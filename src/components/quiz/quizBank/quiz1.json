@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What was wrong with how Priya responded in the meeting?",
+    "options": [
+      "She interrupted him and gave his idea credit to someone else",
+      "She disagreed with his idea",
+      "She asked him to speak louder",
+      "She scheduled the meeting too early"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What would have been a more respectful response?",
+    "options": [
+      "Letting him finish and crediting the idea to him",
+      "Waiting until after the meeting to bring it up",
+      "Asking someone else what they thought instead",
+      "Ignoring the idea entirely"
+    ],
+    "correctAnswer": 0
+  }
+]
