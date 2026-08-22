@@ -104,6 +104,42 @@ could fall back to `meeting_room` at a pinch.
 
 ---
 
+## Scenario 5 — Friday
+
+Reuses every background it needs — `openplan_morning`, `small_room`,
+`meeting_room`, `kitchenette`, `black`. **No new backgrounds.** Four new
+character states, and one set that doesn't exist yet.
+
+### Characters
+
+| Tag | Where it's used | Notes |
+|---|---|---|
+| `delia, warm, centre` | The mentoring and Culture Club ask. | Pleased, generous, seeking him out for the first time all quarter. She thinks she's doing him a kindness, and she is. |
+| `delia, neutral, centre` | Opening the review. | Professional, prepared, forty minutes booked for thirty. **She came in planning to talk about communication style** — nothing in her face should suggest she knows what's coming. |
+| `delia, uncertain, centre` | The reveal, and the two earlier moments she gets caught out. | The hardest drawing in the game. She is working something out mid-sentence and doesn't like it. Not tearful, not apologetic — she's a senior person hearing herself say something true. |
+| `owen, eager, left` | The sprint review, and both March endings. | Twenty-four, junior, delighted to be here. **Not a younger copy of the PC** — Owen is better at this than he was, faster to laugh things off. That's the discomfort. |
+
+### The last card — needs a decision
+
+The closing beat replays twenty seconds of scenario 2's standup with every
+character's gender swapped back. Same lines, same timing, same laugh.
+
+It needs **one swapped sprite set** — the scenario 2 cast, drawn the other way
+round. That's the entire art cost, and it's the cheapest scene in the game
+relative to what it does: it's what makes the title legible from inside the
+product.
+
+It is currently **stubbed in the ink** with a placeholder line, because
+scenario 2 isn't written yet. Two things have to land before it works:
+
+1. Scenario 2's ink exists, so its standup knot can be re-entered.
+2. `SceneRenderer.jsx` reads `# swap: true` and picks sprites and names from a
+   swapped lookup. Not built.
+
+If anything gets cut, not this.
+
+---
+
 ## Scenario 1 — Monday
 
 Already drawn: `intro` · `surprised` · `shocked` · `sideeyeing` · `checking` ·

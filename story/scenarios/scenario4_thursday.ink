@@ -332,6 +332,17 @@ Robyn is kind about it. That's not a subversion. She is actually, genuinely kind
 # thought
 You don't go. At 10:30 Dani says good morning like a person who says good morning.
 
+~ composure = composure - 2
+
+-> sc4_converge
+
+
+// ============================================================
+=== sc4_converge ===
+
+// Jean's beat plays on every route. It used to sit inside sc4_noreport, which
+// meant anyone who reported never learned that the floor already knew — and
+// quiz4 asks about this exact line.
 # background: kitchenette
 # thought
 Later, Jean, apropos of nothing.
@@ -347,14 +358,6 @@ Later, Jean, apropos of nothing.
 # background: kitchenette
 # thought
 You get used to her. Which means Jean already has. Which means Jean knew before yesterday, and so, presumably, did whoever told Jean.
-
-~ composure = composure - 2
-
--> sc4_converge
-
-
-// ============================================================
-=== sc4_converge ===
 
 # background: openplan_morning
 # thought
