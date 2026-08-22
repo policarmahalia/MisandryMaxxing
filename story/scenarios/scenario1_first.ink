@@ -12,7 +12,7 @@ You're confused why they'd think that.
 * ["I'm a Software Engineer, actually..."]
     ~ corrected = true
     -> scene2
-* ["Why would you think that?"]
+* ["No, I'm the Software Engineer you guys hired?"]
     ~ corrected = false
     -> scene2
 

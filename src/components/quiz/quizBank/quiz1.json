@@ -1,21 +1,45 @@
 [
   {
-    "question": "What was wrong with how Priya responded in the meeting?",
+    "topic": "Unpacking Gender-Based Violence",
+    "question": "What assumption did Keira make when she first saw him?",
     "options": [
-      "She interrupted him and gave his idea credit to someone else",
-      "She disagreed with his idea",
-      "She asked him to speak louder",
-      "She scheduled the meeting too early"
+      "That he must be the new marketing hire, not a software engineer",
+      "That he was in the wrong building",
+      "That he was too junior for the role",
+      "That he was a client, not an employee"
     ],
     "correctAnswer": 0
   },
   {
-    "question": "What would have been a more respectful response?",
+    "topic": "Healthy Relationships, Consent & Boundaries",
+    "question": "What made Keira's comment about his shirt inappropriate?",
     "options": [
-      "Letting him finish and crediting the idea to him",
-      "Waiting until after the meeting to bring it up",
-      "Asking someone else what they thought instead",
-      "Ignoring the idea entirely"
+      "It judged his competence based on appearance instead of his work",
+      "It was said too loudly",
+      "It was said on his first day",
+      "It wasn't inappropriate, just teasing"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "topic": "Being an Ethical Bystander",
+    "question": "What could Chesca have done to be an ethical bystander in this scenario?",
+    "options": [
+      "Spoken up when Keira made the comment, instead of staying silent",
+      "Waited until after he left to talk to Keira privately",
+      "Reported it to HR without saying anything in the moment",
+      "Changed the subject to something unrelated"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "topic": "Trauma-Informed Response",
+    "question": "What would have been a trauma-informed response after this interaction?",
+    "options": [
+      "Checking in with him, listening without minimizing it, and letting him know support is available",
+      "Telling him not to take it personally",
+      "Pretending it didn't happen to avoid awkwardness",
+      "Insisting he report it immediately"
     ],
     "correctAnswer": 0
   }
