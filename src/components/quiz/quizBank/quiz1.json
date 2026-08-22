@@ -1,46 +1,146 @@
 [
   {
     "topic": "Unpacking Gender-Based Violence",
-    "question": "What assumption did Keira make when she first saw him?",
+    "question": "Keira assumes he's the new marketing hire. What's going on in that exchange?",
     "options": [
-      "That he must be the new marketing hire, not a software engineer",
-      "That he was in the wrong building",
-      "That he was too junior for the role",
-      "That he was a client, not an employee"
-    ],
-    "correctAnswer": 0
+      {
+        "text": "She read him as non-technical before he'd said anything about his work",
+        "isIssue": true,
+        "note": "The assumption arrives first and the evidence never catches up. That's why it's tiring — the correction has to happen before the conversation can even start."
+      },
+      {
+        "text": "When he corrects her, she treats it as amusing rather than as information",
+        "isIssue": true,
+        "note": "\"Oh, that's cute\" keeps him in the role she assigned him. Being corrected didn't change her read of him. It just made the read more entertaining."
+      },
+      {
+        "text": "Getting someone's role wrong is an easy mistake and there's nothing more to it",
+        "isIssue": false,
+        "note": "It would be, once. What makes it a pattern is how she responds to being corrected — that part isn't a mix-up."
+      },
+      {
+        "text": "He should have led with his job title before she had a chance to assume",
+        "isIssue": false,
+        "note": "This puts the work on him to pre-empt everyone else's assumptions. Consider how much of his day that would take."
+      },
+      {
+        "text": "She said it in front of other people instead of quietly to him",
+        "isIssue": false,
+        "note": "An audience makes it sting more, but it would be the same assumption said alone in a lift."
+      },
+      {
+        "text": "She's senior to him, so she's entitled to size up a new hire",
+        "isIssue": false,
+        "note": "Seniority covers assessing his work. It doesn't cover deciding what kind of person he is on sight."
+      }
+    ]
   },
   {
     "topic": "Healthy Relationships, Consent & Boundaries",
-    "question": "What made Keira's comment about his shirt inappropriate?",
+    "question": "She comments on his shirt, then asks whether his girlfriend knows he dresses like that. What's the problem?",
     "options": [
-      "It judged his competence based on appearance instead of his work",
-      "It was said too loudly",
-      "It was said on his first day",
-      "It wasn't inappropriate, just teasing"
-    ],
-    "correctAnswer": 0
+      {
+        "text": "His body became the subject of a work conversation he didn't open",
+        "isIssue": true,
+        "note": "He came to talk about engineering. The topic got changed to how he looks, and he doesn't get a vote on that."
+      },
+      {
+        "text": "Competence got attached to appearance instead of to anything he's built",
+        "isIssue": true,
+        "note": "\"Too tight for an engineer\" makes the shirt the qualification. Nothing about his actual work ever comes up."
+      },
+      {
+        "text": "The girlfriend question assumes his private life, then asks him to account for it",
+        "isIssue": true,
+        "note": "Two things at once — it decides who he'd be with, and it makes his relationship something he now has to manage at work."
+      },
+      {
+        "text": "The shirt genuinely was too tight for a professional setting",
+        "isIssue": false,
+        "note": "Even if you'd have worn something else, that's a dress-code conversation with a manager. It isn't a remark about his body on the floor."
+      },
+      {
+        "text": "It would have been fine if she'd raised it with him privately",
+        "isIssue": false,
+        "note": "Somewhere quieter doesn't change what's being said. Private mostly means no witnesses."
+      },
+      {
+        "text": "He should have laughed it off to keep things comfortable",
+        "isIssue": false,
+        "note": "He can, and the story lets him. Notice that the cost of keeping things comfortable is only ever paid by him."
+      }
+    ]
   },
   {
     "topic": "Being an Ethical Bystander",
-    "question": "What could Chesca have done to be an ethical bystander in this scenario?",
+    "question": "Chesca is standing right there and says nothing. What would bystander action have looked like?",
     "options": [
-      "Spoken up when Keira made the comment, instead of staying silent",
-      "Waited until after he left to talk to Keira privately",
-      "Reported it to HR without saying anything in the moment",
-      "Changed the subject to something unrelated"
-    ],
-    "correctAnswer": 0
+      {
+        "text": "Naming it in the moment, even lightly, so he isn't the only one who noticed",
+        "isIssue": true,
+        "note": "It doesn't take a confrontation. \"He's an engineer, Keira\" does most of the work, and it moves the cost off him."
+      },
+      {
+        "text": "Turning the conversation back to his actual role and what he's working on",
+        "isIssue": true,
+        "note": "Low risk and effective. It corrects the record without needing anyone to be the villain."
+      },
+      {
+        "text": "Checking in with him afterwards about what he'd like to happen next",
+        "isIssue": true,
+        "note": "Not a substitute for the moment, but it matters — and it leaves the decision with him."
+      },
+      {
+        "text": "Reporting it to HR straight away without saying anything to either of them",
+        "isIssue": false,
+        "note": "It skips past him entirely. A process starts, he hears about it later, and he had no say in any of it."
+      },
+      {
+        "text": "Waiting and raising it with Keira privately another day",
+        "isIssue": false,
+        "note": "Better than nothing, and it might even change Keira. It still leaves him standing alone in the room where it happened."
+      },
+      {
+        "text": "Staying out of it, since it wasn't said to her",
+        "isIssue": false,
+        "note": "Silence in the room reads as agreement to everyone in it — including him."
+      }
+    ]
   },
   {
     "topic": "Trauma-Informed Response",
-    "question": "What would have been a trauma-informed response after this interaction?",
+    "question": "Someone wants to support him after this. What actually helps?",
     "options": [
-      "Checking in with him, listening without minimizing it, and letting him know support is available",
-      "Telling him not to take it personally",
-      "Pretending it didn't happen to avoid awkwardness",
-      "Insisting he report it immediately"
-    ],
-    "correctAnswer": 0
+      {
+        "text": "Listening, without arguing him out of how it landed",
+        "isIssue": true,
+        "note": "The fastest way to end the conversation is to explain to him why it wasn't that bad."
+      },
+      {
+        "text": "Letting him decide what happens next, including deciding nothing happens",
+        "isIssue": true,
+        "note": "Control is the thing that got taken. Handing it back is most of the job."
+      },
+      {
+        "text": "Telling him what support exists without requiring him to use it",
+        "isIssue": true,
+        "note": "Information rather than instruction. He can put it in his pocket and use it in six months."
+      },
+      {
+        "text": "Telling him not to take it personally",
+        "isIssue": false,
+        "note": "It was directed at him personally. This asks him to do the work of not minding."
+      },
+      {
+        "text": "Insisting he make a formal report right away",
+        "isIssue": false,
+        "note": "Well meant, and it takes the decision off him again — just in the other direction."
+      },
+      {
+        "text": "Promising to go and have it out with Keira on his behalf",
+        "isIssue": false,
+        "note": "Feels like solidarity. It's still someone else deciding what happens to him, and he's the one who wears the fallout."
+      }
+    ]
   }
 ]

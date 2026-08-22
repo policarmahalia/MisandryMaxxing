@@ -125,15 +125,16 @@ html, body, #root {
 
 .quiz-screen {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background: #1a1a1a;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
+  justify-content: flex-start;
+  padding: 56px 20px 80px;
   text-align: center;
+  overflow-y: auto;
 }
 
 .quiz-topic {
@@ -191,6 +192,79 @@ html, body, #root {
   border-color: #dc5050;
 }
 
+/* multi-select quiz */
+
+.quiz-instruction {
+  color: #aaa;
+  font-size: 0.95rem;
+  margin-bottom: 22px;
+  max-width: 600px;
+}
+
+.quiz-option-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.quiz-option-row .quiz-option {
+  width: 100%;
+}
+
+.quiz-option:disabled {
+  cursor: default;
+}
+
+/* pre-reveal: picked up, not yet judged */
+.quiz-option.selected {
+  background: rgba(255, 204, 102, 0.16);
+  border-color: #ffcc66;
+}
+
+/* post-reveal. no red anywhere: this is recognition, not marking. */
+.quiz-option.caught {
+  background: rgba(255, 204, 102, 0.18);
+  border-color: #ffcc66;
+  opacity: 1;
+}
+
+.quiz-option.missed {
+  background: rgba(127, 168, 217, 0.16);
+  border-color: #7fa8d9;
+  opacity: 1;
+}
+
+.quiz-option.herring {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #b9b9b9;
+}
+
+.quiz-option.dim {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #7d7d7d;
+}
+
+.quiz-note {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #b0b0b0;
+  text-align: left;
+  padding: 0 4px 10px 18px;
+  border-left: 2px solid rgba(255, 255, 255, 0.14);
+  margin: 2px 0 4px 8px;
+}
+
+.quiz-option.caught + .quiz-note {
+  border-left-color: #ffcc66;
+}
+
+.quiz-option.missed + .quiz-note {
+  border-left-color: #7fa8d9;
+  color: #cfd9e6;
+}
+
 .quiz-next-btn {
   margin-top: 24px;
   padding: 12px 30px;
@@ -222,6 +296,36 @@ html, body, #root {
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
+}
+
+.quiz-score {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffcc66;
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.quiz-score-detail {
+  color: #aaa;
+  font-size: 0.95rem;
+  max-width: 460px;
+  text-align: center;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.quiz-results-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.quiz-btn-secondary {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: white;
 }
 
 /* fade transition */
