@@ -1,6 +1,6 @@
 # Art needed
 
-For Pauleen. Every entry says what it is **and where it appears**, so the mood
+For Pauline. Every entry says what it is **and where it appears**, so the mood
 of the scene is on the page next to the request.
 
 **Spec:** 1951 × 1100 PNG, matching the existing set — line-art characters over
@@ -33,7 +33,7 @@ character states**. Layered, that's **11 drawings**. As composites, it's every
 background × every character who appears in it — **around 20**, and every new
 line of dialogue in an existing room risks another one.
 
-Layering is fewer drawings and far more reusable, but it means Pauleen draws
+Layering is fewer drawings and far more reusable, but it means the artist draws
 characters cut out rather than in scene, and the existing eight would eventually
 want redoing to match. **Recommend layering, and taking the hit on the existing
 eight later** — but it's her call, since she's drawing it.
