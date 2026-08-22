@@ -5,9 +5,11 @@ import StoryEngine from './engine/StoryEngine';
 import scenario1 from '../story/compiled/scenario1.json';
 import scenario3 from '../story/compiled/scenario3.json';
 import scenario4 from '../story/compiled/scenario4.json';
+import scenario5 from '../story/compiled/scenario5.json';
 import quiz1 from './components/quiz/quizBank/quiz1.json';
 import quiz3 from './components/quiz/quizBank/quiz3.json';
 import quiz4 from './components/quiz/quizBank/quiz4.json';
+import quiz5 from './components/quiz/quizBank/quiz5.json';
 import './App.css';
 
 // Temporary scaffolding until ScenarioMenu.jsx exists. Add a scenario here and
@@ -17,9 +19,10 @@ const SCENARIOS = {
   1: { title: 'Monday', story: scenario1, quiz: quiz1 },
   3: { title: 'Wednesday', story: scenario3, quiz: quiz3 },
   4: { title: 'Thursday', story: scenario4, quiz: quiz4 },
+  5: { title: 'Friday', story: scenario5, quiz: quiz5 },
 };
 
-const ORDER = [1, 3, 4];
+const ORDER = [1, 3, 4, 5];
 
 // ?scenario=4 drops you straight into that chapter, for playtesting one
 // without replaying the ones before it.

@@ -264,7 +264,7 @@ You DM Jean asking for ten minutes on a deploy issue.
     ~ composure = composure - 1
     # background: slack_ui
     # thought
-    It takes you until 18:20.
+    You're still on it when the sync starts.
     -> sc4_meeting
 
 
