@@ -474,76 +474,147 @@ html, body, #root {
 /* ---- title screen ---- */
 
 .intro-screen {
+  position: relative;
   width: 100%;
   height: 100%;
-  border: none;
-  background: #1a1a1a;
-  color: white;
-  cursor: pointer;
+  /* matches the artwork's own background, so any letterboxing is invisible */
+  background: #fbdce8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: intro-in 0.7s ease-out both;
+}
+
+/* Holds the artwork at its true aspect ratio. The buttons are positioned
+   against this rather than the window, so they stay in the empty band at the
+   bottom of the picture instead of drifting onto the figures. */
+/* Sized to the largest box of the artwork's aspect ratio that fits the
+   viewport — width-bound on a tall screen, height-bound on a wide one. The
+   frame then matches the picture exactly, so the buttons stay pinned to the
+   empty band inside it instead of to the letterboxing around it.
+
+   Shrink-wrapping the img instead doesn't work: max-height: 100% has no fixed
+   parent height to resolve against, so on a wide viewport it overflowed. */
+.intro-frame {
+  position: relative;
+  aspect-ratio: 2730 / 2049;
+  width: min(100vw, calc(100vh * 2730 / 2049));
+  line-height: 0;
+}
+
+.intro-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.intro-actions {
+  position: absolute;
+  left: 50%;
+  bottom: 7%;
+  transform: translateX(-50%);
+  width: 34%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 4px;
-  padding: 40px 24px;
-  text-align: center;
-  font: inherit;
-  animation: intro-in 0.9s ease-out both;
+  gap: 3%;
 }
 
-.intro-welcome {
-  font-size: 1rem;
-  letter-spacing: 5px;
-  text-transform: lowercase;
-  color: #aaa;
+.intro-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  line-height: 0;
+  transition: transform 0.15s ease-out;
 }
 
-.intro-title {
-  font-size: clamp(2.4rem, 11vw, 5.5rem);
-  font-weight: bold;
-  letter-spacing: -1px;
-  line-height: 1.05;
-  color: #ffcc66;
-  text-wrap: balance;
+.intro-btn img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.intro-tagline {
-  margin-top: 18px;
-  font-size: 0.95rem;
-  font-style: italic;
-  color: #b9b2a4;
+/* cropped to their content, so these are sized on the visible text alone */
+.intro-btn-about {
+  width: 74%;
 }
 
-.intro-hint {
-  margin-top: 44px;
-  font-size: 0.72rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #6f6f6f;
-  animation: intro-pulse 2.4s ease-in-out infinite;
+.intro-btn:hover,
+.intro-btn:focus-visible {
+  transform: scale(1.06);
+  outline: none;
 }
 
-.intro-screen:hover .intro-hint,
-.intro-screen:focus-visible .intro-hint {
-  color: #ffcc66;
-}
-
-.intro-screen:focus-visible {
-  outline: 2px solid #ffcc66;
-  outline-offset: -6px;
+.intro-btn:focus-visible img {
+  outline: 3px solid #1f5fe0;
+  outline-offset: 4px;
 }
 
 @keyframes intro-in {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: none; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-@keyframes intro-pulse {
-  0%, 100% { opacity: 0.55; }
-  50%      { opacity: 1; }
+/* ---- about ---- */
+
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.about-panel {
+  background: #1a1a1a;
+  border: 2px solid #ff3d8b;
+  border-radius: 10px;
+  padding: 28px 30px;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: #e9e9e9;
+  text-align: left;
+}
+
+.about-panel h2 {
+  color: #ff3d8b;
+  margin: 0;
+}
+
+.about-panel p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.about-warning {
+  border-left: 3px solid #ff3d8b;
+  padding-left: 12px;
+  color: #cfcfcf;
+}
+
+.about-close {
+  align-self: flex-start;
+  margin-top: 6px;
+  padding: 10px 24px;
+  background: #ff3d8b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .intro-screen { animation: none; }
-  .intro-hint { animation: none; opacity: 1; }
+  .intro-btn { transition: none; }
 }
