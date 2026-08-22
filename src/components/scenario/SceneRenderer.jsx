@@ -57,12 +57,11 @@ function SceneRenderer({ engine, onScenarioComplete }) {
       // auto-advance after 2s, no tap needed
       setAwaitingTap(false);
       setTimeout(() => showLine(lines, index + 1, result), 2000);
-    } else if (index + 1 < lines.length || result.choices.length > 0) {
-      // more lines queued, or choices coming next — wait for tap
+    } else {
+      // wait for a tap. this has to happen on the final line too, otherwise the
+      // queue never runs off the end and onScenarioComplete never fires.
       setAwaitingTap(true);
       window.__advanceQueue = () => showLine(lines, index + 1, result);
-    } else {
-      setAwaitingTap(false);
     }
   }
 
