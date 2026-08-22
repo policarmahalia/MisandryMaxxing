@@ -52,6 +52,20 @@ You sit at the corner of the table, laptop open, typing furiously. No one looks 
 # thought
 The meeting flashes forward. Reyana presents. You take notes.
 
+// Ghost choices: options he can see and cannot take. inkjs has no disabled
+// choice, so the text ships as a tag and SceneRenderer draws them greyed and
+// unclickable, then advances on its own after four seconds. No tap.
+// The pipe is escaped because ink reserves | as its alternative separator; it
+// survives into the tag value intact.
+# scene: staring
+# thought
+She gets a detail wrong. It's your detail — the one you were still fixing at two in the morning.
+
+# scene: intro_ignoring
+# ghost_choices: "That's not quite it — the retry cost is upfront, not per call."\|"Happy to take this bit. It's my slide."
+# thought
+Both hands on the keyboard. The next sentence has already started and you are three words behind.
+
 The meeting starts to wrap up. The team is talking casually now.
 
 # scene: intro_ignoring

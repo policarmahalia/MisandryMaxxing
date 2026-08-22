@@ -43,6 +43,19 @@ scenario 3 runs today with whatever is in the folder and falls back to black.
 
 ---
 
+## Scenario 2 — The Note Taker
+
+All six backgrounds are drawn: `intro_ignoring` · `staring` · `awkward` ·
+`callout` · `laughing` · `meme`. **Nothing new needed.**
+
+One note: the **ghost-choice beat** now lives here, during Reyana's
+presentation — two options rendered greyed and unclickable for four seconds
+while his hands are on the keyboard. It reuses `staring` and `intro_ignoring`,
+so it costs no new art, but it is the most important four seconds in the
+chapter and the art should not distract from it.
+
+---
+
 ## Scenario 3 — Wednesday
 
 ### Backgrounds
@@ -51,7 +64,6 @@ scenario 3 runs today with whatever is in the folder and falls back to black.
 |---|---|---|
 | `openplan_morning` | **12 lines.** The whole report scene — he finalises it at 10:40, Delia arrives at 11:15, and all four responses play here. Also the shared-drive moment afterwards. | Ordinary Wednesday. Nothing has visibly gone wrong. The scene's weight is entirely in the dialogue, so the room should stay flat and unremarkable. |
 | `slack_ui` | **10 lines.** The #platform-eng thread that resolves without him, then the Fiona DM exchange. | A chat interface. His message needs to be visibly *there* with nothing under it — the gap is the point. |
-| `meeting_room` | **9 lines.** The five-o'clock sync: the minutes, the ghost-choice beat, Ellie's question, his presentation. | The chapter's only real choice point and its hardest four seconds. Several colleagues seated, table, laptops. Tense but not dramatic. |
 | `kitchenette` | **4 lines.** The Pauline conversation only, and only if the player asked for it — so a good share of playthroughs never see this room at all. | Warm and completely unthreatening. She is apologising and she means it. |
 | `home_evening` | **6 lines.** 21:40, opening the PR. Then next morning: forty-one comments against Ellie's LGTM. | Away from the office, alone, late. The only room in the chapter that's his. |
 
@@ -60,14 +72,12 @@ scenario 3 runs today with whatever is in the folder and falls back to black.
 | Tag | Where it's used | Notes |
 |---|---|---|
 | `pauline, warm, left` | **6 lines.** Her whole scene — she's apologising and means it. | Genuinely pleased to see him. She is not a villain and must not look like one. |
-| `reyana, neutral, centre` | **6 lines.** Runs the sync, asks for minutes, hands the fix to Ellie. | Efficient, pleasant, not unkind. Reads as someone with a meeting to get through. |
 | `delia, tired, right` | **5 lines.** Delia at his desk with the wrong report. | **Tired, not furious.** She doesn't have time to adjudicate. If she reads as angry the whole scene collapses into a villain story. |
 | `delia, cool, right` | **2 lines.** Only on the "Pauline must have overwritten it" route. | A single degree cooler than `tired`. The difference should be barely perceptible — that's what makes it land. |
-| `ellie, neutral, left` | **1 line.** Asks his question back to the room and gets thanked for it. | Onscreen briefly and does nothing wrong. Deliberately not Pauline — using one woman for both makes it a vendetta instead of a pattern. |
 
 ### Priority if time runs short
 
-1. `openplan_morning` and `meeting_room` — between them they carry the report scene and the sync, which is most of the chapter.
+1. `openplan_morning` — carries the entire report scene and all four responses, which is most of the chapter.
 2. `kitchenette` — one optional scene, so lower value than its line count suggests.
 3. `slack_ui` — could be a flat mocked-up UI rather than a drawing, and would still work.
 4. `home_evening` — the coda. Lowest cost if it falls back to black.

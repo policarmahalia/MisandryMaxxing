@@ -10,6 +10,8 @@
 //     other reading. No choice unlocks the truth. If a playtester asks "so did
 //     she or didn't she", that's the chapter working.
 //   - The credit is not recovered. Every route converges on him redoing it.
+//   - The sync scene was cut: scenario 2 already carries the note-taker beat,
+//     and the ghost-choice mechanic moved there with it.
 //   - No villains. Delia is tired, Pauline is warm, Reyana is efficient and
 //     Fiona is joking. The damage is cumulative and unattributable.
 //
@@ -26,7 +28,6 @@ VAR composure = 0
 VAR asked_pauline = false
 VAR named_pauline = false
 VAR kept_receipts = false
-VAR note_taker = false
 
 
 // ============================================================
@@ -226,7 +227,7 @@ You DM Fiona asking for ten minutes on a deploy issue.
     # background: slack_ui
     # thought
     She helps. She's good. It was a joke.
-    -> sc4_meeting
+    -> sc4_pr
 
 * ["lol"]
     ~ composure = composure - 2
@@ -236,7 +237,7 @@ You DM Fiona asking for ten minutes on a deploy issue.
     # background: slack_ui
     # thought
     She helps. She's good. It was a joke.
-    -> sc4_meeting
+    -> sc4_pr
 
 * [Close the DM. Work it out yourself.]
     ~ standing = standing - 1
@@ -244,140 +245,13 @@ You DM Fiona asking for ten minutes on a deploy issue.
     # background: slack_ui
     # thought
     You're still on it when the sync starts.
-    -> sc4_meeting
+    -> sc4_pr
 
 
 // ============================================================
-// Scene 4 — The Sync
+// Scene 4 — The PR
 // ============================================================
-=== sc4_meeting ===
-
-# background: meeting_room
-# thought
-Five past five. You've re-cut the report and you're presenting it in ten minutes.
-
-# character: reyana, neutral, centre
-# speaker: Reyana
-"Before we start — someone needs to take the minutes."
-
-# background: meeting_room
-# thought
-She looks around the table. The look completes on you. It always completes on you.
-
-* ["Sure."]
-    ~ standing = standing - 1
-    ~ composure = composure - 1
-    ~ note_taker = true
-    # background: meeting_room
-    # thought
-    You open a doc.
-    -> sc4_body
-
-* [Say nothing. Open a doc.]
-    ~ standing = standing - 1
-    ~ composure = composure - 2
-    ~ note_taker = true
-    # background: meeting_room
-    # thought
-    Nobody has to ask twice. That's the part that stays with you.
-    -> sc4_body
-
-// Not a win. It reads as a condition attached to a small favour, and it buys
-// a rotation that never materialises. Costed accordingly.
-* ["Happy to, if we rotate it after this."]
-    ~ standing = standing - 1
-    ~ composure = composure + 1
-    ~ note_taker = true
-    # character: reyana, neutral, centre
-    # speaker: Reyana
-    "Sure."
-    # background: meeting_room
-    # thought
-    She writes nothing down. You still take them today.
-    -> sc4_body
-
-* ["I'm presenting in ten — I'd rather not be typing through it."]
-    ~ standing = standing + 1
-    ~ composure = composure - 1
-    # character: reyana, neutral, centre
-    # speaker: Reyana
-    "Fair."
-    # character: reyana, neutral, centre
-    # speaker: Reyana
-    "Ellie?"
-    # background: meeting_room
-    # thought
-    Ellie takes them without comment. It was that easy for someone. It was never going to be that easy for you, and you've spent something to find out.
-    -> sc4_body
-
-
-=== sc4_body ===
-
-# character: reyana, neutral, centre
-# speaker: Reyana
-"Settlement job. The retry logic's double-firing on the reconciliation batch."
-
-# background: meeting_room
-# thought
-You know the answer. It's the same idempotency problem from the report you wrote twice.
-
-{note_taker:
-    -> sc4_ghost
-- else:
-    -> sc4_speak
-}
-
-
-= sc4_speak
-
-* ["That's idempotency. The retry key isn't scoped to the batch."]
-    ~ standing = standing + 1
-    -> sc4_resolve
-
-* ["We flagged this in the design review."]
-    ~ standing = standing + 1
-    ~ composure = composure - 1
-    -> sc4_resolve
-
-
-// The single most important four seconds in the chapter: the player reaches
-// for an option and finds it isn't theirs. inkjs has no disabled choice, so
-// the option text ships as a tag and the renderer draws it unclickable.
-= sc4_ghost
-
-# background: meeting_room
-// The pipe is escaped because ink reserves | as its alternative separator.
-// It survives into the tag value intact, so TagParser still splits on "|".
-# ghost_choices: "That's idempotency. The retry key isn't scoped to the batch."\|"We flagged this in the design review."
-# thought
-Both hands on the keyboard. Someone is mid-sentence and you are three words behind.
-
-~ composure = composure - 2
-
--> sc4_resolve
-
-
-=== sc4_resolve ===
-
-# character: ellie, neutral, left
-# speaker: Ellie
-"Is it an idempotency thing? Like, is the retry key scoped to the batch?"
-
-# character: reyana, neutral, centre
-# speaker: Reyana
-"Probably. Good — Ellie, can you take a look tomorrow?"
-
-# background: meeting_room
-# thought
-You present the report. It's good. It's better than the first one. Two people say so.
-
--> sc5_pr
-
-
-// ============================================================
-// Scene 5 — The PR
-// ============================================================
-=== sc5_pr ===
+=== sc4_pr ===
 
 # background: home_evening
 # thought
