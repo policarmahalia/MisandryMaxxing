@@ -1,248 +1,431 @@
 // Scenario 3 — Wednesday
-// Five small humiliations in one day: the sabotaged report, the kitchenette,
-// the invisible thread, the minutes, the pull request.
+// Working title: "Version History"
 //
-// STRUCTURE NOTE: this chapter is deliberately almost entirely linear. The day
-// happens TO him. The single choice point is the minutes, and it lands harder
-// for being the only one. Composure drains passively through the other scenes —
-// they cost him something whether or not he can act on them.
+// Register: dry, underplayed. Nobody raises their voice. Nothing is provable.
+// Thesis: he does the work twice and his name is on it zero times, and there
+// is no one to be angry at.
 //
-// Sarah's motive is never resolved. Whether she overwrote the file on purpose
-// or by accident is not the point. The point is that nobody asked.
+// LOCKED:
+//   - The swap is never explained. Sarah's account is plausible; so is the
+//     other reading. No choice unlocks the truth. If a playtester asks "so did
+//     she or didn't she", that's the chapter working.
+//   - The credit is not recovered. Every route converges on him redoing it.
+//   - No villains. Delia is tired, Sarah is warm, Linda is efficient, Jean is
+//     joking, Kiera means it as a compliment. The damage is cumulative and
+//     unattributable.
+//
+// BOSS is named Delia here — Sarah refers to her by that name in Scene 2, so
+// the placeholder is doing the work of a name already. Change in one place if
+// the team wants something else.
 
 VAR standing = 0
 VAR composure = 0
 
-VAR pushed_minutes = false
-VAR silenced = false
+// Carried from Scenario 2 once cross-scenario state exists. Until then these
+// start at zero and the chapter reads as a standalone.
 
-# scene: desk
-# thought
-Wednesday. The system performance report has been three weeks of your life.
-
-# scene: desk
-# thought
-You save the final version to the shared drive, send the link to Linda and the wider team, and go to get a coffee.
-
--> the_report
+VAR asked_sarah = false
+VAR named_sarah = false
+VAR kept_receipts = false
+VAR note_taker = false
 
 
 // ============================================================
-// Scene 1 — The Incompetence. No choices. He does not get one.
+// Scene 1 — The Report
 // ============================================================
-=== the_report ===
 
-# scene: boss_furious
-# speaker: linda
-"What is this garbage you sent?"
-
-# scene: desk
+# background: openplan_morning
 # thought
-Linda is standing at your desk. You have never seen her look like this.
+You finalise the system performance report at 10:40. Charts, appendix, the lot.
 
-# speaker: you
-"What? I sent the finalized report, it should be..."
-
-# scene: laptop_evidence
+# background: openplan_morning
 # thought
-She shoves her laptop at you.
+Save to the shared drive, link it to Delia and the wider team, go and get a coffee.
 
-# scene: laptop_evidence
+# background: openplan_morning
 # thought
-The report on the screen is dated. It's full of errors you fixed a fortnight ago. It isn't your version, and your name isn't on it anywhere.
+At 11:15 Delia is standing at your desk with her laptop open.
 
-# scene: laptop_evidence
+# background: openplan_morning
+# character: boss, tired, right
+# speaker: delia
+"This isn't what I was expecting."
+
+# background: openplan_morning
 # thought
-Sarah's is.
+She turns the screen. It's the report, dated Tuesday, three charts short, the settlement figures un-reconciled. It's a draft you abandoned two days ago.
 
-~ composure = composure - 3
-
-# scene: judgemental
-# speaker: linda
-"I'm starting to question your competence. Sarah seems to have had to redo the whole thing from scratch."
-
-# scene: judgemental
-# speaker: linda
-"Get it fixed. And don't let me down again."
-
-~ standing = standing - 2
-
-# scene: desk
+# background: openplan_morning
 # thought
-She walks off before you have finished deciding what you would have said.
+Your name isn't on it. Sarah's is.
 
-# scene: desk
+# character: boss, tired, right
+# speaker: delia
+"Sarah's redone most of it from scratch. I'm not thrilled about where that leaves the afternoon."
+
+# background: openplan_morning
 # thought
-Nobody at the surrounding desks looks up.
+She isn't angry. That's somehow worse.
 
-# scene: desk
-# thought
-The rest of the day is a series of small, frustrating humiliations.
+* ["That's not the version I sent. Check the file history."]
+    ~ standing = standing - 1
+    ~ composure = composure - 1
+    ~ kept_receipts = true
+    # character: boss, tired, right
+    # speaker: delia
+    "I don't need a forensic investigation, I need the report."
+    # background: openplan_morning
+    # thought
+    She's already looking at her phone.
+    # speaker: delia
+    "Can you have it by four?"
+    -> sc1_converge
 
--> the_kitchenette
-
-
-// ============================================================
-// Scene 2 — The Kitchenette
-// ============================================================
-=== the_kitchenette ===
-
-# scene: kitchenette
-# thought
-On your way out you're asked to stay behind and wipe down the kitchenette. You seem like you'd be good at it, apparently.
-
-# scene: checking
-# speaker: keira
-"Wow. You clean up so well."
-
-~ composure = composure - 1
-
-# scene: kitchenette
-# thought
-You keep wiping the same clean patch of bench until she leaves.
-
--> the_thread
-
-
-// ============================================================
-// Scene 3 — Slack
-// ============================================================
-=== the_thread ===
-
-# scene: slack_thread
-# thought
-Back at your desk, someone posts a question about connection pooling. You know the answer. You write it out properly, with a link to the docs.
-
-# scene: slack_thread
-# thought
-Nothing. The thread moves on around your message like water around a rock.
-
-# scene: slack_thread
-# thought
-Twenty minutes later it's still sitting there, unanswered, above three replies to somebody else.
-
-~ composure = composure - 1
-
-# scene: jean_desk
-# thought
-You turn to Jean and ask for a hand with a bug you've been stuck on since lunch.
-
-# scene: jean_desk
-# speaker: jean
-"What do I get in return?"
-
-# scene: jean_desk
-# thought
-You wait for her to smile. She doesn't.
-
-~ composure = composure - 1
-
--> the_minutes
-
-
-// ============================================================
-// Scene 4 — The Second Meeting. The only choice in the chapter.
-// ============================================================
-=== the_minutes ===
-
-# scene: meeting_room
-# thought
-Another meeting. You're on the panel presenting the corrected report. The atmosphere is tense before anyone has spoken.
-
-# scene: pointing
-# speaker: linda
-"Alright, someone needs to take the minutes."
-
-# scene: pointing
-# thought
-She looks around the room. Her eyes land on you and stop there.
-
-# speaker: linda
-"Anyone?"
-
-# scene: meeting_room
-# thought
-You can feel everyone waiting.
-
-* [Say nothing. Open a document.]
-    ~ silenced = true
+* ["Sarah must have overwritten it."]
     ~ standing = standing - 2
+    ~ composure = composure + 1
+    ~ named_sarah = true
+    # background: openplan_morning
+    # thought
+    A pause.
+    # character: boss, cool, right
+    # speaker: delia
+    "Let's not do that."
+    # character: boss, cool, right
+    # speaker: delia
+    "Just get me the corrected one."
+    -> sc1_converge
+
+* ["I'll fix it."]
     ~ composure = composure - 2
-    # scene: meeting_room
+    # character: boss, tired, right
+    # speaker: delia
+    "Thank you."
+    # background: openplan_morning
     # thought
-    You don't speak. You just start typing.
-    # scene: meeting_room
+    She means it. She's gone in four seconds.
+    -> sc1_converge
+
+* ["Can I ask Sarah what she was working from?"]
+    ~ standing = standing - 1
+    ~ asked_sarah = true
+    # character: boss, tired, right
+    # speaker: delia
+    "Sure. After four."
+    -> sc1_converge
+
+
+=== sc1_converge ===
+
+# background: openplan_morning
+# thought
+You open the shared drive. There's one file. Modified 09:52 by Sarah.
+
+# background: openplan_morning
+# thought
+There's no earlier version in the folder. There might have been, and there might not have been. You are not going to be able to find out this afternoon.
+
+// Players who didn't ask never get Sarah's side. That's a different
+// playthrough, not a missed one.
+{asked_sarah:
+    -> sc2_sarah
+- else:
+    -> sc3_kitchenette
+}
+
+
+// ============================================================
+// Scene 2 — Sarah  (conditional on asked_sarah)
+// ============================================================
+=== sc2_sarah ===
+
+# background: kitchenette
+# character: sarah, warm, left
+# thought
+She's genuinely pleased to see you.
+
+# character: sarah, warm, left
+# speaker: sarah
+"Oh — the perf report? Yeah, I found it Tuesday night and it was in rough shape, so I just took a run at it."
+
+# character: sarah, warm, left
+# speaker: sarah
+"Was that a live one? God, I'm sorry, it looked like a stale draft."
+
+# character: sarah, warm, left
+# speaker: sarah
+"Did you have a newer one somewhere? I would've just used yours."
+
+* ["I sent the newer one this morning."]
+    ~ composure = composure - 1
+    # character: sarah, warm, left
+    # speaker: sarah
+    "Weird. Ping it to me and I'll tell Delia it was yours."
+    # background: kitchenette
     # thought
-    You keep your head down, and you can feel the power drain out of you. You are the note-taker now, and you don't say another word for the rest of the hour.
-    -> the_pr
+    She doesn't. Not out of malice — the day gets away from her, the same way it gets away from everyone.
+    -> sc3_kitchenette
+
+* ["No, that was probably it."]
+    ~ standing = standing + 1
+    ~ composure = composure - 2
+    # background: kitchenette
+    # thought
+    You watch yourself do it. She is relieved and you are the reason.
+    -> sc3_kitchenette
+
+* ["You could have asked me first."]
+    ~ standing = standing - 1
+    ~ composure = composure + 1
+    # character: sarah, warm, left
+    # speaker: sarah
+    "You're right. That's fair."
+    # background: kitchenette
+    # thought
+    She says it immediately and completely, and it changes nothing, because the report still says Sarah.
+    -> sc3_kitchenette
+
+
+// ============================================================
+// Scene 3 — Small Things
+// ============================================================
+=== sc3_kitchenette ===
+
+// 3a — no fork. Ten seconds long, and it lands harder as something that
+// simply happens to him.
+
+# background: kitchenette
+# thought
+Half four. You're the last one near the kitchenette, so you're the one who's asked to sort it before you go.
+
+# character: kiera, cheerful, right
+# speaker: kiera
+"You're good at this, though. Look at that."
+
+# character: kiera, cheerful, right
+# speaker: kiera
+"You clean up so well."
+
+# background: kitchenette
+# thought
+She means it as a compliment. It is one, structurally.
+
+~ composure = composure - 1
+
+// 3b — the thread
+
+# background: slack_ui
+# thought
+The #platform-eng thread is arguing about connection pooling. You post the actual answer, with a link to the config.
+
+# background: slack_ui
+# thought
+Nothing.
+
+# background: slack_ui
+# thought
+Forty minutes later the thread resolves without you, in the direction you pointed it.
+
+~ composure = composure - 1
+
+// 3c — Jean
+
+# background: slack_ui
+# thought
+You DM Jean asking for ten minutes on a deploy issue.
+
+# background: slack_ui
+# speaker: jean
+"sure — what do i get in return 😉"
+
+* ["A working deploy."]
+    ~ standing = standing + 1
+    ~ composure = composure - 1
+    # background: slack_ui
+    # speaker: jean
+    "hahaha ok ok. 5 mins."
+    # background: slack_ui
+    # thought
+    She helps. She's good. It was a joke.
+    -> sc4_meeting
+
+* ["lol"]
+    ~ composure = composure - 2
+    # background: slack_ui
+    # speaker: jean
+    "gimme 5."
+    # background: slack_ui
+    # thought
+    She helps. She's good. It was a joke.
+    -> sc4_meeting
+
+* [Close the DM. Work it out yourself.]
+    ~ standing = standing - 1
+    ~ composure = composure - 1
+    # background: slack_ui
+    # thought
+    It takes you until 18:20.
+    -> sc4_meeting
+
+
+// ============================================================
+// Scene 4 — The Sync
+// ============================================================
+=== sc4_meeting ===
+
+# background: meeting_room
+# thought
+Five past five. You've re-cut the report and you're presenting it in ten minutes.
+
+# character: linda, neutral, centre
+# speaker: linda
+"Before we start — someone needs to take the minutes."
+
+# background: meeting_room
+# thought
+She looks around the table. The look completes on you. It always completes on you.
 
 * ["Sure."]
     ~ standing = standing - 1
     ~ composure = composure - 1
-    # scene: meeting_room
+    ~ note_taker = true
+    # background: meeting_room
     # thought
-    You agree, and feel the control slip away as you say it.
-    -> the_pr
+    You open a doc.
+    -> sc4_body
 
-* ["Happy to, if we rotate it after this one."]
-    ~ pushed_minutes = true
+* [Say nothing. Open a doc.]
+    ~ standing = standing - 1
+    ~ composure = composure - 2
+    ~ note_taker = true
+    # background: meeting_room
+    # thought
+    Nobody has to ask twice. That's the part that stays with you.
+    -> sc4_body
+
+// Not a win. It reads as a condition attached to a small favour, and it buys
+// a rotation that never materialises. Costed accordingly.
+* ["Happy to, if we rotate it after this."]
     ~ standing = standing - 1
     ~ composure = composure + 1
-    # scene: sideeyeing
+    ~ note_taker = true
+    # character: linda, neutral, centre
     # speaker: linda
-    "Wow. A team player with conditions."
-    # scene: sideeyeing
-    # speaker: linda
-    "Fine. You do it."
-    # scene: meeting_room
+    "Sure."
+    # background: meeting_room
     # thought
-    It was fair, and it worked, and somehow you're the one who came out of it looking petty.
-    -> the_pr
+    She writes nothing down. You still take them today.
+    -> sc4_body
 
-* ["I'd rather follow this properly. I'm presenting after."]
-    ~ pushed_minutes = true
+* ["I'm presenting in ten — I'd rather not be typing through it."]
     ~ standing = standing + 1
     ~ composure = composure - 1
-    # scene: meeting_room
-    # thought
-    Linda scoffs, but she turns away from you.
+    # character: linda, neutral, centre
     # speaker: linda
-    "Fine. Sarah, take them down."
-    # scene: meeting_room
+    "Fair."
+    # character: linda, neutral, centre
+    # speaker: linda
+    "Chesca?"
+    # background: meeting_room
     # thought
-    You kept your stance. It cost more than it should have.
-    -> the_pr
+    Chesca takes them without comment. It was that easy for someone. It was never going to be that easy for you, and you've spent something to find out.
+    -> sc4_body
+
+
+=== sc4_body ===
+
+# character: linda, neutral, centre
+# speaker: linda
+"Settlement job. The retry logic's double-firing on the reconciliation batch."
+
+# background: meeting_room
+# thought
+You know the answer. It's the same idempotency problem from the report you wrote twice.
+
+{note_taker:
+    -> sc4_ghost
+- else:
+    -> sc4_speak
+}
+
+
+= sc4_speak
+
+* ["That's idempotency. The retry key isn't scoped to the batch."]
+    ~ standing = standing + 1
+    -> sc4_resolve
+
+* ["We flagged this in the design review."]
+    ~ standing = standing + 1
+    ~ composure = composure - 1
+    -> sc4_resolve
+
+
+// The single most important four seconds in the chapter: the player reaches
+// for an option and finds it isn't theirs. inkjs has no disabled choice, so
+// the option text ships as a tag and the renderer draws it unclickable.
+= sc4_ghost
+
+# background: meeting_room
+// The pipe is escaped because ink reserves | as its alternative separator.
+// It survives into the tag value intact, so TagParser still splits on "|".
+# ghost_choices: "That's idempotency. The retry key isn't scoped to the batch."\|"We flagged this in the design review."
+# thought
+Both hands on the keyboard. Someone is mid-sentence and you are three words behind.
+
+~ composure = composure - 2
+
+-> sc4_resolve
+
+
+=== sc4_resolve ===
+
+# character: chesca, neutral, left
+# speaker: chesca
+"Is it an idempotency thing? Like, is the retry key scoped to the batch?"
+
+# character: linda, neutral, centre
+# speaker: linda
+"Probably. Good — Chesca, can you take a look tomorrow?"
+
+# background: meeting_room
+# thought
+You present the report. It's good. It's better than the first one. Two people say so.
+
+-> sc5_pr
 
 
 // ============================================================
-// Scene 5 — The PR. Coda. No choices.
+// Scene 5 — The PR
 // ============================================================
-=== the_pr ===
+=== sc5_pr ===
 
-# scene: desk
+# background: home_evening
 # thought
-You finish the day by putting up a pull request for a new feature. It's a solid piece of code and you know it.
+21:40. You open a PR for the pooling fix — the one from the thread nobody answered.
 
-# scene: pr_comments
+# background: home_evening
 # thought
-You wake the next morning to forty comments.
+Morning: forty-one comments. Naming conventions. A suggestion to split a nine-line function. Two people asking whether you'd considered an approach you'd considered and rejected in the description.
 
-# scene: pr_comments
+# background: home_evening
 # thought
-Naming. Spacing. A suggestion to rename a variable back to what it was called before you renamed it. A question about a decision that is explained on the line directly above it.
+One of them is Sarah, and it's the most useful review on there. She's spent twenty minutes on it. She's being kind.
 
-# scene: pr_comments
+# background: home_evening
 # thought
-Out of curiosity, you open Sarah's pull request from the same afternoon.
+Chesca's PR, opened the same night, four files changed.
 
-# scene: pr_comments
+# background: home_evening
 # thought
-One comment.
+LGTM.
 
 ~ composure = composure - 1
 
-# scene: pr_comments
+# background: home_evening
 # thought
-LGTM.
+The corrected report goes out at 09:02, in a shared folder with no author field.
+
+# module: quiz3
 
 -> END
