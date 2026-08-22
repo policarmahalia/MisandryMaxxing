@@ -32,15 +32,14 @@ class StoryEngine {
       // the line that caused them was on screen.
       lines.push({ text: text.trim(), tags, stats: this.readStats() });
     }
+
     const choices = this.story.currentChoices.map((choice, index) => ({
       index,
       text: choice.text,
     }));
-    this.pending = {
-      lines,
-      choices,
-      isEnded: choices.length === 0 && !this.story.canContinue,
-    };
+    const isEnded = !this.story.canContinue && choices.length === 0;
+
+    this.pending = { lines, choices, isEnded };
     return this.pending;
   }
 
