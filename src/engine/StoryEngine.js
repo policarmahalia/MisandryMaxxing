@@ -23,10 +23,6 @@ class StoryEngine {
     this.story.ChooseChoiceIndex(index);
   }
 
-  getVariable(name) {
-    return this.story.variablesState[name];
-  }
-
   restart() {
     this.story.ResetState();
   }

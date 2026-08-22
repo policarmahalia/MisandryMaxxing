@@ -1,10 +1,7 @@
 function parseTags(rawTags = []) {
   return rawTags.map((tag) => {
     const [type, ...rest] = tag.split(':');
-    return {
-      type: type.trim(),
-      value: rest.join(':').trim(),
-    };
+    return { type: type.trim(), value: rest.join(':').trim() };
   });
 }
 

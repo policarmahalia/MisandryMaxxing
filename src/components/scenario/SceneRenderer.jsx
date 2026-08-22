@@ -6,7 +6,7 @@ function SceneRenderer({ engine, onScenarioComplete }) {
   const [dialogueText, setDialogueText] = useState('');
   const [isThought, setIsThought] = useState(false);
   const [speaker, setSpeaker] = useState(null);
-  const [scene, setScene] = useState('girls_neutral');
+  const [scene, setScene] = useState('intro');
   const [choices, setChoices] = useState([]);
   const [promptOpen, setPromptOpen] = useState(false);
 
@@ -16,6 +16,7 @@ function SceneRenderer({ engine, onScenarioComplete }) {
 
   function advance() {
     const result = engine.continueStory();
+    let autoAdvancing = false;
 
     result.lines.forEach((line) => {
       const tags = parseTags(line.tags);
@@ -27,7 +28,14 @@ function SceneRenderer({ engine, onScenarioComplete }) {
       setSpeaker(speakerTag || null);
       setIsThought(thoughtTag);
       setDialogueText(line.text);
+
+      if (sceneTag === 'sideeyeing') {
+        autoAdvancing = true;
+        setTimeout(() => advance(), 2000);
+      }
     });
+
+    if (autoAdvancing) return;
 
     setChoices(result.choices);
     setPromptOpen(result.choices.length > 0);
@@ -38,19 +46,12 @@ function SceneRenderer({ engine, onScenarioComplete }) {
   function handleChoice(index) {
     setPromptOpen(false);
     engine.choose(index);
-    setTimeout(advance, 200); // small delay so slide-down finishes before next line
+    setTimeout(advance, 200);
   }
 
   return (
-    <div
-      className="scene-container"
-      style={{ backgroundImage: `url(/assets/backgrounds/office_open_plan.png)` }}
-    >
-      <img
-        className="scene-art"
-        src={`/assets/scenes/${scene}.png`}
-        alt="scene"
-      />
+    <div className="scene-container">
+      <img className="scene-art-fullbleed" src={`/assets/scenes/${scene}.png`} alt="scene" />
 
       {!promptOpen && (
         <div className={isThought ? 'thought-box' : 'dialogue-box'}>
