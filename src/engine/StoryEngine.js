@@ -12,11 +12,16 @@ class StoryEngine {
       const tags = this.story.currentTags;
       lines.push({ text: text.trim(), tags });
     }
+
     const choices = this.story.currentChoices.map((choice, index) => ({
       index,
       text: choice.text,
     }));
-    return { lines, choices, isEnded: choices.length === 0 && !this.story.canContinue };
+
+
+    const isEnded = !this.story.canContinue && choices.length === 0;
+
+    return { lines, choices, isEnded };
   }
 
   choose(index) {

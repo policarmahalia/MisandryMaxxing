@@ -34,37 +34,46 @@ function SceneRenderer({ engine, onScenarioComplete }) {
     showLine(parsedLines, 0, result);
   }
 
+  
   // displays a single line from the queue at the given index
   function showLine(lines, index, result) {
-    if (index >= lines.length) {
-      // no more lines in this batch — show choices if any, else scenario is done
-      if (result.choices.length > 0) {
-        setAwaitingTap(false);
-        setPromptOpen(true);
-      }
-      if (result.isEnded) onScenarioComplete();
-      return;
-    }
-
-    const line = lines[index];
-    if (line.scene) setScene(line.scene);
-    setSpeaker(line.speaker || null);
-    setIsThought(line.isThought);
-    setDialogueText(line.text);
-    setPromptOpen(false);
-
-    if (line.scene === 'sideeyeing') {
-      // auto-advance after 2s, no tap needed
+  if (index >= lines.length) {
+    if (result.choices.length > 0) {
       setAwaitingTap(false);
-      setTimeout(() => showLine(lines, index + 1, result), 2000);
-    } else if (index + 1 < lines.length || result.choices.length > 0) {
-      // more lines queued, or choices coming next — wait for tap
-      setAwaitingTap(true);
-      window.__advanceQueue = () => showLine(lines, index + 1, result);
-    } else {
-      setAwaitingTap(false);
+      setPromptOpen(true);
+    } else if (result.isEnded) {
+      console.log('SCENARIO ENDED — calling onScenarioComplete');
+      onScenarioComplete();
     }
+    return;
   }
+
+  const line = lines[index];
+  if (line.scene) setScene(line.scene);
+  setSpeaker(line.speaker || null);
+  setIsThought(line.isThought);
+  setDialogueText(line.text);
+  setPromptOpen(false);
+
+  if (line.scene === 'sideeyeing') {
+    setAwaitingTap(false);
+    setTimeout(() => showLine(lines, index + 1, result), 2000);
+  } else if (index + 1 < lines.length) {
+    // more lines still queued in this batch — wait for tap
+    setAwaitingTap(true);
+    window.__advanceQueue = () => showLine(lines, index + 1, result);
+  } else if (result.choices.length > 0) {
+    // last line in batch, but choices are coming — wait for tap then show prompt
+    setAwaitingTap(true);
+    window.__advanceQueue = () => showLine(lines, index + 1, result);
+  } else if (result.isEnded) {
+    // last line in batch, no choices, story is actually done — wait for final tap then end
+    setAwaitingTap(true);
+    window.__advanceQueue = () => showLine(lines, index + 1, result);
+  } else {
+    setAwaitingTap(false);
+  }
+}
 
   function handleTapContinue() {
     if (window.__advanceQueue) {

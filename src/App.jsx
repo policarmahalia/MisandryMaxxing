@@ -15,6 +15,7 @@ function App() {
       setScreen('quiz');
     }, 2000);
   }
+  
 
   function handleQuizPass() {
     console.log('Passed! Move to next scenario or menu.');
