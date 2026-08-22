@@ -136,6 +136,10 @@ There's no earlier version in the folder. There might have been, and there might
 
 // ============================================================
 // Scene 2 — Pauline  (conditional on asked_pauline)
+//
+// NOTE: this is set in the kitchenette, but it is NOT the cut kitchenette
+// beat. Mahalia's "you clean up so well" is gone. This is Pauline
+// apologising, and it reuses the same room.
 // ============================================================
 === sc2_pauline ===
 
