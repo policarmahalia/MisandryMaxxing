@@ -6,6 +6,9 @@
 VAR standing = 0
 VAR composure = 0
 
+// `listening` is the decision frame: it plays on every beat that sits under a
+// choice prompt, so the wider two-hander reads as "the room is waiting for you"
+// rather than continuing Mahalia's run of reaction shots.
 VAR corrected = false
 VAR pushed_back = false
 
@@ -14,6 +17,7 @@ VAR pushed_back = false
 # speaker: Mahalia
 "Hey, I didn't know we had a new marketing hire."
 
+# scene: listening
 # thought
 You're confused why they'd think that.
 
@@ -47,6 +51,7 @@ Mahalia gives you a slow once-over.
 # speaker: Mahalia
 "Well, don't you think that shirt is a bit too tight for an engineer?"
 
+# scene: listening
 # thought
 You're appalled.
 
@@ -67,6 +72,7 @@ You're appalled.
 # speaker: Mahalia
 "Does your girlfriend know you dress like that for work?"
 
+# scene: listening
 # thought
 You're uncomfortable. Why would they assume you have a girlfriend?
 
