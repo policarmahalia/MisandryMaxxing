@@ -1,0 +1,146 @@
+[
+  {
+    "topic": "Unpacking Gender-Based Violence",
+    "question": "Dani frames the comment as a joke and apologises when he names it. Why is it still gender-based harassment?",
+    "options": [
+      {
+        "text": "Intent doesn't determine impact — how she meant it doesn't set what it did",
+        "isIssue": true,
+        "note": "\"It was a joke, you really can't take one\" moves the problem from what she did to how he received it. That move is the harassment continuing, not ending."
+      },
+      {
+        "text": "She used a two-level seniority gap to make the contact and the comment",
+        "isIssue": true,
+        "note": "The gap is what makes the room closed even with the door open. Refusing costs him something it would never cost her."
+      },
+      {
+        "text": "\"For a diversity hire\" reframes his competence as something he was granted",
+        "isIssue": true,
+        "note": "It arrives attached to praise, which is what makes it hard to reject. He can't object to the compliment without objecting to the compliment."
+      },
+      {
+        "text": "Because she is his manager and all humour between levels is prohibited",
+        "isIssue": false,
+        "note": "Seniority doesn't outlaw jokes. It changes who can safely decline one, which is a narrower and more useful point."
+      },
+      {
+        "text": "Because he didn't laugh",
+        "isIssue": false,
+        "note": "Whether he laughed decides nothing. On the deflection route he laughs along, and the cost lands anyway."
+      },
+      {
+        "text": "Because it happened outside normal working hours",
+        "isIssue": false,
+        "note": "Late and empty made it easier. The same words at 11am would be the same words."
+      }
+    ]
+  },
+  {
+    "topic": "Healthy Relationships, Consent & Boundaries",
+    "question": "He asks her to take her hand off him and she does, immediately. What made the contact a boundary violation in the first place?",
+    "options": [
+      {
+        "text": "Consent is required before contact, not granted by the absence of objection",
+        "isIssue": true,
+        "note": "She never asked. Stopping when told is the minimum, not a defence — the violation was complete before he said anything."
+      },
+      {
+        "text": "The seniority gap made refusing expensive, so silence can't be read as permission",
+        "isIssue": true,
+        "note": "Naming it costs him standing in the scenario, and that isn't a game mechanic being cynical. That's the calculation he has about four seconds to do."
+      },
+      {
+        "text": "Stopping promptly doesn't undo it, and what follows shows why",
+        "isIssue": true,
+        "note": "Her embarrassment converts into something cooler within four seconds. He asked correctly, she complied correctly, and he still paid."
+      },
+      {
+        "text": "She held on after he asked — that's what made it a violation",
+        "isIssue": false,
+        "note": "She didn't. Requiring her to refuse before it counts sets the bar so high that almost nothing clears it, which is exactly why this reading is common."
+      },
+      {
+        "text": "It happened in a closed room rather than an open one",
+        "isIssue": false,
+        "note": "The closed room removed witnesses. It didn't create the problem, and an open-plan version would still be one."
+      },
+      {
+        "text": "Physical contact is only acceptable between people of equal seniority",
+        "isIssue": false,
+        "note": "Not the rule, and it implies a peer could have done this. Consent is the variable here, not the org chart."
+      }
+    ]
+  },
+  {
+    "topic": "Being an Ethical Bystander",
+    "question": "Jean says \"she's a lot after seven — you get used to her.\" What does that tell us, and what should have happened instead?",
+    "options": [
+      {
+        "text": "Jean already knew, which means others did too, and nobody said anything beforehand",
+        "isIssue": true,
+        "note": "\"You get used to her\" is only sayable by someone who has. This wasn't a first time; it was a first time for him."
+      },
+      {
+        "text": "The pattern needed naming to someone who could act on it, before he walked into that room",
+        "isIssue": true,
+        "note": "Bystander action isn't only about the moment. Every person who knew and treated it as a personality trait made the room he was sent into."
+      },
+      {
+        "text": "Framing it as something you get used to makes it his job to adapt",
+        "isIssue": true,
+        "note": "Said kindly, and it still hands him the work. He is now the one managing Dani's behaviour, alone, on his own time."
+      },
+      {
+        "text": "Warning him privately to avoid late meetings with her",
+        "isIssue": false,
+        "note": "Better than nothing, and it puts the whole burden on him — he now declines meetings with a principal engineer and pays for that too."
+      },
+      {
+        "text": "Nothing — Jean wasn't in the room, so it wasn't hers to raise",
+        "isIssue": false,
+        "note": "She wasn't in the room and she knew about the room. That's the definition of a bystander, not an exemption from being one."
+      },
+      {
+        "text": "Confronting Dani directly on his behalf",
+        "isIssue": false,
+        "note": "Takes the decision off him the day after somebody else already took a decision about his body."
+      }
+    ]
+  },
+  {
+    "topic": "Trauma-Informed Response",
+    "question": "He tells a colleague what happened and says he isn't sure he wants to report it. What is a trauma-informed response?",
+    "options": [
+      {
+        "text": "Believe him",
+        "isIssue": true,
+        "note": "First, and without a follow-up question that sounds like a test. Everything else is worthless without it."
+      },
+      {
+        "text": "Tell him it isn't his fault, particularly if he laughed along",
+        "isIssue": true,
+        "note": "The deflection route is the one most people take, and it's the one that leaves people most convinced they consented to it."
+      },
+      {
+        "text": "Let him decide what happens next, including deciding nothing happens",
+        "isIssue": true,
+        "note": "The scenario makes both reporting routes fail differently. Someone who's read the outcome letter can say so; nobody gets to make the choice for him."
+      },
+      {
+        "text": "Explain that he has a responsibility to report it so it doesn't happen to someone else",
+        "isIssue": false,
+        "note": "True and devastating. It makes the next person's safety his debt, on the worst day he's had, and it's the single most common thing said to people in this position."
+      },
+      {
+        "text": "Reassure him that Dani probably didn't mean it that way",
+        "isIssue": false,
+        "note": "It's an argument about her, offered to him, while he's the one who needs something."
+      },
+      {
+        "text": "Offer to report it for him so he doesn't have to",
+        "isIssue": false,
+        "note": "Generous and still a decision made over his head. Offer to go with him instead — that keeps it his."
+      }
+    ]
+  }
+]
