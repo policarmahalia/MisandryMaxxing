@@ -1,3 +1,8 @@
+// Same grammar as scenario 1. Day two, so still small numbers — the chapters
+// that hurt are Wednesday onward.
+VAR standing = 0
+VAR composure = 0
+
 VAR agreed_to_notes = false
 VAR pushed_back_day2 = false
 
@@ -21,6 +26,8 @@ It's your second day. You're in the meeting, mentally preparing to deliver a tec
 I spent all night preparing? What should I do?
 
 * [Agree to be the minute taker]
+    ~ standing = standing - 1
+    ~ composure = composure - 2
     ~ agreed_to_notes = true
     "Sure... I guess I'll just... take notes."
     # thought
@@ -28,6 +35,8 @@ I spent all night preparing? What should I do?
     -> notetaking
 
 * [Insist that you present your assigned task]
+    ~ standing = standing - 1
+    ~ composure = composure + 1
     ~ pushed_back_day2 = true
     "Actually, I'd really like to present. I've prepared extensively."
     -> pushback_reaction
@@ -66,6 +75,8 @@ She gets a detail wrong. It's your detail — the one you were still fixing at t
 # thought
 Both hands on the keyboard. The next sentence has already started and you are three words behind.
 
+~ composure = composure - 2
+
 The meeting starts to wrap up. The team is talking casually now.
 
 # scene: intro_ignoring
@@ -95,6 +106,8 @@ The room goes quiet. Everyone stares at you, straight-faced. You are ignored.
 # scene: laughing
 # thought
 The whole room erupts in laughter.
+
+~ composure = composure - 2
 
 # scene: meme
 # thought

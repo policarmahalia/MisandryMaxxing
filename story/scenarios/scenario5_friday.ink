@@ -461,15 +461,50 @@ He goes quiet for a second, because nobody has said that to him, and — you rea
 // ============================================================
 === sc5_last_card ===
 
-# background: meeting_room
-# swap: true
+# background: black
 # thought
 Tuesday.
 
-# background: meeting_room
+// Scenario 2's standup, replayed with every character's gender swapped back.
+// The words are identical — that is the entire point. What changes is who is
+// saying them and who is being spoken to, so the beat is carried by the art:
+// the renderer looks for <scene>_swap.png and falls back to the normal art
+// until that set is drawn.
+
+# scene: intro_ignoring
 # swap: true
-# speaker: placeholder
-"[Scenario 2's standup goes here, gender-swapped. Same lines, same timing, same laugh.]"
+# thought
+It's her second day. She's in the meeting, mentally preparing to deliver a technical solution she spent half the night perfecting.
+
+# scene: staring
+# swap: true
+# speaker: BOSS
+"Hey, sweetie! Last minute change. You're not presenting anymore."
+
+# scene: staring
+# swap: true
+# speaker: BOSS
+"Yeah... we need a note taker for the meeting. You can do that for us, right?"
+
+# scene: intro_ignoring
+# swap: true
+# thought
+She sits at the corner of the table, laptop open, typing furiously. No one looks at her.
+
+# scene: intro_ignoring
+# swap: true
+# speaker: BOSS
+"Anyone have any lunch suggestions?"
+
+# scene: awkward
+# swap: true
+# thought
+The room goes quiet. Everyone stares at her, straight-faced. She is ignored.
+
+# scene: laughing
+# swap: true
+# thought
+Then somebody else says it, and the whole room erupts.
 
 # background: black
 # thought
