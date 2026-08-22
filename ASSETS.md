@@ -1,61 +1,95 @@
-# Scene art needed
+# Art needed
 
-Every `# scene: name` tag in an `.ink` file loads `public/assets/scenes/<name>.png`.
+For Pauleen. Every entry says what it is **and where it appears**, so the mood
+of the scene is on the page next to the request.
+
+**Spec:** 1951 × 1100 PNG, matching the existing set — line-art characters over
+a desaturated open-plan office photo.
 
 **Filenames must be lowercase and match the tag exactly.** macOS won't complain
-if the case is wrong but Vite's dev server and GitHub Pages both will — that's
-what caused the broken images in scenario 1.
-
-**Spec:** 1951 × 1100 PNG, matching the existing set (line-art characters over a
-desaturated open-plan office photo).
+if the case is wrong but Vite and GitHub Pages both will. That's what caused the
+broken images in scenario 1.
 
 ---
 
-## Already drawn
+## Decision needed before anything gets drawn
 
-`intro` · `surprised` · `shocked` · `sideeyeing` · `checking` · `pointing` ·
-`judgemental` · `listening`
+The two scenarios use different systems, and someone has to pick one.
 
-Scenario 3 reuses **checking**, **judgemental**, **pointing** and **sideeyeing**
-as-is. `listening` is drawn but unused so far — worth a look, it may cover one of
-the below.
+**Scenario 1** tags whole composites — `# scene: judgemental` loads one finished
+picture with the character already in it. That's what the eight existing files are.
+
+**Scenario 3** tags a background and a character separately:
+
+```
+# background: meeting_room
+# character: linda, neutral, centre
+```
+
+That assumes a sprite drawn on transparency, positioned over a background.
+
+It matters because of what each costs. Scenario 3 has **5 backgrounds and 6
+character states**. Layered, that's **11 drawings**. As composites, it's every
+background × every character who appears in it — **around 20**, and every new
+line of dialogue in an existing room risks another one.
+
+Layering is fewer drawings and far more reusable, but it means Pauleen draws
+characters cut out rather than in scene, and the existing eight would eventually
+want redoing to match. **Recommend layering, and taking the hit on the existing
+eight later** — but it's her call, since she's drawing it.
+
+Until that's settled the renderer treats `background` as a composite lookup, so
+scenario 3 runs today with whatever is in the folder and falls back to black.
 
 ---
 
-## Needed for scenario 3
+## Scenario 3 — Wednesday
 
-### Tier 1 — the chapter doesn't read without these
+### Backgrounds
 
-| Tag | Scene | Notes |
+| Tag | Where it's used | Feel |
 |---|---|---|
-| `desk` | His own desk, report on the monitor | The workhorse. Opens the chapter, returns four times, and is the fallback for any Tier 2 shot that doesn't get drawn. Draw this first. |
-| `boss_furious` | **Linda** standing over his desk, laptop in hand, genuinely angry | The chapter's hardest beat. Anger, not comedy — if she reads as a caricature the scene stops working. |
-| `laptop_evidence` | Close on a laptop screen: an old, error-strewn report with **Sarah's** name in the author field | The one shot the player needs to actually read. Keep the name legible; that's the gut punch. |
-| `meeting_room` | Panel meeting, tense, several colleagues seated | Used across the whole minutes sequence, which is the only choice point in the chapter. |
-| `kitchenette` | Office kitchenette, him with a cloth, **Keira** in the doorway | Needs to feel ordinary, not menacing. The line does the work. |
+| `openplan_morning` | **12 lines.** The whole report scene — he finalises it at 10:40, Delia arrives at 11:15, and all four responses play here. Also the shared-drive moment afterwards. | Ordinary Wednesday. Nothing has visibly gone wrong. The scene's weight is entirely in the dialogue, so the room should stay flat and unremarkable. |
+| `slack_ui` | **10 lines.** The #platform-eng thread that resolves without him, then the Jean DM exchange. | A chat interface. His message needs to be visibly *there* with nothing under it — the gap is the point. |
+| `meeting_room` | **9 lines.** The five-o'clock sync: the minutes, the ghost-choice beat, Chesca's question, his presentation. | The chapter's only real choice point and its hardest four seconds. Several colleagues seated, table, laptops. Tense but not dramatic. |
+| `kitchenette` | **6 lines.** The Sarah conversation (only if the player asked for it) and Kiera's "you clean up so well". | Warm and completely unthreatening. Both scenes here are people being nice to him. |
+| `home_evening` | **6 lines.** 21:40, opening the PR. Then next morning: forty-one comments against Chesca's LGTM. | Away from the office, alone, late. The only room in the chapter that's his. |
 
-### Tier 2 — fall back to `desk` if time runs out
+### Characters
 
-| Tag | Scene | Notes |
+| Tag | Where it's used | Notes |
 |---|---|---|
-| `slack_thread` | A chat thread on screen, his message sitting unanswered above later replies | If drawn, make the visual gap obvious — his message with nothing under it. |
-| `jean_desk` | **Jean** swivelled round from the next desk, unsmiling | "What do I get in return?" She isn't joking, and her face shouldn't say she is. |
-| `pr_comments` | A pull request with a wall of review comments, and beside it another PR with one comment reading `LGTM` | The chapter's closing image. Works best if the two are visibly side by side. |
+| `sarah, warm, left` | **6 lines.** Her whole scene — she's apologising and means it. | Genuinely pleased to see him. She is not a villain and must not look like one. |
+| `linda, neutral, centre` | **6 lines.** Runs the sync, asks for minutes, hands the fix to Chesca. | Efficient, pleasant, not unkind. Reads as someone with a meeting to get through. |
+| `boss, tired, right` | **5 lines.** Delia at his desk with the wrong report. | **Tired, not furious.** She doesn't have time to adjudicate. If she reads as angry the whole scene collapses into a villain story. |
+| `boss, cool, right` | **2 lines.** Only on the "Sarah must have overwritten it" route. | A single degree cooler than `tired`. The difference should be barely perceptible — that's what makes it land. |
+| `kiera, cheerful, right` | **2 lines.** The kitchenette compliment. | She means it warmly. Same Kiera as scenario 1. |
+| `chesca, neutral, left` | **1 line.** Asks his question back to the room and gets thanked for it. | Onscreen briefly and does nothing wrong. Deliberately not Sarah — using one woman for both makes it a vendetta instead of a pattern. |
+
+### Priority if time runs short
+
+1. `openplan_morning` and `meeting_room` — between them they carry the report scene and the sync, which is most of the chapter.
+2. `kitchenette` — two scenes.
+3. `slack_ui` — could be a flat mocked-up UI rather than a drawing, and would still work.
+4. `home_evening` — the coda. Lowest cost if it falls back to black.
 
 ---
 
-## Characters appearing
+## Scenario 1 — Monday
 
-- **Linda** — senior director. In `boss_furious`, `meeting_room`, and reuses `pointing` / `sideeyeing` / `judgemental`.
-- **Keira** — in `kitchenette`, reuses `checking`. Already designed in scenario 1.
-- **Jean** — new. Only needs `jean_desk`.
-- **Sarah** — named constantly, never on screen. **She doesn't need a design** unless you want her visible in `meeting_room`, and leaving her off-screen is arguably better — the chapter is stronger if we never get to read her face.
+Already drawn: `intro` · `surprised` · `shocked` · `sideeyeing` · `checking` ·
+`pointing` · `judgemental`
+
+Each is used once. `sideeyeing` holds for a scripted two seconds with no tap,
+so it gets looked at longer than the others.
+
+`listening` is drawn but **not used by any scenario yet** — worth a look before
+new work starts, it may already cover something scenario 3 needs.
 
 ---
 
-## If the art runs out of time
+## If the art isn't ready
 
-The scenes degrade gracefully to `desk`, and a chapter carried on five images
-plus the four reused ones still plays. Don't let missing art block writing
-scenarios 2, 4 and 5 — the tags can point at `desk` and be swapped later with a
-find-and-replace.
+Missing files fall back to black and the text still plays, so **nothing here
+blocks writing scenarios 2, 4 and 5**. Tags can point at whatever exists and be
+swapped later with a find-and-replace.

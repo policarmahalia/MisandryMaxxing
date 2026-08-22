@@ -6,7 +6,7 @@
 //
 //   npm run compile
 
-import { Compiler } from 'inkjs/full';
+import { Compiler, CompilerOptions } from 'inkjs/full';
 import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'fs';
 import { join, basename } from 'path';
 
@@ -27,14 +27,25 @@ let failed = false;
 
 for (const file of files) {
   const target = join(OUT, outputName(file));
+  const problems = [];
+  // Ink reports the useful detail (line numbers, what it expected) through this
+  // handler, not the thrown error. Without it every failure is just
+  // "Compilation failed."
+  // sourceFilename stays null: naming it makes ink demand a FileHandler for
+  // INCLUDE resolution, which we don't use.
+  const options = new CompilerOptions(null, [], false, (message, type) =>
+    problems.push(`${type}: ${message}`)
+  );
+
   try {
-    const story = new Compiler(readFileSync(join(SRC, file), 'utf8')).Compile();
+    const story = new Compiler(readFileSync(join(SRC, file), 'utf8'), options).Compile();
     writeFileSync(target, story.ToJson());
     console.log(`  ok  ${file} -> ${target}`);
   } catch (err) {
     failed = true;
     console.error(`  FAIL  ${file}`);
-    console.error(`        ${err.message}`);
+    for (const problem of problems) console.error(`        ${problem}`);
+    if (problems.length === 0) console.error(`        ${err.message}`);
   }
 }
 
