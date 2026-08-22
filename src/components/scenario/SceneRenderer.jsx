@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import parseTags, { getTagValue } from '../../engine/TagParser';
+import parseTags, { getTagValue, getGhostChoices } from '../../engine/TagParser';
 import ChoicePrompt from './ChoicePrompt';
 import StatBar from './StatBar';
 
@@ -22,6 +22,11 @@ function SceneRenderer({ engine, onScenarioComplete }) {
   const [choices, setChoices] = useState([]);
   const [promptOpen, setPromptOpen] = useState(false);
   const [awaitingTap, setAwaitingTap] = useState(false);
+  const [ghostChoices, setGhostChoices] = useState(null);
+  // The last card replays a scene with every character's gender swapped back.
+  // Looks for <scene>_swap.png and falls back to the normal art, so the beat
+  // plays today and becomes legible the moment the swapped set is drawn.
+  const [swapped, setSwapped] = useState(false);
 
   useEffect(() => {
     pullFromEngine();
@@ -35,8 +40,14 @@ function SceneRenderer({ engine, onScenarioComplete }) {
       return {
         text: line.text,
         stats: line.stats,
-        scene: getTagValue(tags, 'scene'),
+        // `background` is scenario 3's tag for the same thing. `character` is
+        // parsed but not rendered yet — it assumes a sprite layered over a
+        // background, and the current art is single composite scenes.
+        scene: getTagValue(tags, 'scene') || getTagValue(tags, 'background'),
+        swap: getTagValue(tags, 'swap') === 'true',
+        character: getTagValue(tags, 'character'),
         speaker: getTagValue(tags, 'speaker'),
+        ghostChoices: getGhostChoices(tags),
         isThought: tags.some((t) => t.type === 'thought'),
       };
     });
@@ -66,8 +77,15 @@ function SceneRenderer({ engine, onScenarioComplete }) {
     setIsThought(line.isThought);
     setDialogueText(line.text);
     setPromptOpen(false);
+    setGhostChoices(line.ghostChoices || null);
+    setSwapped(!!line.swap);
 
-    if (line.scene === 'sideeyeing') {
+    if (line.ghostChoices) {
+      // Options he can see and cannot take. No tap — the scene moves on
+      // without him, which is the point.
+      setAwaitingTap(false);
+      setTimeout(() => showLine(lines, index + 1, result), 4000);
+    } else if (line.scene === 'sideeyeing') {
       setAwaitingTap(false);
       setTimeout(() => showLine(lines, index + 1, result), 2000);
     } else if (index + 1 < lines.length) {
@@ -126,9 +144,30 @@ function SceneRenderer({ engine, onScenarioComplete }) {
 
   return (
     <div className="scene-container" onClick={awaitingTap ? handleTapContinue : undefined}>
-      <img className="scene-art-fullbleed" src={`/assets/scenes/${scene}.png`} alt="scene" />
+      <img
+        className="scene-art-fullbleed"
+        src={`${import.meta.env.BASE_URL}assets/scenes/${scene}${swapped ? '_swap' : ''}.png`}
+        onError={(e) => {
+          // swapped set not drawn yet — fall back rather than showing nothing
+          if (swapped && !e.target.dataset.fellBack) {
+            e.target.dataset.fellBack = '1';
+            e.target.src = `${import.meta.env.BASE_URL}assets/scenes/${scene}.png`;
+          }
+        }}
+        alt="scene"
+      />
 
       <StatBar stats={stats} deltas={deltas} />
+
+      {ghostChoices && (
+        <div className="ghost-choices" aria-hidden="true">
+          {ghostChoices.map((option, i) => (
+            <button key={i} className="choice-prompt-btn ghost" disabled tabIndex={-1}>
+              {option}
+            </button>
+          ))}
+        </div>
+      )}
 
       {!promptOpen && (
         <div className={isThought ? 'thought-box' : 'dialogue-box'}>

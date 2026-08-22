@@ -1,0 +1,146 @@
+[
+  {
+    "topic": "Unpacking Gender-Based Violence",
+    "question": "Delia stayed visibly distant after the rumour started. What does the scenario show about that decision?",
+    "options": [
+      {
+        "text": "Withdrawing support removed the one person whose backing would have ended it",
+        "isIssue": true,
+        "note": "She was the only one who could say \"he's good, I hired him, that's the end of it.\" Her distance is what made that sentence unavailable for eleven weeks."
+      },
+      {
+        "text": "The reasoning was sound and the outcome was still harm",
+        "isIssue": true,
+        "note": "She isn't wrong that a public defence would have been read as confirmation. Both things are true, which is why nobody in the story is a villain and it happens anyway."
+      },
+      {
+        "text": "The cost landed on him and the decision was made without him",
+        "isIssue": true,
+        "note": "He was never told there was a strategy. He experienced it as his manager going cold on him in week six, and drew the obvious conclusion."
+      },
+      {
+        "text": "It was the correct call, since public defence would have made things worse",
+        "isIssue": false,
+        "note": "This is Delia's own position for most of the scene — right up until she hears herself say what it cost. Agreeing with her here means stopping where she stopped."
+      },
+      {
+        "text": "She was uncomfortable with him personally and used the rumour as cover",
+        "isIssue": false,
+        "note": "Nothing supports this. It's the more satisfying story because it gives you someone to blame, which is exactly why it's worth noticing you reached for it."
+      },
+      {
+        "text": "It had no real effect, since the rumour faded anyway",
+        "isIssue": false,
+        "note": "It faded and he did the migration alone, at forty percent over, because nobody would pair with him. The rumour ending isn't the same as it costing nothing."
+      }
+    ]
+  },
+  {
+    "topic": "Healthy Relationships, Consent & Boundaries",
+    "question": "His review is strong on delivery but flags \"communication style\" — prickly, hard to read. Why does this pattern matter?",
+    "options": [
+      {
+        "text": "Vague style feedback with no comparator lets bias into a formal record while sounding objective",
+        "isIssue": true,
+        "note": "\"Prickly compared to who?\" is the entire problem in three words, and the scenario has Delia fail to answer it."
+      },
+      {
+        "text": "It's unattributed — \"the word that came back twice\" names nobody he can respond to",
+        "isIssue": true,
+        "note": "He can't examine it, can't contest it, and can't tell whether it came from the person whose hand was on his shoulder."
+      },
+      {
+        "text": "It's the only part of the review that isn't measurable, and it's the part that decides the promotion",
+        "isIssue": true,
+        "note": "Delivery is strong and undisputed. The promotion turns on the one axis with no numbers attached."
+      },
+      {
+        "text": "Style feedback is never legitimate in a performance review",
+        "isIssue": false,
+        "note": "It often is. It needs specifics, examples and a comparator — the things this feedback doesn't have."
+      },
+      {
+        "text": "It matters only because the delivery numbers were good",
+        "isIssue": false,
+        "note": "Strong delivery makes the contrast visible. It isn't what makes the feedback a problem."
+      },
+      {
+        "text": "It shows his manager had decided against him from the start",
+        "isIssue": false,
+        "note": "She hired him and she put him on the ledger work. The chapter is about someone who was on his side and still did this."
+      }
+    ]
+  },
+  {
+    "topic": "Being an Ethical Bystander",
+    "question": "Sandes's idea is repeated back by Ellie and credited to her. What distinguishes ethical bystander action from private sympathy?",
+    "options": [
+      {
+        "text": "It happens in the room, in public, where the credit was lost",
+        "isIssue": true,
+        "note": "The record is public. Anything that corrects it privately leaves the record alone."
+      },
+      {
+        "text": "It costs the person doing it something real",
+        "isIssue": true,
+        "note": "Two people afterwards call him a bit intense lately. That's the price, and paying it is what separates this from a thumbs up."
+      },
+      {
+        "text": "It counts whether or not the person notices or thanks them",
+        "isIssue": true,
+        "note": "Sandes doesn't thank him and probably didn't register it. It was still the thing worth doing, which is the least comfortable part of the answer."
+      },
+      {
+        "text": "Messaging Sandes privately achieves the same outcome with less conflict",
+        "isIssue": false,
+        "note": "It achieves a different outcome: Sandes feels seen, and the room still thinks it was Ellie's. Kind, free, and it changes nothing."
+      },
+      {
+        "text": "It involves reporting the incident to a manager afterwards",
+        "isIssue": false,
+        "note": "Reyana was in the room and said \"nice one, Ellie.\" There is no afterwards that fixes a thing that needed four seconds at the time."
+      },
+      {
+        "text": "It requires being more senior than the person who took the credit",
+        "isIssue": false,
+        "note": "He isn't senior to anyone here. He does it anyway, badly, and it still counts."
+      }
+    ]
+  },
+  {
+    "topic": "Trauma-Informed Response",
+    "question": "Delia realises mid-sentence what her distance cost him. What would a trauma-informed response look like from her at that moment?",
+    "options": [
+      {
+        "text": "Name what she did without asking him to absolve her",
+        "isIssue": true,
+        "note": "\"That was me. I did that.\" — and then not looking at him for a response. The scenario deliberately doesn't let her apologise, because an apology would hand him a job to do."
+      },
+      {
+        "text": "Ask what he needs now rather than deciding for him",
+        "isIssue": true,
+        "note": "Her last decision on his behalf is what they're discussing. Making another one, even a generous one, repeats it."
+      },
+      {
+        "text": "Sit with it rather than resolving it in the room",
+        "isIssue": true,
+        "note": "\"I'm going to have to sit with it.\" Nothing about this is fixable in the forty minutes, and pretending otherwise would be for her comfort."
+      },
+      {
+        "text": "Apologise immediately and repeatedly so he knows she is sorry",
+        "isIssue": false,
+        "note": "Repeated apology turns him into the person managing her guilt. He then has to say it's fine, and it isn't."
+      },
+      {
+        "text": "Explain the reasoning again so he understands she meant well",
+        "isIssue": false,
+        "note": "She has already explained it. Explaining it twice is asking him to agree the decision was reasonable, which is a request, not a repair."
+      },
+      {
+        "text": "Promise to fix it publicly at the next all-hands",
+        "isIssue": false,
+        "note": "The same instinct that started this — deciding, alone, what public gesture is good for him. Eleven weeks late and without asking."
+      }
+    ]
+  }
+]

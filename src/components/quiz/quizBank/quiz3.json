@@ -1,145 +1,145 @@
 [
   {
     "topic": "Unpacking Gender-Based Violence",
-    "question": "Linda finds an old, broken version of the report with Sarah's name on it. What's going on here?",
+    "question": "The report was replaced and Pauline's name was on it. What does the scenario establish about what happened?",
     "options": [
       {
-        "text": "The conclusion went straight to his competence rather than to what happened to the file",
+        "text": "It's never established — both readings stay possible and he has no way to resolve it",
         "isIssue": true,
-        "note": "A file on a shared drive got replaced. That has a dozen boring explanations. The one that got picked first was that he isn't good enough."
+        "note": "This is the chapter's whole design. If you finished it still wondering, that isn't the writing failing. That's the experience."
       },
       {
-        "text": "Nobody asked him for his account before deciding what had happened",
+        "text": "Not knowing is itself part of the harm, separately from whatever happened",
         "isIssue": true,
-        "note": "He isn't a witness to his own work. The version history was one click away and no one opened it."
+        "note": "He can't be angry, because there may be nothing to be angry at. He can't let it go, because there may be. That costs him all afternoon."
       },
       {
-        "text": "\"Don't let me down again\" turns one incident into a pattern he now has to disprove",
+        "text": "The conclusion about him got reached without anyone checking",
         "isIssue": true,
-        "note": "\"Again\" is doing a lot of work in that sentence. From here he's not starting from neutral, he's starting from behind."
+        "note": "One file, modified 09:52. The version history was one click away and nobody opened it — including the person who decided what it meant."
       },
       {
-        "text": "Sarah deliberately sabotaged him and that's the real problem",
+        "text": "Pauline deliberately stole the work to get ahead",
         "isIssue": false,
-        "note": "She might have. We never find out, and it changes less than you'd think — if nobody checks either way, the outcome is the same for him."
+        "note": "The game never says so, and her account holds up. Deciding she's a thief makes this one woman's vendetta rather than a pattern — which is exactly the reading the chapter refuses."
       },
       {
-        "text": "He should have kept his own copy instead of trusting the shared drive",
+        "text": "It was a technical fault in the shared drive",
         "isIssue": false,
-        "note": "Reasonable habit. Notice that it's a habit only he needs, and that it's being suggested after the fact as though the gap were his."
+        "note": "Also never established. Reaching for the innocent explanation is the same mistake as reaching for the malicious one: both let you stop thinking about it."
       },
       {
-        "text": "It would have been better handled in a meeting room instead of at his desk",
+        "text": "He should have kept his own copy or worked outside the shared drive",
         "isIssue": false,
-        "note": "The audience made it worse. The assumption underneath it would have been identical behind a closed door."
+        "note": "A sensible habit that only he needs. Note it's offered afterwards, as though the gap were his."
       }
     ]
   },
   {
     "topic": "Healthy Relationships, Consent & Boundaries",
-    "question": "He's asked to stay back and clean the kitchenette, and later Jean asks what she gets in return for helping him. What's the problem?",
+    "question": "He asks Fiona for ten minutes on a deploy issue and she replies \"what do i get in return 😉\". She's joking, and she helps. What's the problem?",
     "options": [
       {
-        "text": "He was picked for the cleaning because of assumptions about him, not because it was his turn",
+        "text": "Ordinary collegial help got priced, even in jest",
         "isIssue": true,
-        "note": "\"You seem like you'd be good at it\" isn't a rota. It's a category, and he's been put in it."
+        "note": "Everyone else gets a hand with a bug for free. Once there's a price, he has to work out what the currency is before he can ask again."
       },
       {
-        "text": "\"You clean up so well\" makes his appearance the joke in a work setting",
+        "text": "The winking framing makes him guess which reading to answer",
         "isIssue": true,
-        "note": "The line works twice, and both meanings are about how he looks. Neither is about the report he spent three weeks on."
+        "note": "He has about a second to decide whether it's flirtation or banter, and he wears it either way if he guesses wrong."
       },
       {
-        "text": "Jean turned ordinary collegial help into something he has to pay for",
+        "text": "It costs him something whichever way he answers",
         "isIssue": true,
-        "note": "Everyone else gets a hand with a bug for free. Pricing it — even as a joke — makes him ask himself what the currency is."
+        "note": "Playing along costs composure. Not playing along costs standing. Closing the DM costs both and he solves it alone. There is no free reply."
       },
       {
-        "text": "Someone has to clean the kitchenette and it may as well be him",
+        "text": "She was joking and he took it too seriously",
         "isIssue": false,
-        "note": "Someone does. Track who it is over a month, and that's the whole point."
+        "note": "She was joking, and she is good, and she helps — the scenario says all three. None of that removes the second he spent deciding how to respond."
       },
       {
-        "text": "Jean was obviously joking and he read too much into it",
+        "text": "She should have helped without being asked at all",
         "isIssue": false,
-        "note": "She might have been. He still has to decide, in the moment, which reading to act on — and he'll wear it if he guesses wrong."
+        "note": "He asked, which is normal. The asking isn't the problem."
       },
       {
-        "text": "He should have just said no to the kitchenette",
+        "text": "It was over DM rather than said in person",
         "isIssue": false,
-        "note": "On the day his competence was publicly questioned. Consider what saying no would have cost him that afternoon."
+        "note": "In person it would be the same sentence with a face attached. The channel isn't what makes it land."
       }
     ]
   },
   {
     "topic": "Being an Ethical Bystander",
-    "question": "Several people watched this day happen. Where could someone have stepped in?",
+    "question": "His answer in the #platform-eng thread went unacknowledged, then the thread resolved in that same direction. What would an ethical bystander do?",
     "options": [
       {
-        "text": "At the surrounding desks, after Linda walked off",
+        "text": "Name the source in the thread — \"this is what he said above\" — publicly, in the moment",
         "isIssue": true,
-        "note": "Nobody looked up. Not during, which is hard — but not after either, which isn't. \"That didn't look like your file\" would have cost nothing."
+        "note": "Four seconds of typing. It costs the bystander nothing and it's the only thing that actually puts his name back on it."
       },
       {
-        "text": "In the thread, by replying to his answer or pointing back to it",
+        "text": "React to or reply to the original message so it stops being invisible",
         "isIssue": true,
-        "note": "The cheapest bystander action in the building. \"This is answered above\" takes four seconds and makes him visible again."
+        "note": "Even lower effort. A thread with one reply reads completely differently from a thread with none."
       },
       {
-        "text": "In the meeting, by volunteering before the silence did its work",
+        "text": "Notice that the thread resolved in his direction and say where it came from",
         "isIssue": true,
-        "note": "The silence is the mechanism. Anyone could have broken it, and the person who breaks it barely pays anything."
+        "note": "Somebody in that thread read his message, agreed with it, and argued for it forty minutes later without mentioning him. They didn't have to be malicious to do that."
       },
       {
-        "text": "By reporting Linda to HR on his behalf",
+        "text": "Privately message him to say it was unfair",
         "isIssue": false,
-        "note": "It skips him again — the second time in one day someone else decides what happens to him without asking."
+        "note": "Kind, and it changes nothing that happened in public. It also quietly makes him responsible for what to do next."
       },
       {
-        "text": "By taking him aside afterwards and telling him to let it roll off",
+        "text": "Say nothing, since the right outcome was reached anyway",
         "isIssue": false,
-        "note": "This is offered as kindness and lands as instruction. It tells him the problem is how he's taking it."
+        "note": "The outcome was reached. The credit went somewhere else, and next time the room has slightly less reason to listen to him."
       },
       {
-        "text": "Nothing — none of it was directed at anyone else, so it wasn't their business",
+        "text": "Report the thread to a manager",
         "isIssue": false,
-        "note": "Everyone in the room is part of what the room is like. Sitting it out is a contribution too."
+        "note": "Enormous machinery for a Slack thread, and it takes it out of his hands. Delia already hasn't got time to adjudicate one report."
       }
     ]
   },
   {
-    "topic": "Trauma-Informed Response",
-    "question": "Someone wants to check in with him at the end of this day. What actually helps?",
+    "topic": "Unpacking Gender-Based Violence",
+    "question": "His pull request gets forty-one comments. Ellie's, opened the same night, gets \"LGTM\". What does the comparison show?",
     "options": [
       {
-        "text": "Believing his account of the file without making him prove it first",
+        "text": "The same work is held to a different standard of scrutiny depending on who submitted it",
         "isIssue": true,
-        "note": "He's spent all day being disbelieved. Starting from belief is the whole difference between support and another interrogation."
+        "note": "Four files changed against a solid piece of code he knew was solid. The difference isn't in the diffs."
       },
       {
-        "text": "Asking what he wants to happen next instead of deciding for him",
+        "text": "The reviewing is individually reasonable and collectively a tax",
         "isIssue": true,
-        "note": "Every decision today got made over his head. This is the one that doesn't have to be."
+        "note": "No single comment is unfair. Naming, spacing, a question already answered a line above — forty-one of them is an afternoon he doesn't get back."
       },
       {
-        "text": "Naming the pattern across the day rather than treating each thing separately",
+        "text": "Being reviewed kindly and being reviewed disproportionately aren't opposites",
         "isIssue": true,
-        "note": "Any one of these is survivable and deniable. Together they're a day. Someone else seeing that shape is enormously relieving."
+        "note": "Pauline's is the most useful review on there and she spent twenty minutes being genuinely helpful. She is also one of the forty-one."
       },
       {
-        "text": "Telling him to document everything from now on",
+        "text": "His code was probably worse and deserved the attention",
         "isIssue": false,
-        "note": "Practical, and it's a second job. It asks him to keep evidence on his own workplace, forever, in case he needs it — which is its own kind of weight."
+        "note": "Possible, and unfalsifiable, which is what makes it such a comfortable explanation. Note that nobody applied the same doubt to the LGTM."
       },
       {
-        "text": "Offering to have a word with Linda for him",
+        "text": "Ellie's reviewers were being lazy",
         "isIssue": false,
-        "note": "Generous, and still someone else steering. Ask first — he may want exactly this, and he may not."
+        "note": "Maybe. Turning this into a complaint about her review quality moves it off the pattern and onto a person again."
       },
       {
-        "text": "Reassuring him that Sarah almost certainly didn't mean it",
+        "text": "He should have opened a smaller pull request",
         "isIssue": false,
-        "note": "It might be true. It's also an argument about intent when what he needs acknowledged is effect."
+        "note": "Advice that only he needs, arriving after the fact, and shifting the work of being reviewed fairly onto the person being reviewed."
       }
     ]
   }

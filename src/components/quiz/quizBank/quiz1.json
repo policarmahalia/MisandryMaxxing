@@ -1,7 +1,7 @@
 [
   {
     "topic": "Unpacking Gender-Based Violence",
-    "question": "Keira assumes he's the new marketing hire. What's going on in that exchange?",
+    "question": "Mahalia assumes he's the new marketing hire. What's going on in that exchange?",
     "options": [
       {
         "text": "She read him as non-technical before he'd said anything about his work",
@@ -73,12 +73,12 @@
   },
   {
     "topic": "Being an Ethical Bystander",
-    "question": "Chesca is standing right there and says nothing. What would bystander action have looked like?",
+    "question": "Ellie is standing right there and says nothing. What would bystander action have looked like?",
     "options": [
       {
         "text": "Naming it in the moment, even lightly, so he isn't the only one who noticed",
         "isIssue": true,
-        "note": "It doesn't take a confrontation. \"He's an engineer, Keira\" does most of the work, and it moves the cost off him."
+        "note": "It doesn't take a confrontation. \"He's an engineer, Mahalia\" does most of the work, and it moves the cost off him."
       },
       {
         "text": "Turning the conversation back to his actual role and what he's working on",
@@ -96,9 +96,9 @@
         "note": "It skips past him entirely. A process starts, he hears about it later, and he had no say in any of it."
       },
       {
-        "text": "Waiting and raising it with Keira privately another day",
+        "text": "Waiting and raising it with Mahalia privately another day",
         "isIssue": false,
-        "note": "Better than nothing, and it might even change Keira. It still leaves him standing alone in the room where it happened."
+        "note": "Better than nothing, and it might even change Mahalia. It still leaves him standing alone in the room where it happened."
       },
       {
         "text": "Staying out of it, since it wasn't said to her",
@@ -137,7 +137,7 @@
         "note": "Well meant, and it takes the decision off him again — just in the other direction."
       },
       {
-        "text": "Promising to go and have it out with Keira on his behalf",
+        "text": "Promising to go and have it out with Mahalia on his behalf",
         "isIssue": false,
         "note": "Feels like solidarity. It's still someone else deciding what happens to him, and he's the one who wears the fallout."
       }
