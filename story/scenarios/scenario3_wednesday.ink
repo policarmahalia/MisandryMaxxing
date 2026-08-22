@@ -216,7 +216,7 @@ She means it as a compliment. It is one, structurally.
 
 # background: slack_ui
 # thought
-The #platform-eng thread is arguing about connection pooling. You post the actual answer, with a link to the config.
+The \#platform-eng thread is arguing about connection pooling. You post the actual answer, with a link to the config.
 
 # background: slack_ui
 # thought
