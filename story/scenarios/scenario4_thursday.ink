@@ -345,7 +345,7 @@ You don't go. At 10:30 BOSS says good morning like a person who says good mornin
 // quiz4 asks about this exact line.
 # background: kitchenette
 # thought
-Later, Fiona, apropos of nothing.
+Later, at the sink, Fiona brings it up herself. You hadn't mentioned it to anyone.
 
 # background: kitchenette
 # speaker: Fiona
