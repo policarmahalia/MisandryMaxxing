@@ -243,45 +243,100 @@ html, body, #root {
   height: 100%;
 }
 
+/* ==========================================================================
+   Quiz — styled after the UQ Design System (design-system.uq.edu.au).
+   Tokens lifted from packages/core/src/scss/_partials/_colour-constants.scss.
+
+   Deliberately light against the dark story: the quiz IS the Respect at UQ
+   module, so it should look like a UQ web page rather than part of the game.
+   ========================================================================== */
+
+.quiz-screen,
+.quiz-results {
+  --uq-purple: #51247a;
+  --uq-purple-600: #4b2271;
+  --uq-purple-100: #dcd3e4;
+  --uq-purple-50: #eee9f2;
+  --uq-success: #4aa74e;
+  --uq-success-700: #3b7c3e;
+  --uq-success-100: #dbeddc;
+  --uq-success-50: #edf6ed;
+  --uq-error: #d62929;
+  --uq-error-700: #9d2424;
+  --uq-error-100: #f7d4d4;
+  --uq-error-50: #fbeaea;
+  --uq-black: #19151c;
+  --uq-grey-900: #3b383e;
+  --uq-grey-800: #5e5b60;
+  --uq-grey-300: #d1d0d2;
+  --uq-grey-100: #e8e8e8;
+  --uq-grey-50: #f3f3f4;
+}
+
 .quiz-screen {
   width: 100%;
   height: 100%;
-  background: #1a1a1a;
-  color: white;
+  background: #fff;
+  color: var(--uq-black);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 56px 20px 80px;
+  padding: 0 20px 80px;
   text-align: center;
   overflow-y: auto;
   overscroll-behavior: contain;
 }
 
+/* the module's masthead — a purple band, as on a UQ page */
+.quiz-screen::before,
+.quiz-results::before {
+  content: "Respect at UQ";
+  display: block;
+  width: 100vw;
+  margin: 0 -20px 36px;
+  text-align: center;
+  padding: 14px 20px;
+  background: var(--uq-purple);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
 .quiz-screen h2,
 .quiz-results h2 {
-  color: #fff;
+  color: var(--uq-purple);
 }
 
 .quiz-topic {
-  color: #ffcc66;
+  color: var(--uq-purple);
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
+  font-size: 0.8rem;
+  letter-spacing: 1.2px;
   margin-bottom: 8px;
 }
 
 .quiz-progress {
-  color: #aaa;
+  color: var(--uq-grey-800);
   font-size: 0.9rem;
   margin-bottom: 20px;
 }
 
 .quiz-question-text {
   font-size: 1.4rem;
-  margin-bottom: 30px;
+  margin-bottom: 14px;
   max-width: 700px;
+}
+
+.quiz-instruction {
+  color: var(--uq-grey-800);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  max-width: 600px;
 }
 
 .quiz-options {
@@ -289,42 +344,7 @@ html, body, #root {
   flex-direction: column;
   gap: 12px;
   width: 100%;
-  max-width: 600px;
-}
-
-.quiz-option {
-  padding: 14px 18px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  text-align: left;
-  transition: background 0.2s;
-}
-
-.quiz-option:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.quiz-option.correct {
-  background: rgba(80, 200, 120, 0.3);
-  border-color: #50c878;
-}
-
-.quiz-option.incorrect {
-  background: rgba(220, 80, 80, 0.3);
-  border-color: #dc5050;
-}
-
-/* multi-select quiz */
-
-.quiz-instruction {
-  color: #aaa;
-  font-size: 0.95rem;
-  margin-bottom: 22px;
-  max-width: 600px;
+  max-width: 640px;
 }
 
 .quiz-option-row {
@@ -337,78 +357,125 @@ html, body, #root {
   width: 100%;
 }
 
+.quiz-option {
+  padding: 14px 18px;
+  background: #fff;
+  border: 2px solid var(--uq-grey-300);
+  border-radius: 4px;
+  color: var(--uq-black);
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.quiz-option:hover {
+  border-color: var(--uq-purple);
+  background: var(--uq-purple-50);
+}
+
+.quiz-option:focus-visible {
+  outline: 3px solid var(--uq-purple);
+  outline-offset: 2px;
+}
+
 .quiz-option:disabled {
   cursor: default;
 }
 
-/* pre-reveal: picked up, not yet judged */
+/* picked, not yet marked */
 .quiz-option.selected {
-  background: rgba(255, 204, 102, 0.16);
-  border-color: #ffcc66;
+  background: var(--uq-purple-50);
+  border-color: var(--uq-purple);
+  font-weight: 600;
 }
 
-/* post-reveal. no red anywhere: this is recognition, not marking. */
+/* ---- marked ---- */
+
+/* right, and you picked it */
 .quiz-option.caught {
-  background: rgba(255, 204, 102, 0.18);
-  border-color: #ffcc66;
-  opacity: 1;
+  background: var(--uq-success-50);
+  border-color: var(--uq-success);
+  font-weight: 600;
 }
 
+/* right, and you didn't — still green, so it reads as a right answer */
 .quiz-option.missed {
-  background: rgba(127, 168, 217, 0.16);
-  border-color: #7fa8d9;
-  opacity: 1;
+  background: #fff;
+  border-color: var(--uq-success);
+  border-style: dashed;
+  color: var(--uq-success-700);
 }
 
+/* wrong, and you picked it */
 .quiz-option.herring {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.22);
-  color: #b9b9b9;
+  background: var(--uq-error-50);
+  border-color: var(--uq-error);
+  color: var(--uq-error-700);
 }
 
+/* wrong, and you left it alone */
 .quiz-option.dim {
-  background: transparent;
-  border-color: rgba(255, 255, 255, 0.1);
-  color: #7d7d7d;
+  background: var(--uq-grey-50);
+  border-color: var(--uq-grey-100);
+  color: var(--uq-grey-800);
 }
+
+.quiz-option.caught::before,
+.quiz-option.missed::before,
+.quiz-option.herring::before {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.quiz-option.caught::before { content: "\2713"; color: var(--uq-success-700); }
+.quiz-option.missed::before { content: "\2713"; color: var(--uq-success); }
+.quiz-option.herring::before { content: "\2715"; color: var(--uq-error); }
 
 .quiz-note {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   line-height: 1.5;
-  color: #b0b0b0;
+  color: var(--uq-grey-900);
   text-align: left;
-  padding: 0 4px 10px 18px;
-  border-left: 2px solid rgba(255, 255, 255, 0.14);
+  padding: 2px 4px 10px 18px;
+  border-left: 3px solid var(--uq-grey-300);
   margin: 2px 0 4px 8px;
 }
 
-.quiz-option.caught + .quiz-note {
-  border-left-color: #ffcc66;
-}
-
-.quiz-option.missed + .quiz-note {
-  border-left-color: #7fa8d9;
-  color: #cfd9e6;
-}
+.quiz-option.caught + .quiz-note { border-left-color: var(--uq-success); }
+.quiz-option.missed + .quiz-note { border-left-color: var(--uq-success); }
+.quiz-option.herring + .quiz-note { border-left-color: var(--uq-error); }
 
 .quiz-next-btn {
-  margin-top: 24px;
-  padding: 12px 30px;
-  background: #ffcc66;
+  margin-top: 28px;
+  padding: 13px 32px;
+  background: var(--uq-purple);
+  color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
+  transition: background 0.15s;
 }
 
+.quiz-next-btn:hover { background: var(--uq-purple-600); }
+
+.quiz-next-btn:focus-visible {
+  outline: 3px solid var(--uq-purple);
+  outline-offset: 3px;
+}
+
+/* ---- results ---- */
+
 .quiz-results {
+  position: relative;
   width: 100%;
   height: 100%;
   overflow-y: auto;
-  padding: 40px 20px;
-  background: #1a1a1a;
-  color: white;
+  padding: 90px 20px 40px;
+  background: #fff;
+  color: var(--uq-black);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -421,25 +488,31 @@ html, body, #root {
 }
 
 .quiz-results button {
-  padding: 12px 30px;
-  background: #ffcc66;
+  padding: 13px 32px;
+  background: var(--uq-purple);
+  color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
 }
 
+.quiz-results button:hover { background: var(--uq-purple-600); }
+
 .quiz-score {
-  font-size: 3rem;
+  font-size: 3.4rem;
   font-weight: bold;
-  color: #ffcc66;
+  color: var(--uq-purple);
   margin: 0;
   font-variant-numeric: tabular-nums;
 }
 
+.quiz-results.passed .quiz-score { color: var(--uq-success-700); }
+.quiz-results.failed .quiz-score { color: var(--uq-error); }
+
 .quiz-score-detail {
-  color: #aaa;
+  color: var(--uq-grey-800);
   font-size: 0.95rem;
   max-width: 460px;
   text-align: center;
@@ -455,10 +528,22 @@ html, body, #root {
 }
 
 .quiz-btn-secondary {
-  background: transparent !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  color: white;
+  background: #fff !important;
+  border: 2px solid var(--uq-purple) !important;
+  color: var(--uq-purple) !important;
 }
+
+.quiz-btn-secondary:hover {
+  background: var(--uq-purple-50) !important;
+}
+
+.quiz-results::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
 
 /* fade transition */
 .fade-transition {

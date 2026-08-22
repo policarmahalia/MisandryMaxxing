@@ -94,7 +94,7 @@ function QuizScreen({ quizData, onPass, onRetry }) {
 
   if (results) {
     return (
-      <div className="quiz-results" ref={panelRef}>
+      <div className={`quiz-results ${results.passed ? 'passed' : 'failed'}`} ref={panelRef}>
         {results.passed ? (
           <>
             <h2>Module complete</h2>
