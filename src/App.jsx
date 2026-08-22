@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import SceneRenderer from './components/scenario/SceneRenderer';
 import QuizScreen from './components/quiz/QuizScreen';
+import IntroScreen from './components/nav/IntroScreen';
 import StoryEngine from './engine/StoryEngine';
 import scenarioMeta from './data/scenarioMeta';
 import scenario1 from '../story/compiled/scenario1.json';
@@ -38,7 +39,12 @@ function App() {
   const [engine, setEngine] = useState(
     () => new StoryEngine(STORIES[metaFor(startingId()).ink])
   );
-  const [screen, setScreen] = useState('scenario'); // scenario | quiz | done
+  // intro | scenario | quiz | done
+  // ?scenario=N jumps straight in — playtesting one chapter shouldn't mean
+  // clicking through the title card every time.
+  const [screen, setScreen] = useState(
+    new URLSearchParams(window.location.search).has('scenario') ? 'scenario' : 'intro'
+  );
 
   const meta = metaFor(id);
 
@@ -72,6 +78,8 @@ function App() {
 
   return (
     <div className="app">
+      {screen === 'intro' && <IntroScreen onStart={() => setScreen('scenario')} />}
+
       {screen === 'scenario' && (
         // key remounts the renderer on scenario change so it pulls from the
         // new engine instead of sitting on the previous batch.
