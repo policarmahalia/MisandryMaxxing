@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const PASS_MARK = 0.5; // 50%, same bar as the original single-answer version
 
@@ -8,6 +8,15 @@ function QuizScreen({ quizData, onPass, onRetry }) {
   const [revealed, setRevealed] = useState(false);
   const [tallies, setTallies] = useState([]);
   const [results, setResults] = useState(null);
+  const panelRef = useRef(null);
+
+  // The panel is its own scroll container, so its scrollTop survives a question
+  // change. Without this you'd scroll to the bottom of one question to reach
+  // Next, then land part-way down the next one with the question itself above
+  // the viewport. Same on reveal, where the notes make the page much taller.
+  useEffect(() => {
+    if (panelRef.current) panelRef.current.scrollTop = 0;
+  }, [currentIndex, revealed, results]);
 
   const question = quizData[currentIndex];
   const isLast = currentIndex + 1 >= quizData.length;
@@ -85,7 +94,7 @@ function QuizScreen({ quizData, onPass, onRetry }) {
 
   if (results) {
     return (
-      <div className="quiz-results">
+      <div className="quiz-results" ref={panelRef}>
         {results.passed ? (
           <>
             <h2>Module complete</h2>
@@ -122,7 +131,7 @@ function QuizScreen({ quizData, onPass, onRetry }) {
   }
 
   return (
-    <div className="quiz-screen">
+    <div className="quiz-screen" ref={panelRef}>
       <p className="quiz-topic">{question.topic}</p>
       <p className="quiz-progress">
         Question {currentIndex + 1} of {quizData.length}
