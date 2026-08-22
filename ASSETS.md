@@ -62,25 +62,23 @@ chapter and the art should not distract from it.
 
 | Tag | Where it's used | Feel |
 |---|---|---|
-| `openplan_morning` | **12 lines.** The whole report scene — he finalises it at 10:40, Delia arrives at 11:15, and all four responses play here. Also the shared-drive moment afterwards. | Ordinary Wednesday. Nothing has visibly gone wrong. The scene's weight is entirely in the dialogue, so the room should stay flat and unremarkable. |
+| `boss_intro` / `boss_scolding` / `boss_showing` | **17 lines.** The whole report scene — DRAWN. | Delia at a desk with a laptop, three states. |
+| `openplan_morning` | **no longer used by Wednesday.** The whole report scene — he finalises it at 10:40, Delia arrives at 11:15, and all four responses play here. Also the shared-drive moment afterwards. | Ordinary Wednesday. Nothing has visibly gone wrong. The scene's weight is entirely in the dialogue, so the room should stay flat and unremarkable. |
 | `slack_ui` | **10 lines.** The #platform-eng thread that resolves without him, then the Fiona DM exchange. | A chat interface. His message needs to be visibly *there* with nothing under it — the gap is the point. |
-| `kitchenette` | **4 lines.** The Pauline conversation only, and only if the player asked for it — so a good share of playthroughs never see this room at all. | Warm and completely unthreatening. She is apologising and she means it. |
 | `home_evening` | **6 lines.** 21:40, opening the PR. Then next morning: forty-one comments against Ellie's LGTM. | Away from the office, alone, late. The only room in the chapter that's his. |
 
 ### Characters
 
 | Tag | Where it's used | Notes |
 |---|---|---|
-| `pauline, warm, left` | **6 lines.** Her whole scene — she's apologising and means it. | Genuinely pleased to see him. She is not a villain and must not look like one. |
 | `delia, tired, right` | **5 lines.** Delia at his desk with the wrong report. | **Tired, not furious.** She doesn't have time to adjudicate. If she reads as angry the whole scene collapses into a villain story. |
 | `delia, cool, right` | **2 lines.** Only on the "Pauline must have overwritten it" route. | A single degree cooler than `tired`. The difference should be barely perceptible — that's what makes it land. |
 
 ### Priority if time runs short
 
 1. `openplan_morning` — carries the entire report scene and all four responses, which is most of the chapter.
-2. `kitchenette` — one optional scene, so lower value than its line count suggests.
-3. `slack_ui` — could be a flat mocked-up UI rather than a drawing, and would still work.
-4. `home_evening` — the coda. Lowest cost if it falls back to black.
+2. `slack_ui` — could be a flat mocked-up UI rather than a drawing, and would still work.
+3. `home_evening` — the coda, and shared with Thursday.
 
 ---
 

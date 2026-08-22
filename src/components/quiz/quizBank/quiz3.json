@@ -1,37 +1,37 @@
 [
   {
     "topic": "Unpacking Gender-Based Violence",
-    "question": "The report was replaced and Pauline's name was on it. What does the scenario establish about what happened?",
+    "question": "Pauline's name is on the report he wrote, and Delia's read is that he hasn't been pulling his weight. What's going on here?",
     "options": [
       {
-        "text": "It's never established — both readings stay possible and he has no way to resolve it",
+        "text": "His work counted — it just counted for somebody else",
         "isIssue": true,
-        "note": "This is the chapter's whole design. If you finished it still wondering, that isn't the writing failing. That's the experience."
+        "note": "The charts, the figures, the appendix he rebuilt on Monday. All of it landed. None of it landed on him."
       },
       {
-        "text": "Not knowing is itself part of the harm, separately from whatever happened",
+        "text": "Nobody checked, and checking would have taken one click",
         "isIssue": true,
-        "note": "He can't be angry, because there may be nothing to be angry at. He can't let it go, because there may be. That costs him all afternoon."
+        "note": "One file on the drive, modified 09:52. The version history was right there and the conclusion about him got reached without it."
       },
       {
-        "text": "The conclusion about him got reached without anyone checking",
+        "text": "He now has to disprove a reputation rather than build one",
         "isIssue": true,
-        "note": "One file, modified 09:52. The version history was one click away and nobody opened it — including the person who decided what it meant."
+        "note": "\"I need to see you pulling your weight\" means he isn't starting from neutral any more. He's starting from behind, on work he actually did."
       },
       {
-        "text": "Pauline deliberately stole the work to get ahead",
+        "text": "It's a paperwork error and no one is really at fault",
         "isIssue": false,
-        "note": "The game never says so, and her account holds up. Deciding she's a thief makes this one woman's vendetta rather than a pattern — which is exactly the reading the chapter refuses."
-      },
-      {
-        "text": "It was a technical fault in the shared drive",
-        "isIssue": false,
-        "note": "Also never established. Reaching for the innocent explanation is the same mistake as reaching for the malicious one: both let you stop thinking about it."
+        "note": "Names don't move on their own, and the person who benefited didn't correct it. Calling it clerical is how it stays repeatable."
       },
       {
         "text": "He should have kept his own copy or worked outside the shared drive",
         "isIssue": false,
         "note": "A sensible habit that only he needs. Note it's offered afterwards, as though the gap were his."
+      },
+      {
+        "text": "Delia is the real problem for being harsh with him",
+        "isIssue": false,
+        "note": "She's barely interested, which is the point. Making this about one unkind manager is smaller and more comfortable than what actually happened."
       }
     ]
   },
