@@ -59,9 +59,23 @@ class StoryEngine {
   // both mounts call this on the same engine — without the cache the first mount
   // ate the whole opening batch and the visible one got nothing, so the scene
   // jumped straight to the choices.
+  // Snapshot of the story right now, for the back button. Cheap enough to take
+  // one per batch.
+  saveState() {
+    return this.story.state.toJson();
+  }
+
+  restoreState(json) {
+    this.story.state.LoadJson(json);
+    this.pending = null;
+  }
+
   continueStory() {
     if (this.pending) return this.pending;
 
+    // Captured before the batch is consumed, so restoring it and calling
+    // continueStory again replays exactly this batch.
+    const batchState = this.saveState();
     const lines = [];
     while (this.story.canContinue) {
       const text = this.story.Continue();
@@ -78,7 +92,7 @@ class StoryEngine {
     }));
     const isEnded = !this.story.canContinue && choices.length === 0;
 
-    this.pending = { lines, choices, isEnded };
+    this.pending = { lines, choices, isEnded, batchState };
     return this.pending;
   }
 

@@ -27,15 +27,22 @@ function SceneRenderer({ engine, onScenarioComplete }) {
   // Looks for <scene>_swap.png and falls back to the normal art, so the beat
   // plays today and becomes legible the moment the swapped set is drawn.
   const [swapped, setSwapped] = useState(false);
+  // Visited positions, for the back button: one entry per line shown, holding
+  // the ink snapshot for its batch plus the index within it. Restoring means
+  // reloading that snapshot and replaying the batch to the same line, so going
+  // back across a choice genuinely un-makes it.
+  const history = useRef([]);
+  const [canGoBack, setCanGoBack] = useState(false);
+  // auto-advance timers (ghost choices, sideeyeing) — cleared on rewind so a
+  // pending tick can't fire into a restored position
+  const autoTimer = useRef(null);
 
   useEffect(() => {
     pullFromEngine();
   }, []);
 
-  // pulls a fresh batch of lines from inkjs and starts displaying them one by one
-  function pullFromEngine() {
-    const result = engine.continueStory();
-    const parsedLines = result.lines.map((line) => {
+  function parseBatch(result) {
+    return result.lines.map((line) => {
       const tags = parseTags(line.tags);
       return {
         text: line.text,
@@ -51,15 +58,51 @@ function SceneRenderer({ engine, onScenarioComplete }) {
         isThought: tags.some((t) => t.type === 'thought'),
       };
     });
+  }
 
+  // pulls a fresh batch of lines from inkjs and starts displaying them one by one
+  function pullFromEngine() {
+    const result = engine.continueStory();
+    const parsedLines = parseBatch(result);
     setQueue(parsedLines);
     setChoices(result.choices);
     showLine(parsedLines, 0, result);
   }
 
+  // Left arrow. Drops the current position and restores the one before it.
+  function goBack() {
+    if (history.current.length < 2) return;
+    clearTimeout(autoTimer.current);
+
+    history.current.pop();
+    const prev = history.current[history.current.length - 1];
+
+    engine.restoreState(prev.batchState);
+    const result = engine.continueStory();
+    const parsedLines = parseBatch(result);
+
+    setQueue(parsedLines);
+    setChoices(result.choices);
+    // no delta flash on a rewind — the numbers are going backwards
+    prevStats.current = null;
+    setDeltas(NO_DELTA);
+    showLine(parsedLines, prev.index, result, true);
+  }
+
+  useEffect(() => {
+    function onKey(e) {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        goBack();
+      }
+    }
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  });
+
   
   // displays a single line from the queue at the given index
-  function showLine(lines, index, result) {
+  function showLine(lines, index, result, restoring = false) {
     if (index >= lines.length) {
       if (result.choices.length > 0) {
         setAwaitingTap(false);
@@ -71,6 +114,21 @@ function SceneRenderer({ engine, onScenarioComplete }) {
     }
 
     const line = lines[index];
+
+    if (restoring) {
+      // trim anything the rewind invalidated, then re-record this position
+      history.current = history.current.slice(0, -1);
+    }
+
+    // StrictMode re-runs the mount effect on the same instance, so refs
+    // survive and the opening line would otherwise be recorded twice — which
+    // showed a back affordance on the very first line of a scenario.
+    const top = history.current[history.current.length - 1];
+    if (!top || top.batchState !== result.batchState || top.index !== index) {
+      history.current.push({ batchState: result.batchState, index });
+    }
+    setCanGoBack(history.current.length > 1);
+
     applyStats(line.stats);
     if (line.scene) setScene(line.scene);
     setSpeaker(line.speaker || null);
@@ -84,10 +142,10 @@ function SceneRenderer({ engine, onScenarioComplete }) {
       // Options he can see and cannot take. No tap — the scene moves on
       // without him, which is the point.
       setAwaitingTap(false);
-      setTimeout(() => showLine(lines, index + 1, result), 4000);
+      autoTimer.current = setTimeout(() => showLine(lines, index + 1, result), 4000);
     } else if (line.scene === 'sideeyeing') {
       setAwaitingTap(false);
-      setTimeout(() => showLine(lines, index + 1, result), 2000);
+      autoTimer.current = setTimeout(() => showLine(lines, index + 1, result), 2000);
     } else if (index + 1 < lines.length) {
       // more lines still queued in this batch — wait for tap
       setAwaitingTap(true);
@@ -127,7 +185,10 @@ function SceneRenderer({ engine, onScenarioComplete }) {
     setStats(next);
   }
 
-  useEffect(() => () => clearTimeout(deltaTimer.current), []);
+  useEffect(() => () => {
+    clearTimeout(deltaTimer.current);
+    clearTimeout(autoTimer.current);
+  }, []);
 
   function handleTapContinue() {
     const next = advanceQueue.current;
@@ -158,6 +219,16 @@ function SceneRenderer({ engine, onScenarioComplete }) {
       />
 
       <StatBar stats={stats} deltas={deltas} />
+
+      {canGoBack && (
+        <button
+          className="back-hint"
+          onClick={(e) => { e.stopPropagation(); goBack(); }}
+          aria-label="Go back one step"
+        >
+          &larr; back
+        </button>
+      )}
 
       {ghostChoices && (
         <div className="ghost-choices" aria-hidden="true">
