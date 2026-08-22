@@ -448,67 +448,21 @@ He goes quiet for a second, because nobody has said that to him, and — you rea
 // ============================================================
 // The Last Card
 //
-// PLACEHOLDER. This is meant to replay twenty seconds of the Scenario 2
-// standup with every character's gender swapped back — same lines, same
-// timing, same laugh. Scenario 2 isn't inked yet, so the lines below stand in
-// and should be REPLACED with that knot re-entered under # swap: true once it
-// exists.
-//
-// The renderer also needs to read # swap: true and pick sprites and names from
-// a swapped lookup. Not built yet.
-//
-// No commentary. No text on screen. Let it play and cut to black.
+// Was a replay of Scenario 2's standup with the genders swapped back. Cut:
+// reversing one scene and nothing else asked the player to infer the whole
+// framing device from a single beat, and with no swapped art it read as the
+// game glitching back to chapter 2. Says it plainly instead.
 // ============================================================
 === sc5_last_card ===
 
 # background: black
-# thought
-Tuesday.
-
-// Scenario 2's standup, replayed with every character's gender swapped back.
-// The words are identical — that is the entire point. What changes is who is
-// saying them and who is being spoken to, so the beat is carried by the art:
-// the renderer looks for <scene>_swap.png and falls back to the normal art
-// until that set is drawn.
-
-# scene: intro_ignoring
-# swap: true
-# thought
-It's her second day. She's in the meeting, mentally preparing to deliver a technical solution she spent half the night perfecting.
-
-# scene: staring
-# swap: true
-# speaker: BOSS
-"Hey, sweetie! Last minute change. You're not presenting anymore."
-
-# scene: staring
-# swap: true
-# speaker: BOSS
-"Yeah... we need a note taker for the meeting. You can do that for us, right?"
-
-# scene: intro_ignoring
-# swap: true
-# thought
-She sits at the corner of the table, laptop open, typing furiously. No one looks at her.
-
-# scene: intro_ignoring
-# swap: true
-# speaker: BOSS
-"Anyone have any lunch suggestions?"
-
-# scene: awkward
-# swap: true
-# thought
-The room goes quiet. Everyone stares at her, straight-faced. She is ignored.
-
-# scene: laughing
-# swap: true
-# thought
-Then somebody else says it, and the whole room erupts.
+Nothing here was invented.
 
 # background: black
-# thought
-...
+Every scene you have just played is drawn from documented accounts of women working in engineering and technology.
+
+# background: black
+The only thing that was changed was who it happened to.
 
 # module: quiz5
 

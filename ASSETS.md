@@ -127,25 +127,6 @@ character states, and one set that doesn't exist yet.
 | `mahalia, cheerful, right` | **1 line.** "You two should get coffee." | Same Mahalia as scenario 1. Her only appearance outside Monday now that the Wednesday kitchenette beat is cut. |
 | `sandes, eager, left` | The sprint review, and both March endings. | Twenty-four, junior, delighted to be here. **Not a younger copy of the PC** — Sandes is better at this than he was, faster to laugh things off. That's the discomfort. |
 
-### The last card — needs a decision
-
-The closing beat replays twenty seconds of scenario 2's standup with every
-character's gender swapped back. Same lines, same timing, same laugh.
-
-It needs **one swapped sprite set** — the scenario 2 cast, drawn the other way
-round. That's the entire art cost, and it's the cheapest scene in the game
-relative to what it does: it's what makes the title legible from inside the
-product.
-
-It is currently **stubbed in the ink** with a placeholder line, because
-scenario 2 isn't written yet. Two things have to land before it works:
-
-1. Scenario 2's ink exists, so its standup knot can be re-entered.
-2. `SceneRenderer.jsx` reads `# swap: true` and picks sprites and names from a
-   swapped lookup. Not built.
-
-If anything gets cut, not this.
-
 ---
 
 ## Scenario 1 — Monday
