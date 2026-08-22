@@ -1,9 +1,47 @@
 import { Story } from 'inkjs';
 
 class StoryEngine {
-  constructor(storyJson) {
+  constructor(storyJson, carriedState) {
     this.story = new Story(storyJson);
     this.pending = null;
+    if (carriedState) this.importState(carriedState);
+  }
+
+  // Values that follow the player from one chapter to the next. Anything not
+  // listed here resets, which is what you want for scene-local flags.
+  static CARRIED = [
+    'standing',
+    'composure',
+    'kept_receipts',   // Wed -> Thu, where it pays off by not helping
+    'named_it',        // Thu -> Fri, changes how Delia's reveal reads
+    'reported',        // Thu -> Fri, the outcome letter lands mid-review
+    'deflected',       // Thu -> Fri, "you're easy to have around"
+    'note_taker',      // Tue -> Fri, one line about not driving the room
+    'froze',
+    'left_room',
+  ];
+
+  // Reads the carried values off this scenario's final state.
+  exportState() {
+    const out = {};
+    for (const name of StoryEngine.CARRIED) {
+      const value = this.story.variablesState[name];
+      if (value !== null && value !== undefined) out[name] = value;
+    }
+    return out;
+  }
+
+  // Writes them into the next scenario, skipping any it doesn't declare.
+  importState(carried) {
+    for (const [name, value] of Object.entries(carried)) {
+      // inkjs returns null for a variable the story doesn't declare, and
+      // assigning to one throws "Cannot assign to a variable that hasn't been
+      // declared". Skip anything this scenario doesn't know about.
+      if (this.story.variablesState[name] !== null &&
+          this.story.variablesState[name] !== undefined) {
+        this.story.variablesState[name] = value;
+      }
+    }
   }
 
   // Reads the stat variables if the scenario declares them. Scenarios that
@@ -11,7 +49,8 @@ class StoryEngine {
   readStats() {
     const standing = this.story.variablesState['standing'];
     const composure = this.story.variablesState['composure'];
-    if (standing === undefined || composure === undefined) return null;
+    if (standing === null || standing === undefined) return null;
+    if (composure === null || composure === undefined) return null;
     return { standing, composure };
   }
 

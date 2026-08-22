@@ -4,6 +4,9 @@ VAR standing = 0
 VAR composure = 0
 
 VAR agreed_to_notes = false
+// Same fact under the name Friday's calibration reads, so it survives the
+// carry between chapters.
+VAR note_taker = false
 VAR pushed_back_day2 = false
 
 // Scene 1 — meeting room, waiting to present
@@ -29,6 +32,7 @@ I spent all night preparing? What should I do?
     ~ standing = standing - 1
     ~ composure = composure - 2
     ~ agreed_to_notes = true
+    ~ note_taker = true
     "Sure... I guess I'll just... take notes."
     # thought
     [Soul leaves body]
@@ -38,6 +42,7 @@ I spent all night preparing? What should I do?
     ~ standing = standing - 1
     ~ composure = composure + 1
     ~ pushed_back_day2 = true
+    ~ note_taker = true
     "Actually, I'd really like to present. I've prepared extensively."
     -> pushback_reaction
 

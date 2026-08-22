@@ -258,6 +258,11 @@ html, body, #root {
   overscroll-behavior: contain;
 }
 
+.quiz-screen h2,
+.quiz-results h2 {
+  color: #fff;
+}
+
 .quiz-topic {
   color: #ffcc66;
   font-weight: bold;
@@ -407,7 +412,11 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* `safe` matters: plain `center` centres the content, and when it's taller
+     than the panel that pushes the top out of the scrollable area where no
+     amount of scrolling reaches it. `safe center` falls back to start
+     alignment as soon as it would overflow. */
+  justify-content: safe center;
   gap: 16px;
 }
 

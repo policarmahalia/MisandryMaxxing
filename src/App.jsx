@@ -42,9 +42,13 @@ function App() {
 
   const meta = metaFor(id);
 
+  // Standing, composure and the cross-chapter flags follow the player forward.
+  // Without this every chapter restarted at 0 and Friday's ending was decided
+  // by Friday alone.
   function goTo(nextId) {
+    const carried = engine.exportState();
     setId(nextId);
-    setEngine(new StoryEngine(STORIES[metaFor(nextId).ink]));
+    setEngine(new StoryEngine(STORIES[metaFor(nextId).ink], carried));
     setScreen('scenario');
   }
 
