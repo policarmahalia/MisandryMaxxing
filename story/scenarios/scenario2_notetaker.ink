@@ -7,14 +7,14 @@ VAR pushed_back_day2 = false
 It's your second day. You're in the meeting, mentally preparing to deliver a technical solution you spent half the night perfecting. You're ready. You're confident. You're about to crush it. Your turn is next.
 
 # scene: staring
-# speaker: boss
+# speaker: BOSS
 "Hey, sweetie! Last minute change. You're not presenting anymore."
 
 # thought
 [Spit-take your coffee] What????
 
 # scene: staring
-# speaker: boss
+# speaker: BOSS
 "Yeah... we need a note taker for the meeting. You can do that for us, right?"
 
 # thought
@@ -35,10 +35,10 @@ I spent all night preparing? What should I do?
 === pushback_reaction ===
 # scene: awkward
 # thought
-Boss stares at you like you just asked to fly the plane.
+BOSS stares at you like you just asked to fly the plane.
 
-# speaker: boss
-"Cute. Linda, you'll be presenting. You — take notes. We don't have all day."
+# speaker: BOSS
+"Cute. Reyana, you'll be presenting. You — take notes. We don't have all day."
 
 -> notetaking
 
@@ -50,12 +50,12 @@ You sit at the corner of the table, laptop open, typing furiously. No one looks 
 // Scene 2 — flashcut through the meeting
 # scene: intro_ignoring
 # thought
-The meeting flashes forward. Linda presents. You take notes.
+The meeting flashes forward. Reyana presents. You take notes.
 
 The meeting starts to wrap up. The team is talking casually now.
 
 # scene: intro_ignoring
-# speaker: boss
+# speaker: BOSS
 "Anyone have any lunch suggestions?"
 
 # thought
@@ -71,11 +71,11 @@ This is my chance!
 # thought
 The room goes quiet. Everyone stares at you, straight-faced. You are ignored.
 
-# speaker: linda
-"Hey, Boss... how about we grab those onion rings you like?"
+# speaker: Reyana
+"Hey, BOSS... how about we grab those onion rings you like?"
 
 # scene: callout
-# speaker: linda
+# speaker: Reyana
 "Or should I say... sonoin rings!"
 
 # scene: laughing

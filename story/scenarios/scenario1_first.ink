@@ -3,7 +3,7 @@ VAR pushed_back = false
 
 // Scene 1
 # scene: intro
-# speaker: keira
+# speaker: Mahalia
 "Hey, I didn't know we had a new marketing hire."
 
 # thought
@@ -20,20 +20,20 @@ You're confused why they'd think that.
 === scene2 ===
 {corrected:
     # scene: surprised
-    # speaker: keira
+    # speaker: Mahalia
     "Oh, that's cute."
 - else:
     # scene: shocked
-    # speaker: keira
+    # speaker: Mahalia
     "Oh! You're serious?"
 }
 
 # scene: sideeyeing
 # thought
-Keira gives you a slow once-over.
+Mahalia gives you a slow once-over.
 
 # scene: checking
-# speaker: keira
+# speaker: Mahalia
 "Well, don't you think that shirt is a bit too tight for an engineer?"
 
 # thought
@@ -49,7 +49,7 @@ You're appalled.
 // Scene 3
 === scene3 ===
 # scene: pointing
-# speaker: keira
+# speaker: Mahalia
 "Does your girlfriend know you dress like that for work?"
 
 # thought
@@ -62,7 +62,7 @@ You're uncomfortable. Why would they assume you have a girlfriend?
 
 === ending ===
 # scene: judgemental
-# speaker: keira
+# speaker: Mahalia
 "Whatever. We're just joking, lighten up...."
 
 -> END

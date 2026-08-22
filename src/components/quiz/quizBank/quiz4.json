@@ -1,7 +1,7 @@
 [
   {
     "topic": "Unpacking Gender-Based Violence",
-    "question": "Dani frames the comment as a joke and apologises when he names it. Why is it still gender-based harassment?",
+    "question": "BOSS frames the comment as a joke and apologises when he names it. Why is it still gender-based harassment?",
     "options": [
       {
         "text": "Intent doesn't determine impact — how she meant it doesn't set what it did",
@@ -73,10 +73,10 @@
   },
   {
     "topic": "Being an Ethical Bystander",
-    "question": "Jean says \"she's a lot after seven — you get used to her.\" What does that tell us, and what should have happened instead?",
+    "question": "Fiona says \"she's a lot after seven — you get used to her.\" What does that tell us, and what should have happened instead?",
     "options": [
       {
-        "text": "Jean already knew, which means others did too, and nobody said anything beforehand",
+        "text": "Fiona already knew, which means others did too, and nobody said anything beforehand",
         "isIssue": true,
         "note": "\"You get used to her\" is only sayable by someone who has. This wasn't a first time; it was a first time for him."
       },
@@ -88,7 +88,7 @@
       {
         "text": "Framing it as something you get used to makes it his job to adapt",
         "isIssue": true,
-        "note": "Said kindly, and it still hands him the work. He is now the one managing Dani's behaviour, alone, on his own time."
+        "note": "Said kindly, and it still hands him the work. He is now the one managing BOSS's behaviour, alone, on his own time."
       },
       {
         "text": "Warning him privately to avoid late meetings with her",
@@ -96,12 +96,12 @@
         "note": "Better than nothing, and it puts the whole burden on him — he now declines meetings with a principal engineer and pays for that too."
       },
       {
-        "text": "Nothing — Jean wasn't in the room, so it wasn't hers to raise",
+        "text": "Nothing — Fiona wasn't in the room, so it wasn't hers to raise",
         "isIssue": false,
         "note": "She wasn't in the room and she knew about the room. That's the definition of a bystander, not an exemption from being one."
       },
       {
-        "text": "Confronting Dani directly on his behalf",
+        "text": "Confronting BOSS directly on his behalf",
         "isIssue": false,
         "note": "Takes the decision off him the day after somebody else already took a decision about his body."
       }
@@ -132,7 +132,7 @@
         "note": "True and devastating. It makes the next person's safety his debt, on the worst day he's had, and it's the single most common thing said to people in this position."
       },
       {
-        "text": "Reassure him that Dani probably didn't mean it that way",
+        "text": "Reassure him that BOSS probably didn't mean it that way",
         "isIssue": false,
         "note": "It's an argument about her, offered to him, while he's the one who needs something."
       },

@@ -1,7 +1,7 @@
 [
   {
     "topic": "Unpacking Gender-Based Violence",
-    "question": "The report was replaced and Sarah's name was on it. What does the scenario establish about what happened?",
+    "question": "The report was replaced and Pauline's name was on it. What does the scenario establish about what happened?",
     "options": [
       {
         "text": "It's never established — both readings stay possible and he has no way to resolve it",
@@ -19,7 +19,7 @@
         "note": "One file, modified 09:52. The version history was one click away and nobody opened it — including the person who decided what it meant."
       },
       {
-        "text": "Sarah deliberately stole the work to get ahead",
+        "text": "Pauline deliberately stole the work to get ahead",
         "isIssue": false,
         "note": "The game never says so, and her account holds up. Deciding she's a thief makes this one woman's vendetta rather than a pattern — which is exactly the reading the chapter refuses."
       },
@@ -37,7 +37,7 @@
   },
   {
     "topic": "Healthy Relationships, Consent & Boundaries",
-    "question": "Kiera's \"you clean up so well\" is delivered as a compliment. Why is it still a problem?",
+    "question": "Mahalia's \"you clean up so well\" is delivered as a compliment. Why is it still a problem?",
     "options": [
       {
         "text": "It rewards him for work outside his role that he was singled out to do",
@@ -86,7 +86,7 @@
         "note": "Even lower effort. A thread with one reply reads completely differently from a thread with none."
       },
       {
-        "text": "In the sync, notice that Chesca's question was his answer and say so",
+        "text": "In the sync, notice that Ellie's question was his answer and say so",
         "isIssue": true,
         "note": "Same pattern twice in one day, in two rooms. Somebody in that meeting had heard it before."
       },
@@ -132,14 +132,14 @@
         "note": "With what? He has no earlier version. Sending him into a process he can't win takes the decision off him and hands him a loss."
       },
       {
-        "text": "Point out that Sarah probably didn't mean it, so it's best let go",
+        "text": "Point out that Pauline probably didn't mean it, so it's best let go",
         "isIssue": false,
         "note": "Probably true, and it's an argument about intent when the thing he needs acknowledged is effect."
       },
       {
-        "text": "Offer to confront Sarah on his behalf",
+        "text": "Offer to confront Pauline on his behalf",
         "isIssue": false,
-        "note": "Reads as solidarity. It's still someone else deciding what happens to him, and he's the one who works next to Sarah tomorrow."
+        "note": "Reads as solidarity. It's still someone else deciding what happens to him, and he's the one who works next to Pauline tomorrow."
       }
     ]
   }

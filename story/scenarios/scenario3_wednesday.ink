@@ -6,17 +6,17 @@
 // is no one to be angry at.
 //
 // LOCKED:
-//   - The swap is never explained. Sarah's account is plausible; so is the
+//   - The swap is never explained. Pauline's account is plausible; so is the
 //     other reading. No choice unlocks the truth. If a playtester asks "so did
 //     she or didn't she", that's the chapter working.
 //   - The credit is not recovered. Every route converges on him redoing it.
-//   - No villains. Delia is tired, Sarah is warm, Linda is efficient, Jean is
-//     joking, Kiera means it as a compliment. The damage is cumulative and
+//   - No villains. Delia is tired, Pauline is warm, Reyana is efficient, Fiona is
+//     joking, Mahalia means it as a compliment. The damage is cumulative and
 //     unattributable.
 //
-// BOSS is named Delia here — Sarah refers to her by that name in Scene 2, so
-// the placeholder is doing the work of a name already. Change in one place if
-// the team wants something else.
+// Delia is the senior director. She is NOT the BOSS character from Scenario 2
+// and 4 — that's a different, deliberately unnamed person, and Scenario 4
+// depends on them being distinct.
 
 VAR standing = 0
 VAR composure = 0
@@ -24,8 +24,8 @@ VAR composure = 0
 // Carried from Scenario 2 once cross-scenario state exists. Until then these
 // start at zero and the chapter reads as a standalone.
 
-VAR asked_sarah = false
-VAR named_sarah = false
+VAR asked_pauline = false
+VAR named_pauline = false
 VAR kept_receipts = false
 VAR note_taker = false
 
@@ -47,8 +47,8 @@ Save to the shared drive, link it to Delia and the wider team, go and get a coff
 At 11:15 Delia is standing at your desk with her laptop open.
 
 # background: openplan_morning
-# character: boss, tired, right
-# speaker: delia
+# character: delia, tired, right
+# speaker: Delia
 "This isn't what I was expecting."
 
 # background: openplan_morning
@@ -57,11 +57,11 @@ She turns the screen. It's the report, dated Tuesday, three charts short, the se
 
 # background: openplan_morning
 # thought
-Your name isn't on it. Sarah's is.
+Your name isn't on it. Pauline's is.
 
-# character: boss, tired, right
-# speaker: delia
-"Sarah's redone most of it from scratch. I'm not thrilled about where that leaves the afternoon."
+# character: delia, tired, right
+# speaker: Delia
+"Pauline's redone most of it from scratch. I'm not thrilled about where that leaves the afternoon."
 
 # background: openplan_morning
 # thought
@@ -71,46 +71,46 @@ She isn't angry. That's somehow worse.
     ~ standing = standing - 1
     ~ composure = composure - 1
     ~ kept_receipts = true
-    # character: boss, tired, right
-    # speaker: delia
+    # character: delia, tired, right
+    # speaker: Delia
     "I don't need a forensic investigation, I need the report."
     # background: openplan_morning
     # thought
     She's already looking at her phone.
-    # speaker: delia
+    # speaker: Delia
     "Can you have it by four?"
     -> sc1_converge
 
-* ["Sarah must have overwritten it."]
+* ["Pauline must have overwritten it."]
     ~ standing = standing - 2
     ~ composure = composure + 1
-    ~ named_sarah = true
+    ~ named_pauline = true
     # background: openplan_morning
     # thought
     A pause.
-    # character: boss, cool, right
-    # speaker: delia
+    # character: delia, cool, right
+    # speaker: Delia
     "Let's not do that."
-    # character: boss, cool, right
-    # speaker: delia
+    # character: delia, cool, right
+    # speaker: Delia
     "Just get me the corrected one."
     -> sc1_converge
 
 * ["I'll fix it."]
     ~ composure = composure - 2
-    # character: boss, tired, right
-    # speaker: delia
+    # character: delia, tired, right
+    # speaker: Delia
     "Thank you."
     # background: openplan_morning
     # thought
     She means it. She's gone in four seconds.
     -> sc1_converge
 
-* ["Can I ask Sarah what she was working from?"]
+* ["Can I ask Pauline what she was working from?"]
     ~ standing = standing - 1
-    ~ asked_sarah = true
-    # character: boss, tired, right
-    # speaker: delia
+    ~ asked_pauline = true
+    # character: delia, tired, right
+    # speaker: Delia
     "Sure. After four."
     -> sc1_converge
 
@@ -119,47 +119,47 @@ She isn't angry. That's somehow worse.
 
 # background: openplan_morning
 # thought
-You open the shared drive. There's one file. Modified 09:52 by Sarah.
+You open the shared drive. There's one file. Modified 09:52 by Pauline.
 
 # background: openplan_morning
 # thought
 There's no earlier version in the folder. There might have been, and there might not have been. You are not going to be able to find out this afternoon.
 
-// Players who didn't ask never get Sarah's side. That's a different
+// Players who didn't ask never get Pauline's side. That's a different
 // playthrough, not a missed one.
-{asked_sarah:
-    -> sc2_sarah
+{asked_pauline:
+    -> sc2_pauline
 - else:
     -> sc3_kitchenette
 }
 
 
 // ============================================================
-// Scene 2 — Sarah  (conditional on asked_sarah)
+// Scene 2 — Pauline  (conditional on asked_pauline)
 // ============================================================
-=== sc2_sarah ===
+=== sc2_pauline ===
 
 # background: kitchenette
-# character: sarah, warm, left
+# character: pauline, warm, left
 # thought
 She's genuinely pleased to see you.
 
-# character: sarah, warm, left
-# speaker: sarah
+# character: pauline, warm, left
+# speaker: Pauline
 "Oh — the perf report? Yeah, I found it Tuesday night and it was in rough shape, so I just took a run at it."
 
-# character: sarah, warm, left
-# speaker: sarah
+# character: pauline, warm, left
+# speaker: Pauline
 "Was that a live one? God, I'm sorry, it looked like a stale draft."
 
-# character: sarah, warm, left
-# speaker: sarah
+# character: pauline, warm, left
+# speaker: Pauline
 "Did you have a newer one somewhere? I would've just used yours."
 
 * ["I sent the newer one this morning."]
     ~ composure = composure - 1
-    # character: sarah, warm, left
-    # speaker: sarah
+    # character: pauline, warm, left
+    # speaker: Pauline
     "Weird. Ping it to me and I'll tell Delia it was yours."
     # background: kitchenette
     # thought
@@ -177,12 +177,12 @@ She's genuinely pleased to see you.
 * ["You could have asked me first."]
     ~ standing = standing - 1
     ~ composure = composure + 1
-    # character: sarah, warm, left
-    # speaker: sarah
+    # character: pauline, warm, left
+    # speaker: Pauline
     "You're right. That's fair."
     # background: kitchenette
     # thought
-    She says it immediately and completely, and it changes nothing, because the report still says Sarah.
+    She says it immediately and completely, and it changes nothing, because the report still says Pauline.
     -> sc3_kitchenette
 
 
@@ -198,12 +198,12 @@ She's genuinely pleased to see you.
 # thought
 Half four. You're the last one near the kitchenette, so you're the one who's asked to sort it before you go.
 
-# character: kiera, cheerful, right
-# speaker: kiera
+# character: mahalia, cheerful, right
+# speaker: Mahalia
 "You're good at this, though. Look at that."
 
-# character: kiera, cheerful, right
-# speaker: kiera
+# character: mahalia, cheerful, right
+# speaker: Mahalia
 "You clean up so well."
 
 # background: kitchenette
@@ -228,21 +228,21 @@ Forty minutes later the thread resolves without you, in the direction you pointe
 
 ~ composure = composure - 1
 
-// 3c — Jean
+// 3c — Fiona
 
 # background: slack_ui
 # thought
-You DM Jean asking for ten minutes on a deploy issue.
+You DM Fiona asking for ten minutes on a deploy issue.
 
 # background: slack_ui
-# speaker: jean
+# speaker: Fiona
 "sure — what do i get in return 😉"
 
 * ["A working deploy."]
     ~ standing = standing + 1
     ~ composure = composure - 1
     # background: slack_ui
-    # speaker: jean
+    # speaker: Fiona
     "hahaha ok ok. 5 mins."
     # background: slack_ui
     # thought
@@ -252,7 +252,7 @@ You DM Jean asking for ten minutes on a deploy issue.
 * ["lol"]
     ~ composure = composure - 2
     # background: slack_ui
-    # speaker: jean
+    # speaker: Fiona
     "gimme 5."
     # background: slack_ui
     # thought
@@ -277,8 +277,8 @@ You DM Jean asking for ten minutes on a deploy issue.
 # thought
 Five past five. You've re-cut the report and you're presenting it in ten minutes.
 
-# character: linda, neutral, centre
-# speaker: linda
+# character: reyana, neutral, centre
+# speaker: Reyana
 "Before we start — someone needs to take the minutes."
 
 # background: meeting_room
@@ -309,8 +309,8 @@ She looks around the table. The look completes on you. It always completes on yo
     ~ standing = standing - 1
     ~ composure = composure + 1
     ~ note_taker = true
-    # character: linda, neutral, centre
-    # speaker: linda
+    # character: reyana, neutral, centre
+    # speaker: Reyana
     "Sure."
     # background: meeting_room
     # thought
@@ -320,22 +320,22 @@ She looks around the table. The look completes on you. It always completes on yo
 * ["I'm presenting in ten — I'd rather not be typing through it."]
     ~ standing = standing + 1
     ~ composure = composure - 1
-    # character: linda, neutral, centre
-    # speaker: linda
+    # character: reyana, neutral, centre
+    # speaker: Reyana
     "Fair."
-    # character: linda, neutral, centre
-    # speaker: linda
-    "Chesca?"
+    # character: reyana, neutral, centre
+    # speaker: Reyana
+    "Ellie?"
     # background: meeting_room
     # thought
-    Chesca takes them without comment. It was that easy for someone. It was never going to be that easy for you, and you've spent something to find out.
+    Ellie takes them without comment. It was that easy for someone. It was never going to be that easy for you, and you've spent something to find out.
     -> sc4_body
 
 
 === sc4_body ===
 
-# character: linda, neutral, centre
-# speaker: linda
+# character: reyana, neutral, centre
+# speaker: Reyana
 "Settlement job. The retry logic's double-firing on the reconciliation batch."
 
 # background: meeting_room
@@ -380,13 +380,13 @@ Both hands on the keyboard. Someone is mid-sentence and you are three words behi
 
 === sc4_resolve ===
 
-# character: chesca, neutral, left
-# speaker: chesca
+# character: ellie, neutral, left
+# speaker: Ellie
 "Is it an idempotency thing? Like, is the retry key scoped to the batch?"
 
-# character: linda, neutral, centre
-# speaker: linda
-"Probably. Good — Chesca, can you take a look tomorrow?"
+# character: reyana, neutral, centre
+# speaker: Reyana
+"Probably. Good — Ellie, can you take a look tomorrow?"
 
 # background: meeting_room
 # thought
@@ -410,11 +410,11 @@ Morning: forty-one comments. Naming conventions. A suggestion to split a nine-li
 
 # background: home_evening
 # thought
-One of them is Sarah, and it's the most useful review on there. She's spent twenty minutes on it. She's being kind.
+One of them is Pauline, and it's the most useful review on there. She's spent twenty minutes on it. She's being kind.
 
 # background: home_evening
 # thought
-Chesca's PR, opened the same night, four files changed.
+Ellie's PR, opened the same night, four files changed.
 
 # background: home_evening
 # thought

@@ -39,9 +39,9 @@ There's a new starter on the floor. Backend, junior, started Monday on the other
 # thought
 Two people mention it to you before ten. Both of them mention it the same way.
 
-# character: kiera, cheerful, right
-# speaker: kiera
-"Have you met Owen? You two should get coffee."
+# character: mahalia, cheerful, right
+# speaker: Mahalia
+"Have you met Sandes? You two should get coffee."
 
 ~ composure = composure - 1
 
@@ -59,20 +59,20 @@ Two people mention it to you before ten. Both of them mention it the same way.
 Delia catches you before standup. She's pleased about something.
 
 # character: delia, warm, centre
-# speaker: delia
-"Owen — I'd like you to mentor him. Informally, nothing heavy. You've had a harder ramp than you should have and I think that makes you good at it."
+# speaker: Delia
+"Sandes — I'd like you to mentor him. Informally, nothing heavy. You've had a harder ramp than you should have and I think that makes you good at it."
 
 # background: small_room
 # thought
 It's a compliment. It's also the first time all quarter she's sought you out.
 
 # character: delia, warm, centre
-# speaker: delia
+# speaker: Delia
 "Also — Culture Club's short a rep and I put your name down. It's an hour a fortnight."
 
 {deflected:
     # character: delia, warm, centre
-    # speaker: delia
+    # speaker: Delia
     "You're easy to have around. People notice that."
 }
 
@@ -88,10 +88,10 @@ It's a compliment. It's also the first time all quarter she's sought you out.
     ~ standing = standing - 1
     ~ composure = composure + 1
     # character: delia, warm, centre
-    # speaker: delia
+    # speaker: Delia
     "Course."
     # character: delia, warm, centre
-    # speaker: delia
+    # speaker: Delia
     "I'll ask Marcus."
     # background: small_room
     # thought
@@ -102,13 +102,13 @@ It's a compliment. It's also the first time all quarter she's sought you out.
     ~ standing = standing - 1
     ~ composure = composure + 2
     # character: delia, warm, centre
-    # speaker: delia
+    # speaker: Delia
     "Because—"
     # background: small_room
     # thought
     She stops. She actually stops.
     # character: delia, uncertain, centre
-    # speaker: delia
+    # speaker: Delia
     "That's a fair question. Let me think about that."
     # background: small_room
     # thought
@@ -148,36 +148,36 @@ Your face is still on the careers page.
 === sc5_room ===
 
 # background: meeting_room
-# character: owen, eager, left
+# character: sandes, eager, left
 # thought
-Sprint review. Owen, nine weeks in now, says the thing about the connection pool, and it's right, and it goes past the room like a car going past a bus stop.
+Sprint review. Sandes, nine weeks in now, says the thing about the connection pool, and it's right, and it goes past the room like a car going past a bus stop.
 
 # background: meeting_room
 # thought
-Four minutes. Then Chesca says it back, slightly better.
+Four minutes. Then Ellie says it back, slightly better.
 
-# character: linda, neutral, centre
-# speaker: linda
-"Nice one, Chesca."
+# character: reyana, neutral, centre
+# speaker: Reyana
+"Nice one, Ellie."
 
 # background: meeting_room
 # thought
-Owen's face does the exact thing you've spent three months learning not to let your face do.
+Sandes's face does the exact thing you've spent three months learning not to let your face do.
 
 // The good ending sits behind a -2 standing hit on purpose. A player
 // optimising for the review will not take it. That's the argument.
-* ["That was Owen's, four minutes ago."]
+* ["That was Sandes's, four minutes ago."]
     ~ standing = standing - 2
     ~ backed_owen = true
     # background: meeting_room
     # thought
-    The room does what the room does. Linda says "sure, sure" and moves on.
+    The room does what the room does. Reyana says "sure, sure" and moves on.
     # background: meeting_room
     # thought
-    Afterwards, two separate people describe you as a bit intense lately. Owen doesn't thank you and probably didn't register it clearly enough to.
+    Afterwards, two separate people describe you as a bit intense lately. Sandes doesn't thank you and probably didn't register it clearly enough to.
     -> sc5_calibration
 
-* [Message Owen privately: "that was yours."]
+* [Message Sandes privately: "that was yours."]
     ~ composure = composure + 1
     # background: meeting_room
     # thought
@@ -207,16 +207,16 @@ Quarter end. Forty minutes, scheduled for thirty.
 The numbers are good. The migration shipped. Nobody disputes any of it.
 
 # character: delia, neutral, centre
-# speaker: delia
+# speaker: Delia
 "Delivery's strong. Where it gets complicated is communication style."
 
 # character: delia, neutral, centre
-# speaker: delia
+# speaker: Delia
 "There's a perception you're — the word that came back twice was prickly. Once was hard to read."
 
 {note_taker:
     # character: delia, neutral, centre
-    # speaker: delia
+    # speaker: Delia
     "And there's a sense you're not always driving the room. Which surprised me, because you're in every room."
 }
 
@@ -237,7 +237,7 @@ The numbers are good. The migration shipped. Nobody disputes any of it.
     # thought
     A long pause.
     # character: delia, uncertain, centre
-    # speaker: delia
+    # speaker: Delia
     "That's — yeah. Okay."
     # background: small_room
     # thought
@@ -274,7 +274,7 @@ The numbers are good. The migration shipped. Nobody disputes any of it.
     # thought
     And then you stop, because it turns out there's a limit to how many of these you can say out loud in a row.
     # character: delia, uncertain, centre
-    # speaker: delia
+    # speaker: Delia
     "Go on. Please."
     # background: small_room
     # thought
@@ -289,7 +289,7 @@ The numbers are good. The migration shipped. Nobody disputes any of it.
 }
 
 # character: delia, uncertain, centre
-# speaker: delia
+# speaker: Delia
 "I know."
 
 -> sc5_reveal
@@ -305,19 +305,19 @@ The numbers are good. The migration shipped. Nobody disputes any of it.
 === sc5_reveal ===
 
 # character: delia, uncertain, centre
-# speaker: delia
+# speaker: Delia
 "Can I tell you why I did what I did? Because I want to be straight with you and I've never actually said this to anyone."
 
 # character: delia, uncertain, centre
-# speaker: delia
+# speaker: Delia
 "When the thing went round about how you got the ledger work — I heard it in week six. And the correct move, obviously, is to shut it down. Publicly. Be seen backing you."
 
 # character: delia, uncertain, centre
-# speaker: delia
+# speaker: Delia
 "And I didn't, because if I'd stood up in front of the floor and defended you, every single person in that room would have decided that confirmed it."
 
 # character: delia, uncertain, centre
-# speaker: delia
+# speaker: Delia
 "So the smart thing was distance. Give it nothing to feed on. Let it starve."
 
 # background: small_room
@@ -325,12 +325,12 @@ The numbers are good. The migration shipped. Nobody disputes any of it.
 She's still explaining. She thinks she's describing something sensible, because she is.
 
 # character: delia, uncertain, centre
-# speaker: delia
+# speaker: Delia
 "And it did starve, more or less, and—"
 
 // The beat. The sentence does not finish.
 # character: delia, uncertain, centre
-# speaker: delia
+# speaker: Delia
 "...and you did the whole migration on your own."
 
 # background: small_room
@@ -338,22 +338,22 @@ She's still explaining. She thinks she's describing something sensible, because 
 Silence.
 
 # character: delia, uncertain, centre
-# speaker: delia
+# speaker: Delia
 "I took the one person who could have said 'he's good, I hired him, that's the end of it' — and I removed her. That was me. I did that."
 
 # character: delia, uncertain, centre
-# speaker: delia
+# speaker: Delia
 "I thought I was protecting you from it. I was protecting you from me, and you needed me."
 
 {named_it:
     # character: delia, uncertain, centre
-    # speaker: delia
-    "And when you came to Robyn in October, I was told, and I stayed out of that too. Same reasoning. God."
+    # speaker: Delia
+    "And when you came to Vanna in October, I was told, and I stayed out of that too. Same reasoning. God."
 }
 
 // She doesn't apologise. An apology would let both of them off early.
 # character: delia, uncertain, centre
-# speaker: delia
+# speaker: Delia
 "I don't know what to do with that. I'm going to have to sit with it."
 
 -> sc5_endings
@@ -393,7 +393,7 @@ The promotion goes through in January. It's real and you earned it, and the way 
 
 # background: openplan_morning
 # thought
-March. Owen catches you by the window, embarrassed, and asks how you handle Kiera — because she said something to him about his shirt and he doesn't know if he's allowed to mind.
+March. Sandes catches you by the window, embarrassed, and asks how you handle Mahalia — because she said something to him about his shirt and he doesn't know if he's allowed to mind.
 
 # background: openplan_morning
 # thought
@@ -430,7 +430,7 @@ You're still here. You still recognise yourself.
 
 # background: kitchenette
 # thought
-March. Owen catches you by the window and asks how you handle Kiera — because she said something about his shirt and he doesn't know if he's allowed to mind.
+March. Sandes catches you by the window and asks how you handle Mahalia — because she said something about his shirt and he doesn't know if he's allowed to mind.
 
 # speaker: you
 "You're allowed to mind."

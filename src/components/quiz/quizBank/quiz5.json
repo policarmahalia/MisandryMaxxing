@@ -73,7 +73,7 @@
   },
   {
     "topic": "Being an Ethical Bystander",
-    "question": "Owen's idea is repeated back by Chesca and credited to her. What distinguishes ethical bystander action from private sympathy?",
+    "question": "Sandes's idea is repeated back by Ellie and credited to her. What distinguishes ethical bystander action from private sympathy?",
     "options": [
       {
         "text": "It happens in the room, in public, where the credit was lost",
@@ -88,17 +88,17 @@
       {
         "text": "It counts whether or not the person notices or thanks them",
         "isIssue": true,
-        "note": "Owen doesn't thank him and probably didn't register it. It was still the thing worth doing, which is the least comfortable part of the answer."
+        "note": "Sandes doesn't thank him and probably didn't register it. It was still the thing worth doing, which is the least comfortable part of the answer."
       },
       {
-        "text": "Messaging Owen privately achieves the same outcome with less conflict",
+        "text": "Messaging Sandes privately achieves the same outcome with less conflict",
         "isIssue": false,
-        "note": "It achieves a different outcome: Owen feels seen, and the room still thinks it was Chesca's. Kind, free, and it changes nothing."
+        "note": "It achieves a different outcome: Sandes feels seen, and the room still thinks it was Ellie's. Kind, free, and it changes nothing."
       },
       {
         "text": "It involves reporting the incident to a manager afterwards",
         "isIssue": false,
-        "note": "Linda was in the room and said \"nice one, Chesca.\" There is no afterwards that fixes a thing that needed four seconds at the time."
+        "note": "Reyana was in the room and said \"nice one, Ellie.\" There is no afterwards that fixes a thing that needed four seconds at the time."
       },
       {
         "text": "It requires being more senior than the person who took the credit",

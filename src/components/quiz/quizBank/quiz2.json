@@ -1,46 +1,146 @@
 [
   {
     "topic": "Unpacking Gender-Based Violence",
-    "question": "The boss pulled him off his own presentation to make him take notes instead. What pattern does this reflect?",
+    "question": "BOSS pulled him off his own presentation to make him take notes instead. What pattern does this reflect?",
     "options": [
-      "Assuming administrative/support work belongs to him regardless of what he'd earned or prepared",
-      "A random scheduling mix-up with no deeper pattern",
-      "A performance issue with his previous work",
-      "A rotation system every employee goes through equally"
-    ],
-    "correctAnswer": 0
+      {
+        "text": "Support work is assumed to be his regardless of what he'd earned or prepared",
+        "isIssue": true,
+        "note": "He spent half the night on it. That fact never enters the conversation, because the decision wasn't about the work."
+      },
+      {
+        "text": "\"Sweetie\" arrives before the instruction and does half of its work",
+        "isIssue": true,
+        "note": "It sets the register. By the time the actual sentence lands, the room already knows what kind of person is being addressed."
+      },
+      {
+        "text": "The reassignment goes to Reyana without anyone weighing the two of them",
+        "isIssue": true,
+        "note": "Nobody compares preparation. Reyana presents because Reyana is the obvious person to present, and that obviousness is the whole problem."
+      },
+      {
+        "text": "A random scheduling mix-up with no deeper pattern",
+        "isIssue": false,
+        "note": "Possible on day two. It's the fourth time by Friday that this reading stops being available."
+      },
+      {
+        "text": "A performance issue with his previous work",
+        "isIssue": false,
+        "note": "He's two days in. There is no previous work, which is the point — the assessment arrived before any evidence could."
+      },
+      {
+        "text": "A rotation every employee goes through equally",
+        "isIssue": false,
+        "note": "Then it would have a name, a schedule and a next person. Track who takes minutes across the week."
+      }
+    ]
   },
   {
     "topic": "Healthy Relationships, Consent & Boundaries",
-    "question": "He said, \"Actually, I'd really like to present. I've prepared extensively.\" What happened to that boundary?",
+    "question": "He said \"Actually, I'd really like to present. I've prepared extensively.\" What happened to that boundary?",
     "options": [
-      "It was brushed off with \"cute\" and overridden without any real consideration",
-      "It was respected and he got to present after all",
-      "It was discussed calmly and a compromise was reached",
-      "He never actually stated it out loud"
-    ],
-    "correctAnswer": 0
+      {
+        "text": "It was brushed off with \"cute\" and overridden without consideration",
+        "isIssue": true,
+        "note": "\"Cute\" is the whole reply. It doesn't engage the request; it reclassifies the person making it."
+      },
+      {
+        "text": "He stated it correctly and clearly, and that changed nothing",
+        "isIssue": true,
+        "note": "Worth sitting with, because the advice he'll get later is to speak up. He did. On day two, plainly, with a reason."
+      },
+      {
+        "text": "The cost of asking landed on him — the room now has him filed as difficult",
+        "isIssue": true,
+        "note": "\"We don't have all day\" makes his one sentence the thing holding everyone up."
+      },
+      {
+        "text": "It was respected and he got to present after all",
+        "isIssue": false,
+        "note": "Reyana presents. He takes notes."
+      },
+      {
+        "text": "It was discussed calmly and a compromise was reached",
+        "isIssue": false,
+        "note": "There was no discussion. Two words and an instruction."
+      },
+      {
+        "text": "He never actually stated it out loud",
+        "isIssue": false,
+        "note": "He did, on the record, in front of the room. Misremembering this is how \"he never said anything\" gets said later."
+      }
+    ]
   },
   {
     "topic": "Being an Ethical Bystander",
-    "question": "When the whole room laughed at his \"sonion rings\" slip, Linda was the one who pointed it out. What would ethical bystander behavior have looked like instead?",
+    "question": "The room laughed at his \"sonion rings\" slip, and Reyana was the one who pointed it out. What would ethical bystander behaviour have looked like?",
     "options": [
-      "Someone redirecting the moment rather than piling onto the laughter",
-      "Waiting for him to laugh at himself first",
-      "Recording the moment to bring up in his performance review",
-      "Nothing — reacting to an honest mistake is fine"
-    ],
-    "correctAnswer": 0
+      {
+        "text": "Redirecting the moment rather than piling onto the laughter",
+        "isIssue": true,
+        "note": "Someone answering the actual lunch question would have ended it in four seconds."
+      },
+      {
+        "text": "Not repeating the slip back for a second, bigger laugh",
+        "isIssue": true,
+        "note": "The first laugh was reflex. Reyana's callback was a choice, made after seeing the room go quiet."
+      },
+      {
+        "text": "Noticing that his suggestion was ignored before the slip was ever the subject",
+        "isIssue": true,
+        "note": "He was invisible first and funny second. The silence came before the laughter."
+      },
+      {
+        "text": "Waiting for him to laugh at himself first",
+        "isIssue": false,
+        "note": "That makes his own humiliation the permission slip, and he has to perform being fine to get it."
+      },
+      {
+        "text": "Recording it to raise in his performance review",
+        "isIssue": false,
+        "note": "Wildly disproportionate to a lunch order, and it moves a four-second problem into a formal process he'd have to survive."
+      },
+      {
+        "text": "Nothing — reacting to an honest mistake is fine",
+        "isIssue": false,
+        "note": "Reacting is fine. Repeating it for a bigger laugh, at the person the room had just ignored, is a different act."
+      }
+    ]
   },
   {
     "topic": "Trauma-Informed Response",
-    "question": "He ends the scene thinking, \"Just once in my life I'd like to go an entire day without having a bruh moment.\" What does this reveal, and what response would help?",
+    "question": "He ends the scene thinking \"just once I'd like to go a whole day without a bruh moment.\" What does that reveal, and what would help?",
     "options": [
-      "A pattern of repeated small humiliations — someone acknowledging that pattern would help more than brushing off one moment",
-      "He's overreacting to a single joke and should let it go",
-      "Nothing needs to happen; this is normal workplace banter",
-      "He should be told to develop a thicker skin"
-    ],
-    "correctAnswer": 0
+      {
+        "text": "It's a pattern, not an incident — and naming the pattern helps more than excusing one moment",
+        "isIssue": true,
+        "note": "\"Just once\" is doing the work. He's counting, which means there's something to count."
+      },
+      {
+        "text": "He's already decided not to say anything about it",
+        "isIssue": true,
+        "note": "The thought is a joke he makes to himself. That's what it looks like when someone has worked out that raising it costs more than carrying it."
+      },
+      {
+        "text": "Asking what he'd want done, rather than deciding on his behalf",
+        "isIssue": true,
+        "note": "On day two he has no read on which of these people are safe. Handing him the choice is the only way he gets one."
+      },
+      {
+        "text": "He's overreacting to a single joke and should let it go",
+        "isIssue": false,
+        "note": "It isn't a single joke. It's the second thing in one meeting, and the meeting was his second day."
+      },
+      {
+        "text": "Nothing needs to happen — this is normal workplace banter",
+        "isIssue": false,
+        "note": "It is normal. Both things are true, and \"normal\" describes how often it happens rather than whether it costs anything."
+      },
+      {
+        "text": "He should be told to develop a thicker skin",
+        "isIssue": false,
+        "note": "This is the advice the game watches him take. By Friday you can see what it cost him."
+      }
+    ]
   }
 ]
