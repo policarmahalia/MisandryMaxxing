@@ -1,0 +1,46 @@
+[
+  {
+    "topic": "Unpacking Gender-Based Violence",
+    "question": "The boss pulled him off his own presentation to make him take notes instead. What pattern does this reflect?",
+    "options": [
+      "Assuming administrative/support work belongs to him regardless of what he'd earned or prepared",
+      "A random scheduling mix-up with no deeper pattern",
+      "A performance issue with his previous work",
+      "A rotation system every employee goes through equally"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "topic": "Healthy Relationships, Consent & Boundaries",
+    "question": "He said, \"Actually, I'd really like to present. I've prepared extensively.\" What happened to that boundary?",
+    "options": [
+      "It was brushed off with \"cute\" and overridden without any real consideration",
+      "It was respected and he got to present after all",
+      "It was discussed calmly and a compromise was reached",
+      "He never actually stated it out loud"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "topic": "Being an Ethical Bystander",
+    "question": "When the whole room laughed at his \"sonion rings\" slip, Linda was the one who pointed it out. What would ethical bystander behavior have looked like instead?",
+    "options": [
+      "Someone redirecting the moment rather than piling onto the laughter",
+      "Waiting for him to laugh at himself first",
+      "Recording the moment to bring up in his performance review",
+      "Nothing — reacting to an honest mistake is fine"
+    ],
+    "correctAnswer": 0
+  },
+  {
+    "topic": "Trauma-Informed Response",
+    "question": "He ends the scene thinking, \"Just once in my life I'd like to go an entire day without having a bruh moment.\" What does this reveal, and what response would help?",
+    "options": [
+      "A pattern of repeated small humiliations — someone acknowledging that pattern would help more than brushing off one moment",
+      "He's overreacting to a single joke and should let it go",
+      "Nothing needs to happen; this is normal workplace banter",
+      "He should be told to develop a thicker skin"
+    ],
+    "correctAnswer": 0
+  }
+]
