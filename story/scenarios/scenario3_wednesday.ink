@@ -10,9 +10,8 @@
 //     other reading. No choice unlocks the truth. If a playtester asks "so did
 //     she or didn't she", that's the chapter working.
 //   - The credit is not recovered. Every route converges on him redoing it.
-//   - No villains. Delia is tired, Pauline is warm, Reyana is efficient, Fiona is
-//     joking, Mahalia means it as a compliment. The damage is cumulative and
-//     unattributable.
+//   - No villains. Delia is tired, Pauline is warm, Reyana is efficient and
+//     Fiona is joking. The damage is cumulative and unattributable.
 //
 // Delia is the senior director. She is NOT the BOSS character from Scenario 2
 // and 4 — that's a different, deliberately unnamed person, and Scenario 4
@@ -130,7 +129,7 @@ There's no earlier version in the folder. There might have been, and there might
 {asked_pauline:
     -> sc2_pauline
 - else:
-    -> sc3_kitchenette
+    -> sc3_small_things
 }
 
 
@@ -164,7 +163,7 @@ She's genuinely pleased to see you.
     # background: kitchenette
     # thought
     She doesn't. Not out of malice — the day gets away from her, the same way it gets away from everyone.
-    -> sc3_kitchenette
+    -> sc3_small_things
 
 * ["No, that was probably it."]
     ~ standing = standing + 1
@@ -172,7 +171,7 @@ She's genuinely pleased to see you.
     # background: kitchenette
     # thought
     You watch yourself do it. She is relieved and you are the reason.
-    -> sc3_kitchenette
+    -> sc3_small_things
 
 * ["You could have asked me first."]
     ~ standing = standing - 1
@@ -183,34 +182,14 @@ She's genuinely pleased to see you.
     # background: kitchenette
     # thought
     She says it immediately and completely, and it changes nothing, because the report still says Pauline.
-    -> sc3_kitchenette
+    -> sc3_small_things
 
 
 // ============================================================
 // Scene 3 — Small Things
+// (the kitchenette beat was cut; this opens on the thread now)
 // ============================================================
-=== sc3_kitchenette ===
-
-// 3a — no fork. Ten seconds long, and it lands harder as something that
-// simply happens to him.
-
-# background: kitchenette
-# thought
-Half four. You're the last one near the kitchenette, so you're the one who's asked to sort it before you go.
-
-# character: mahalia, cheerful, right
-# speaker: Mahalia
-"You're good at this, though. Look at that."
-
-# character: mahalia, cheerful, right
-# speaker: Mahalia
-"You clean up so well."
-
-# background: kitchenette
-# thought
-She means it as a compliment. It is one, structurally.
-
-~ composure = composure - 1
+=== sc3_small_things ===
 
 // 3b — the thread
 

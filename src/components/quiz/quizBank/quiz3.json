@@ -37,37 +37,37 @@
   },
   {
     "topic": "Healthy Relationships, Consent & Boundaries",
-    "question": "Mahalia's \"you clean up so well\" is delivered as a compliment. Why is it still a problem?",
+    "question": "He asks Fiona for ten minutes on a deploy issue and she replies \"what do i get in return 😉\". She's joking, and she helps. What's the problem?",
     "options": [
       {
-        "text": "It rewards him for work outside his role that he was singled out to do",
+        "text": "Ordinary collegial help got priced, even in jest",
         "isIssue": true,
-        "note": "He was the last one near the kitchenette, and that was enough. Praise for it closes the loop: the task was his, and he was good at it, so it stays his."
+        "note": "Everyone else gets a hand with a bug for free. Once there's a price, he has to work out what the currency is before he can ask again."
       },
       {
-        "text": "It frames domestic competence as his contribution on a day he did the report twice",
+        "text": "The winking framing makes him guess which reading to answer",
         "isIssue": true,
-        "note": "Nobody complimented the report. Two people said it was good in the meeting, and this is the line he takes home."
+        "note": "He has about a second to decide whether it's flirtation or banter, and he wears it either way if he guesses wrong."
       },
       {
-        "text": "The second meaning lands on his appearance whether or not it was intended",
+        "text": "It costs him something whichever way he answers",
         "isIssue": true,
-        "note": "It works twice and he has to decide, in the moment, which one to hear. Meaning it kindly doesn't spare him that."
+        "note": "Playing along costs composure. Not playing along costs standing. Closing the DM costs both and he solves it alone. There is no free reply."
       },
       {
-        "text": "She used an unprofessional tone of voice",
+        "text": "She was joking and he took it too seriously",
         "isIssue": false,
-        "note": "Her tone was warm. That's what makes it hard to point at, and it's why he says nothing."
+        "note": "She was joking, and she is good, and she helps — the scenario says all three. None of that removes the second he spent deciding how to respond."
       },
       {
-        "text": "She should have offered to help him clean",
+        "text": "She should have helped without being asked at all",
         "isIssue": false,
-        "note": "It would have been nice. It also leaves intact the bit that matters — that he was the one asked."
+        "note": "He asked, which is normal. The asking isn't the problem."
       },
       {
-        "text": "It was said in front of other colleagues",
+        "text": "It was over DM rather than said in person",
         "isIssue": false,
-        "note": "An audience makes it stick. Said in an empty kitchen it would carry exactly the same message."
+        "note": "In person it would be the same sentence with a face attached. The channel isn't what makes it land."
       }
     ]
   },
@@ -108,38 +108,38 @@
     ]
   },
   {
-    "topic": "Trauma-Informed Response",
-    "question": "He tells a colleague he thinks his work was taken, but admits he can't prove it. What is a trauma-informed response?",
+    "topic": "Unpacking Gender-Based Violence",
+    "question": "His pull request gets forty-one comments. Ellie's, opened the same night, gets \"LGTM\". What does the comparison show?",
     "options": [
       {
-        "text": "Believe him without requiring proof first",
+        "text": "The same work is held to a different standard of scrutiny depending on who submitted it",
         "isIssue": true,
-        "note": "He has already spent a day being disbelieved by someone holding the only evidence. Starting from belief is the entire difference between support and a second interrogation."
+        "note": "Four files changed against a solid piece of code he knew was solid. The difference isn't in the diffs."
       },
       {
-        "text": "Acknowledge that not knowing is its own harm",
+        "text": "The reviewing is individually reasonable and collectively a tax",
         "isIssue": true,
-        "note": "Naming the ambiguity as real is a relief. It stops him privately wondering whether the problem is that he's paranoid."
+        "note": "No single comment is unfair. Naming, spacing, a question already answered a line above — forty-one of them is an afternoon he doesn't get back."
       },
       {
-        "text": "Ask what he wants to do rather than telling him",
+        "text": "Being reviewed kindly and being reviewed disproportionately aren't opposites",
         "isIssue": true,
-        "note": "Every decision that day was made over his head. This is the one that doesn't have to be."
+        "note": "Pauline's is the most useful review on there and she spent twenty minutes being genuinely helpful. She is also one of the forty-one."
       },
       {
-        "text": "Advise him to escalate to HR immediately",
+        "text": "His code was probably worse and deserved the attention",
         "isIssue": false,
-        "note": "With what? He has no earlier version. Sending him into a process he can't win takes the decision off him and hands him a loss."
+        "note": "Possible, and unfalsifiable, which is what makes it such a comfortable explanation. Note that nobody applied the same doubt to the LGTM."
       },
       {
-        "text": "Point out that Pauline probably didn't mean it, so it's best let go",
+        "text": "Ellie's reviewers were being lazy",
         "isIssue": false,
-        "note": "Probably true, and it's an argument about intent when the thing he needs acknowledged is effect."
+        "note": "Maybe. Turning this into a complaint about her review quality moves it off the pattern and onto a person again."
       },
       {
-        "text": "Offer to confront Pauline on his behalf",
+        "text": "He should have opened a smaller pull request",
         "isIssue": false,
-        "note": "Reads as solidarity. It's still someone else deciding what happens to him, and he's the one who works next to Pauline tomorrow."
+        "note": "Advice that only he needs, arriving after the fact, and shifting the work of being reviewed fairly onto the person being reviewed."
       }
     ]
   }
