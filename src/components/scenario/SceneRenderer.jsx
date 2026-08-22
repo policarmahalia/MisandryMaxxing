@@ -1,8 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import parseTags, { getTagValue } from '../../engine/TagParser';
 import ChoicePrompt from './ChoicePrompt';
+import StatBar from './StatBar';
+
+const NO_DELTA = { standing: 0, composure: 0 };
 
 function SceneRenderer({ engine, onScenarioComplete }) {
+  const [stats, setStats] = useState(null);
+  const [deltas, setDeltas] = useState(NO_DELTA);
+  const prevStats = useRef(null);
+  const deltaTimer = useRef(null);
+  // Per-instance, not window.*: StrictMode mounts this twice in dev, and a
+  // global here meant two playthroughs sharing one advance callback and
+  // fighting over every tap.
+  const advanceQueue = useRef(null);
   const [queue, setQueue] = useState([]);
   const [dialogueText, setDialogueText] = useState('');
   const [isThought, setIsThought] = useState(false);
@@ -23,6 +34,7 @@ function SceneRenderer({ engine, onScenarioComplete }) {
       const tags = parseTags(line.tags);
       return {
         text: line.text,
+        stats: line.stats,
         scene: getTagValue(tags, 'scene'),
         speaker: getTagValue(tags, 'speaker'),
         isThought: tags.some((t) => t.type === 'thought'),
@@ -47,6 +59,7 @@ function SceneRenderer({ engine, onScenarioComplete }) {
     }
 
     const line = lines[index];
+    applyStats(line.stats);
     if (line.scene) setScene(line.scene);
     setSpeaker(line.speaker || null);
     setIsThought(line.isThought);
@@ -61,16 +74,39 @@ function SceneRenderer({ engine, onScenarioComplete }) {
       // wait for a tap. this has to happen on the final line too, otherwise the
       // queue never runs off the end and onScenarioComplete never fires.
       setAwaitingTap(true);
-      window.__advanceQueue = () => showLine(lines, index + 1, result);
+      advanceQueue.current = () => showLine(lines, index + 1, result);
     }
   }
 
-  function handleTapContinue() {
-    if (window.__advanceQueue) {
-      const next = window.__advanceQueue;
-      window.__advanceQueue = null;
-      next();
+  // Shows the new totals, and flashes the change alongside them so the player
+  // can see what the line just cost.
+  function applyStats(next) {
+    if (!next) return;
+
+    const prev = prevStats.current;
+    if (prev) {
+      const change = {
+        standing: next.standing - prev.standing,
+        composure: next.composure - prev.composure,
+      };
+      if (change.standing !== 0 || change.composure !== 0) {
+        setDeltas(change);
+        clearTimeout(deltaTimer.current);
+        deltaTimer.current = setTimeout(() => setDeltas(NO_DELTA), 1800);
+      }
     }
+
+    prevStats.current = next;
+    setStats(next);
+  }
+
+  useEffect(() => () => clearTimeout(deltaTimer.current), []);
+
+  function handleTapContinue() {
+    const next = advanceQueue.current;
+    if (!next) return;
+    advanceQueue.current = null;
+    next();
   }
 
   function handleChoice(choiceIndex) {
@@ -82,6 +118,8 @@ function SceneRenderer({ engine, onScenarioComplete }) {
   return (
     <div className="scene-container" onClick={awaitingTap ? handleTapContinue : undefined}>
       <img className="scene-art-fullbleed" src={`/assets/scenes/${scene}.png`} alt="scene" />
+
+      <StatBar stats={stats} deltas={deltas} />
 
       {!promptOpen && (
         <div className={isThought ? 'thought-box' : 'dialogue-box'}>
