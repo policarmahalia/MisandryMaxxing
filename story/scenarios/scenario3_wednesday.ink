@@ -34,36 +34,37 @@ VAR kept_receipts = false
 // Scene 1 — The Report
 // ============================================================
 
-# background: openplan_morning
+# background: boss_intro
 # thought
 You finalise the system performance report at 10:40. Charts, appendix, the lot.
 
-# background: openplan_morning
+# background: boss_intro
 # thought
 Save to the shared drive, link it to Delia and the wider team, go and get a coffee.
 
-# background: openplan_morning
+# background: boss_intro
 # thought
 At 11:15 Delia is standing at your desk with her laptop open.
 
-# background: openplan_morning
+# background: boss_scolding
 # character: delia, tired, right
 # speaker: Delia
 "This isn't what I was expecting."
 
-# background: openplan_morning
+# background: boss_showing
 # thought
 She turns the screen. It's the report, dated Tuesday, three charts short, the settlement figures un-reconciled. It's a draft you abandoned two days ago.
 
-# background: openplan_morning
+# background: boss_intro
 # thought
 Your name isn't on it. Pauline's is.
 
+# background: boss_scolding
 # character: delia, tired, right
 # speaker: Delia
 "Pauline's redone most of it from scratch. I'm not thrilled about where that leaves the afternoon."
 
-# background: openplan_morning
+# background: boss_intro
 # thought
 She isn't angry. That's somehow worse.
 
@@ -74,7 +75,7 @@ She isn't angry. That's somehow worse.
     # character: delia, tired, right
     # speaker: Delia
     "I don't need a forensic investigation, I need the report."
-    # background: openplan_morning
+    # background: boss_intro
     # thought
     She's already looking at her phone.
     # speaker: Delia
@@ -85,7 +86,7 @@ She isn't angry. That's somehow worse.
     ~ standing = standing - 2
     ~ composure = composure + 1
     ~ named_pauline = true
-    # background: openplan_morning
+    # background: boss_intro
     # thought
     A pause.
     # character: delia, cool, right
@@ -101,7 +102,7 @@ She isn't angry. That's somehow worse.
     # character: delia, tired, right
     # speaker: Delia
     "Thank you."
-    # background: openplan_morning
+    # background: boss_intro
     # thought
     She means it. She's gone in four seconds.
     -> sc1_converge
