@@ -25,7 +25,7 @@ You're confused why they'd think that.
 - else:
     # scene: shocked
     # speaker: keira
-    Keira nearly spits out her coffee. "Oh! You're serious?"
+    "Oh! You're serious?"
 }
 
 # scene: sideeyeing

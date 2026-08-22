@@ -3,60 +3,92 @@ import parseTags, { getTagValue } from '../../engine/TagParser';
 import ChoicePrompt from './ChoicePrompt';
 
 function SceneRenderer({ engine, onScenarioComplete }) {
+  const [queue, setQueue] = useState([]);
   const [dialogueText, setDialogueText] = useState('');
   const [isThought, setIsThought] = useState(false);
   const [speaker, setSpeaker] = useState(null);
   const [scene, setScene] = useState('intro');
   const [choices, setChoices] = useState([]);
   const [promptOpen, setPromptOpen] = useState(false);
+  const [awaitingTap, setAwaitingTap] = useState(false);
 
   useEffect(() => {
-    advance();
+    pullFromEngine();
   }, []);
 
-  function advance() {
+  // pulls a fresh batch of lines from inkjs and starts displaying them one by one
+  function pullFromEngine() {
     const result = engine.continueStory();
-    let autoAdvancing = false;
-
-    result.lines.forEach((line) => {
+    const parsedLines = result.lines.map((line) => {
       const tags = parseTags(line.tags);
-      const sceneTag = getTagValue(tags, 'scene');
-      const speakerTag = getTagValue(tags, 'speaker');
-      const thoughtTag = tags.some((t) => t.type === 'thought');
-
-      if (sceneTag) setScene(sceneTag);
-      setSpeaker(speakerTag || null);
-      setIsThought(thoughtTag);
-      setDialogueText(line.text);
-
-      if (sceneTag === 'sideeyeing') {
-        autoAdvancing = true;
-        setTimeout(() => advance(), 2000);
-      }
+      return {
+        text: line.text,
+        scene: getTagValue(tags, 'scene'),
+        speaker: getTagValue(tags, 'speaker'),
+        isThought: tags.some((t) => t.type === 'thought'),
+      };
     });
 
-    if (autoAdvancing) return;
-
+    setQueue(parsedLines);
     setChoices(result.choices);
-    setPromptOpen(result.choices.length > 0);
-
-    if (result.isEnded) onScenarioComplete();
+    showLine(parsedLines, 0, result);
   }
 
-  function handleChoice(index) {
+  // displays a single line from the queue at the given index
+  function showLine(lines, index, result) {
+    if (index >= lines.length) {
+      // no more lines in this batch — show choices if any, else scenario is done
+      if (result.choices.length > 0) {
+        setAwaitingTap(false);
+        setPromptOpen(true);
+      }
+      if (result.isEnded) onScenarioComplete();
+      return;
+    }
+
+    const line = lines[index];
+    if (line.scene) setScene(line.scene);
+    setSpeaker(line.speaker || null);
+    setIsThought(line.isThought);
+    setDialogueText(line.text);
     setPromptOpen(false);
-    engine.choose(index);
-    setTimeout(advance, 200);
+
+    if (line.scene === 'sideeyeing') {
+      // auto-advance after 2s, no tap needed
+      setAwaitingTap(false);
+      setTimeout(() => showLine(lines, index + 1, result), 2000);
+    } else if (index + 1 < lines.length || result.choices.length > 0) {
+      // more lines queued, or choices coming next — wait for tap
+      setAwaitingTap(true);
+      window.__advanceQueue = () => showLine(lines, index + 1, result);
+    } else {
+      setAwaitingTap(false);
+    }
+  }
+
+  function handleTapContinue() {
+    if (window.__advanceQueue) {
+      const next = window.__advanceQueue;
+      window.__advanceQueue = null;
+      next();
+    }
+  }
+
+  function handleChoice(choiceIndex) {
+    setPromptOpen(false);
+    engine.choose(choiceIndex);
+    setTimeout(pullFromEngine, 200);
   }
 
   return (
-    <div className="scene-container">
+    <div className="scene-container" onClick={awaitingTap ? handleTapContinue : undefined}>
       <img className="scene-art-fullbleed" src={`/assets/scenes/${scene}.png`} alt="scene" />
 
       {!promptOpen && (
         <div className={isThought ? 'thought-box' : 'dialogue-box'}>
           {speaker && <span className="speaker-name">{speaker}</span>}
           <p>{isThought ? `[${dialogueText}]` : dialogueText}</p>
+          {awaitingTap && <span className="tap-indicator">▼</span>}
         </div>
       )}
 
