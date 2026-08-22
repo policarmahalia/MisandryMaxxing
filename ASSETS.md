@@ -75,6 +75,35 @@ scenario 3 runs today with whatever is in the folder and falls back to black.
 
 ---
 
+## Scenario 4 — Thursday
+
+Content warning scenario. Reuses `home_evening`, `openplan_morning` and
+`kitchenette` from Wednesday. Three new backgrounds, two new characters.
+
+### Backgrounds
+
+| Tag | Where it's used | Feel |
+|---|---|---|
+| `black` | The content warning card, and the skip summary. | Not a drawing — a flat black field the warning text sits on. Can be pure CSS if that's easier. |
+| `meeting_room_night` | **The whole harassment sequence**, both scenes and all eight responses. | 19:50, floor empty, door pushed shut, corridor light on a sensor flicking on and off. It should look like an ordinary meeting room after hours, because it is one. **Nothing menacing in the staging** — the register note is "nobody leers, including the prose", and that goes for the art. |
+| `small_room` | The People and Culture conversation, all three outcomes. | A small booked room. Robyn is kind and the room should be too. The failure here is procedural, not personal, and the picture shouldn't telegraph it. |
+
+### Characters
+
+| Tag | Where it's used | Notes |
+|---|---|---|
+| `dani, relaxed, right` | Most of her lines — the opener, and the exit line afterwards. | Principal engineer, two levels up. Comfortable, friendly, entirely at ease. She is not written as a predator and must not be drawn as one; the discomfort is meant to come from the words. |
+| `dani, close, right` | The hand scene only. | Same character, closer to frame. **The change should be spatial, not expressive** — she looks exactly as friendly as before. That's the whole point of the scene. |
+| `robyn, kind, centre` | Her scene. | People and Culture. Genuinely kind, listens to the end, and cannot help. Warm, unhurried, mid-forties reading. |
+
+### Priority
+
+`meeting_room_night` is the one that matters — it carries the chapter's two
+hardest scenes and both Dani states. `black` needs no drawing. `small_room`
+could fall back to `meeting_room` at a pinch.
+
+---
+
 ## Scenario 1 — Monday
 
 Already drawn: `intro` · `surprised` · `shocked` · `sideeyeing` · `checking` ·
