@@ -146,12 +146,12 @@ function SceneRenderer({ engine, onScenarioComplete }) {
     <div className="scene-container" onClick={awaitingTap ? handleTapContinue : undefined}>
       <img
         className="scene-art-fullbleed"
-        src={`/assets/scenes/${scene}${swapped ? '_swap' : ''}.png`}
+        src={`${import.meta.env.BASE_URL}assets/scenes/${scene}${swapped ? '_swap' : ''}.png`}
         onError={(e) => {
           // swapped set not drawn yet — fall back rather than showing nothing
           if (swapped && !e.target.dataset.fellBack) {
             e.target.dataset.fellBack = '1';
-            e.target.src = `/assets/scenes/${scene}.png`;
+            e.target.src = `${import.meta.env.BASE_URL}assets/scenes/${scene}.png`;
           }
         }}
         alt="scene"
