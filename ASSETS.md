@@ -141,3 +141,25 @@ new work starts, it may already cover something scenario 3 needs.
 Missing files fall back to black and the text still plays, so **nothing here
 blocks writing scenarios 2, 4 and 5**. Tags can point at whatever exists and be
 swapped later with a find-and-replace.
+
+---
+
+## Scenario 4 art — mapping assumptions
+
+Pauleen's Thursday set arrived with descriptive filenames rather than tag names.
+Mapped as below. The three marked **?** are guesses from the filename alone and
+should be checked by eye in a playthrough — swapping any two is just a rename.
+
+| Her filename | Mapped to | Confidence |
+|---|---|---|
+| `Blankoffice` | `office_close` | confirmed — empty office desk |
+| `Suggestive` | `boss_smirk` | confirmed — leaning on the desk, smiling |
+| `Ending` | `boss_release` | confirmed — close-up, reaching, grinning |
+| `Clearinglaptop` | `boss_pleased` | ? |
+| `Taunting` | `boss_laugh` | ? |
+| `Approaching` | `boss_tie` | ? |
+| `Gripping` | `boss_pull` | ? |
+| `Crazy` | `boss_grip` | ? |
+| `Leaving` | `bed_dark` | ? — the weakest of these; `bed_dark` is him awake at night, and a frame called "Leaving" may not be that at all |
+
+`blackout` needs no drawing — the two closing lines play on flat black.
