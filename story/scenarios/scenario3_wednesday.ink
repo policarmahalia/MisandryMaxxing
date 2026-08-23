@@ -1,21 +1,5 @@
 // Scenario 3 — Wednesday
 // Working title: "Version History"
-//
-// Register: dry, underplayed. Nobody raises their voice.
-// Thesis: he does the work twice and his name is on it zero times.
-//
-// LOCKED:
-//   - Pauline's name is on the report and she keeps the credit. This used to
-//     be deliberately ambiguous with an apology scene giving her side; both
-//     were cut. She takes it, nobody investigates, and he redoes the work.
-//   - The credit is not recovered. Every route converges on him redoing it.
-//   - The sync scene was cut: scenario 2 already carries the note-taker beat,
-//     and the ghost-choice mechanic moved there with it.
-//   - Delia isn't angry, she's unbothered. That's what makes it land.
-//
-// Delia is the senior director. She is NOT the BOSS character from Scenario 2
-// and 4 — that's a different, deliberately unnamed person, and Scenario 4
-// depends on them being distinct.
 
 VAR standing = 0
 VAR composure = 0
@@ -33,35 +17,35 @@ VAR kept_receipts = false
 
 # background: boss_intro
 # thought
-You finalise the system performance report at 10:40. Charts, appendix, the lot.
+You finalise the system performance report at 10:40. You're happy with how it turned out, so you go ahead and submit it to the team.
 
 # background: boss_intro
 # thought
-Save to the shared drive, link it to Delia and the wider team, go and get a coffee.
-
-# background: boss_intro
-# thought
-At 11:15 Delia is standing at your desk with her laptop open.
+Later in the afternoon, Delia calls you into her office.
 
 # background: boss_scolding
 # speaker: Delia
 "I'm not seeing anything from you this quarter."
 
-# background: boss_showing
+# background: boss_scolding
 # thought
-She turns the screen. It's your report — your charts, your figures, the appendix you rebuilt on Monday.
+You're confused. "But I just submitted our system report this morning?"
 
 # background: boss_showing
 # thought
-Pauline's name is on it. Yours isn't anywhere.
+She turns the screen. It's your report, your charts, your figures, but the rest of the report was completely messed up and redone.
+
+# background: boss_showing
+# thought
+Pauline's name is on your section, and yours is nowhere to be found.
 
 # background: boss_scolding
 # speaker: Delia
-"Pauline's been carrying this. I need to see you pulling your weight."
+"Pauline's been carrying this. I need to see you start pulling your weight."
 
 # background: boss_intro
 # thought
-She isn't angry. She's barely interested. That's somehow worse.
+She isn't angry. She's barely interested and unimpressed.
 
 * ["That's my report. My name was on it this morning."]
     ~ standing = standing - 1
@@ -72,7 +56,7 @@ She isn't angry. She's barely interested. That's somehow worse.
     "I don't need a forensic investigation, I need the work."
     # background: boss_intro
     # thought
-    She's already looking at her phone.
+    She's already distracted doing something else.
     # speaker: Delia
     "Can you have it by four?"
     -> sc1_converge
@@ -96,10 +80,9 @@ She isn't angry. She's barely interested. That's somehow worse.
     ~ composure = composure - 2
     # background: boss_scolding
     # speaker: Delia
-    "Thank you."
+    "Yeah yeah."
     # background: boss_intro
-    # thought
-    She means it. She's gone in four seconds.
+
     -> sc1_converge
 
 
@@ -125,7 +108,7 @@ You do it again. It takes until four, and it is the second time you have written
 
 # background: slack_ui
 # thought
-The \#platform-eng thread is arguing about connection pooling. You post the actual answer, with a link to the config.
+The #platform-eng thread is arguing about connection pooling. You post the actual answer, with a link to the config.
 
 # background: slack_ui
 # thought
@@ -207,7 +190,5 @@ LGTM.
 # background: home_evening
 # thought
 The corrected report goes out at 09:02, in a shared folder with no author field.
-
-# module: quiz3
 
 -> END
