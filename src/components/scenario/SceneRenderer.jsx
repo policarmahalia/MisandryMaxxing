@@ -51,6 +51,7 @@ function SceneRenderer({ engine, onScenarioComplete }) {
         speaker: getTagValue(tags, 'speaker'),
         ghostChoices: getGhostChoices(tags),
         isThought: tags.some((t) => t.type === 'thought'),
+        isFlash: tags.some((t) => t.type === 'flash'),
       };
     });
   }
@@ -133,28 +134,27 @@ function SceneRenderer({ engine, onScenarioComplete }) {
     setGhostChoices(line.ghostChoices || null);
 
     if (line.ghostChoices) {
-      // Options he can see and cannot take. No tap — the scene moves on
-      // without him, which is the point.
-      setAwaitingTap(false);
-      autoTimer.current = setTimeout(() => showLine(lines, index + 1, result), 4000);
-    } else if (line.scene === 'sideeyeing') {
-      setAwaitingTap(false);
-      autoTimer.current = setTimeout(() => showLine(lines, index + 1, result), 2000);
-    } else if (index + 1 < lines.length) {
-      // more lines still queued in this batch — wait for tap
-      setAwaitingTap(true);
-      advanceQueue.current = () => showLine(lines, index + 1, result);
-    } else if (result.choices.length > 0) {
-      // last line in batch, but choices are coming — wait for tap then show prompt
-      setAwaitingTap(true);
-      advanceQueue.current = () => showLine(lines, index + 1, result);
-    } else if (result.isEnded) {
-      // last line in batch, no choices, story is actually done — wait for final tap then end
-      setAwaitingTap(true);
-      advanceQueue.current = () => showLine(lines, index + 1, result);
-    } else {
-      setAwaitingTap(false);
-    }
+  setAwaitingTap(false);
+  autoTimer.current = setTimeout(() => showLine(lines, index + 1, result), 4000);
+} else if (line.scene === 'sideeyeing') {
+  setAwaitingTap(false);
+  autoTimer.current = setTimeout(() => showLine(lines, index + 1, result), 2000);
+} else if (line.isFlash) {
+  // ADD THIS BRANCH — rapid cut, no tap, 0.5s hold
+  setAwaitingTap(false);
+  autoTimer.current = setTimeout(() => showLine(lines, index + 1, result), 500);
+} else if (index + 1 < lines.length) {
+  setAwaitingTap(true);
+  advanceQueue.current = () => showLine(lines, index + 1, result);
+} else if (result.choices.length > 0) {
+  setAwaitingTap(true);
+  advanceQueue.current = () => showLine(lines, index + 1, result);
+} else if (result.isEnded) {
+  setAwaitingTap(true);
+  advanceQueue.current = () => showLine(lines, index + 1, result);
+} else {
+  setAwaitingTap(false);
+}
   }
 
   // Shows the new totals, and flashes the change alongside them so the player

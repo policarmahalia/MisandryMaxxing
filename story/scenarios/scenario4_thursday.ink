@@ -10,12 +10,12 @@ VAR left_room = false
 // Scene 1 — The Office
 // ============================================================
 
-# background: office_close
+# background: boss_intro
 # thought
 Boss told you to stay back for a quick performance check.
 
-# background: office_close
-# speaker: BOSS
+# background: boss_intro
+# speaker: boss
 "So. How has your first week been?"
 
 * ["Good."]
@@ -26,74 +26,85 @@ Boss told you to stay back for a quick performance check.
 
 === perf_check ===
 
-# background: boss_pleased
-# speaker: BOSS
+# background: boss_intro
+# speaker: boss
 "I'm impressed with your performance."
 
-# background: boss_pleased
+# background: boss_intro
 # thought
 Thanks, I guess?
 
-# background: boss_smirk
-# speaker: BOSS
+# background: boss_showing
+# speaker: boss
 "I heard you went pretty above and beyond to get this role."
 
-# background: boss_smirk
+# background: boss_showing
 # thought
 What the hell does that mean?
 
-# background: boss_smirk
-# speaker: BOSS
+# background: boss_showing
+# speaker: boss
 "Are you somebody's nephew? Or..."
 
-# background: boss_smirk
-# speaker: BOSS
+# background: boss_showing
+# speaker: boss
 "...did you sleep with someone?"
 
-# background: boss_smirk
+# background: boss_showing
 # thought
 Tf??????
 
-# background: boss_laugh
-# speaker: BOSS
+# background: boss_scolding
+# speaker: boss
 "Relax. I'm just asking."
 
-# background: boss_tie
+# background: boss_scolding
 # thought
 She's standing in front of you now, playing with your tie.
 
-# background: boss_tie
-# speaker: BOSS
+# background: boss_scolding
+# speaker: boss
 "I can make things very easy for you here. Or very hard."
 
-# background: boss_tie
-# speaker: BOSS
+# background: boss_scolding
+# speaker: boss
 "The question is... how badly do you want to stay?"
 
 * ["This is inappropriate."]
     ~ froze = false
     ~ standing = standing + 1
     ~ composure = composure - 1
-    -> boss_touch
+    -> escalation
 
 * [Freeze]
     ~ froze = true
     ~ composure = composure - 2
-    -> boss_touch
+    -> escalation
 
-=== boss_touch ===
+=== escalation ===
 
-# background: boss_pull
-# thought
-Her hand slides down your arm.
+// Rapid flash-cut, 0.5s per frame, no tap needed — the scene stops pacing
+// like a conversation here on purpose.
+# background: clearing_laptop
+# flash
 
-# background: boss_pull
-# speaker: BOSS
-"Think about it. A good word from me goes a long way."
+# background: Suggestive
+# flash
 
-# background: boss_grip
-# speaker: BOSS
-"Or maybe you want to make things really easy for yourself."
+# background: Leaving
+# flash
+
+# background: Gripping
+# flash
+
+# background: Approaching
+# flash
+
+# background: Taunting
+# flash
+
+# background: Crazy
+# flash
 
 * ["I need to go."]
     ~ left_room = true
@@ -108,12 +119,12 @@ Her hand slides down your arm.
 
 === boss_release ===
 
-# background: boss_release
+# background: boss_scolding
 # thought
 She releases you, smirking.
 
-# background: boss_release
-# speaker: BOSS
+# background: boss_scolding
+# speaker: boss
 "I'll see you Monday then. Same time."
 
 -> that_night
