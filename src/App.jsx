@@ -12,7 +12,7 @@ import quiz1 from './components/quiz/quizBank/quiz1.json';
 import quiz2 from './components/quiz/quizBank/quiz2.json';
 import quiz3 from './components/quiz/quizBank/quiz3.json';
 import quiz4 from './components/quiz/quizBank/quiz4.json';
-import quiz5 from './components/quiz/quizBank/quiz5.json';
+import MusicPlayer from './components/music/MusicPlayer';
 import PrologueScene from './components/nav/PrologueScene';
 import './App.css';
 
@@ -81,6 +81,8 @@ function App() {
 
   return (
     <div className="app">
+      <MusicPlayer />
+
       {screen === 'intro' && <IntroScreen onStart={() => setScreen('prologue')} />}
 
       {screen === 'prologue' && (

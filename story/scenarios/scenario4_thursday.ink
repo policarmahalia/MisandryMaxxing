@@ -50,7 +50,7 @@ He gets out of the room. What he does about it is still his to decide.
 # thought
 Boss told you to stay back for a quick performance check.
 
-# background: boss_intro
+# background: boss_showing
 # speaker: boss
 "So. How has your first week been?"
 
@@ -62,11 +62,11 @@ Boss told you to stay back for a quick performance check.
 
 === perf_check ===
 
-# background: boss_intro
+# background: boss_showing
 # speaker: boss
 "I'm impressed with your performance."
 
-# background: boss_intro
+# background: boss_showing
 # thought
 Thanks, I guess?
 
