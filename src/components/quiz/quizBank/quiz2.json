@@ -14,9 +14,9 @@
         "note": "It sets the register. By the time the actual sentence lands, the room already knows what kind of person is being addressed."
       },
       {
-        "text": "The reassignment goes to Reyana without anyone weighing the two of them",
+        "text": "The reassignment goes to Linda without anyone weighing the two of them",
         "isIssue": true,
-        "note": "Nobody compares preparation. Reyana presents because Reyana is the obvious person to present, and that obviousness is the whole problem."
+        "note": "Nobody compares preparation. Linda presents because Linda is the obvious person to present, and that obviousness is the whole problem."
       },
       {
         "text": "A random scheduling mix-up with no deeper pattern",
@@ -57,7 +57,7 @@
       {
         "text": "It was respected and he got to present after all",
         "isIssue": false,
-        "note": "Reyana presents. He takes notes."
+        "note": "Linda presents. He takes notes."
       },
       {
         "text": "It was discussed calmly and a compromise was reached",
@@ -73,7 +73,7 @@
   },
   {
     "topic": "Being an Ethical Bystander",
-    "question": "The room laughed at his \"sonion rings\" slip, and Reyana was the one who pointed it out. What would ethical bystander behaviour have looked like?",
+    "question": "The room laughed at his \"sonion rings\" slip, and Linda was the one who pointed it out. What would ethical bystander behaviour have looked like?",
     "options": [
       {
         "text": "Redirecting the moment rather than piling onto the laughter",
@@ -83,7 +83,7 @@
       {
         "text": "Not repeating the slip back for a second, bigger laugh",
         "isIssue": true,
-        "note": "The first laugh was reflex. Reyana's callback was a choice, made after seeing the room go quiet."
+        "note": "The first laugh was reflex. Linda's callback was a choice, made after seeing the room go quiet."
       },
       {
         "text": "Noticing that his suggestion was ignored before the slip was ever the subject",

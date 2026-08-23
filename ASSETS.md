@@ -1,6 +1,6 @@
 # Art needed
 
-For Pauline. Every entry says what it is **and where it appears**, so the mood
+For Sarah. Every entry says what it is **and where it appears**, so the mood
 of the scene is on the page next to the request.
 
 **Spec:** 1951 × 1100 PNG, matching the existing set — line-art characters over
@@ -23,7 +23,7 @@ picture with the character already in it. That's what the eight existing files a
 
 ```
 # background: meeting_room
-# character: reyana, neutral, centre
+# character: linda, neutral, centre
 ```
 
 That assumes a sprite drawn on transparency, positioned over a background.
@@ -48,7 +48,7 @@ scenario 3 runs today with whatever is in the folder and falls back to black.
 All six backgrounds are drawn: `intro_ignoring` · `staring` · `awkward` ·
 `callout` · `laughing` · `meme`. **Nothing new needed.**
 
-One note: the **ghost-choice beat** now lives here, during Reyana's
+One note: the **ghost-choice beat** now lives here, during Linda's
 presentation — two options rendered greyed and unclickable for four seconds
 while his hands are on the keyboard. It reuses `staring` and `intro_ignoring`,
 so it costs no new art, but it is the most important four seconds in the
@@ -64,7 +64,7 @@ chapter and the art should not distract from it.
 |---|---|---|
 | `boss_intro` / `boss_scolding` / `boss_showing` | **17 lines.** The whole report scene — DRAWN. | Delia at a desk with a laptop, three states. |
 | `openplan_morning` | **no longer used by Wednesday.** The whole report scene — he finalises it at 10:40, Delia arrives at 11:15, and all four responses play here. Also the shared-drive moment afterwards. | Ordinary Wednesday. Nothing has visibly gone wrong. The scene's weight is entirely in the dialogue, so the room should stay flat and unremarkable. |
-| `slack_ui` | **10 lines.** The #platform-eng thread that resolves without him, then the Fiona DM exchange. | A chat interface. His message needs to be visibly *there* with nothing under it — the gap is the point. |
+| `slack_ui` | **10 lines.** The #platform-eng thread that resolves without him, then the Jean DM exchange. | A chat interface. His message needs to be visibly *there* with nothing under it — the gap is the point. |
 | `home_evening` | **6 lines.** 21:40, opening the PR. Then next morning: forty-one comments against Ellie's LGTM. | Away from the office, alone, late. The only room in the chapter that's his. |
 
 ### Characters
@@ -72,7 +72,7 @@ chapter and the art should not distract from it.
 | Tag | Where it's used | Notes |
 |---|---|---|
 | `delia, tired, right` | **5 lines.** Delia at his desk with the wrong report. | **Tired, not furious.** She doesn't have time to adjudicate. If she reads as angry the whole scene collapses into a villain story. |
-| `delia, cool, right` | **2 lines.** Only on the "Pauline must have overwritten it" route. | A single degree cooler than `tired`. The difference should be barely perceptible — that's what makes it land. |
+| `delia, cool, right` | **2 lines.** Only on the "Sarah must have overwritten it" route. | A single degree cooler than `tired`. The difference should be barely perceptible — that's what makes it land. |
 
 ### Priority if time runs short
 
@@ -84,32 +84,26 @@ chapter and the art should not distract from it.
 
 ## Scenario 4 — Thursday
 
-Content warning scenario. Reuses `home_evening`, `openplan_morning` and
-`kitchenette` from Wednesday. Three new backgrounds, two new characters.
-
-### Backgrounds
+Rewritten. **Ten new backgrounds, none of them drawn** — this chapter currently
+plays entirely on black, so it's the biggest art gap in the game.
 
 | Tag | Where it's used | Feel |
 |---|---|---|
-| `black` | The content warning card, and the skip summary. | Not a drawing — a flat black field the warning text sits on. Can be pure CSS if that's easier. |
-| `meeting_room_night` | **The whole harassment sequence**, both scenes and all eight responses. | 19:50, floor empty, door pushed shut, corridor light on a sensor flicking on and off. It should look like an ordinary meeting room after hours, because it is one. **Nothing menacing in the staging** — the register note is "nobody leers, including the prose", and that goes for the art. |
-| `small_room` | The People and Culture conversation, all three outcomes. | A small booked room. Vanna is kind and the room should be too. The failure here is procedural, not personal, and the picture shouldn't telegraph it. |
-
-### Characters
-
-| Tag | Where it's used | Notes |
-|---|---|---|
-| `boss, relaxed, right` | Most of her lines — the opener, and the exit line afterwards. | Principal engineer, two levels up. Comfortable, friendly, entirely at ease. She is not written as a predator and must not be drawn as one; the discomfort is meant to come from the words. |
-| `boss, close, right` | The hand scene only. | Same character, closer to frame. **The change should be spatial, not expressive** — she looks exactly as friendly as before. That's the whole point of the scene. |
-| `vanna, kind, centre` | Her scene. | People and Culture. Genuinely kind, listens to the end, and cannot help. Warm, unhurried, mid-forties reading. |
+| `office_close` | Opening. Kept back after hours for a "quick performance check". | An office after everyone's gone. Ordinary, not sinister — the staging should not telegraph anything. |
+| `boss_pleased` | "I'm impressed with your performance." | Warm, complimentary. She means it, and that's what makes the next beat work. |
+| `boss_smirk` | "Are you somebody's nephew? Or… did you sleep with someone?" | The turn. Still friendly on the surface. |
+| `boss_laugh` | "Relax. I'm just asking." | Laughing it off, putting it back on him for reacting. |
+| `boss_tie` | Standing in front of him, playing with his tie. "I can make things very easy for you here. Or very hard." | First physical contact. **Close, not lurid** — the discomfort should come from the words and the proximity. |
+| `boss_pull` | Her hand slides down his arm. | |
+| `boss_grip` | "Or maybe you want to make things really easy for yourself." | |
+| `boss_release` | She lets go, smirking. "I'll see you Monday then. Same time." | The scene ends with her entirely unbothered. |
+| `bed_dark` | That night, awake, still working it out. | Alone, dark, no resolution. |
+| `blackout` | The two closing lines. | **Not a drawing** — flat black. |
 
 ### Priority
 
-`meeting_room_night` is the one that matters — it carries the chapter's two
-hardest scenes and both BOSS states. `black` needs no drawing. `small_room`
-could fall back to `meeting_room` at a pinch.
-
----
+`boss_tie`, `boss_pull` and `boss_grip` are the three that carry the scene.
+`blackout` needs nothing. `office_close` and `bed_dark` are the two rooms.
 
 ## Scenario 5 — Friday
 

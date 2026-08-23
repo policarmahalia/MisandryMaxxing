@@ -7,7 +7,7 @@ VAR composure = 0
 // Carried from Scenario 2 once cross-scenario state exists. Until then these
 // start at zero and the chapter reads as a standalone.
 
-VAR named_pauline = false
+VAR named_sarah = false
 VAR kept_receipts = false
 
 
@@ -37,11 +37,11 @@ She turns the screen. It's your report, your charts, your figures, but the rest 
 
 # background: boss_showing
 # thought
-Pauline's name is on your section, and yours is nowhere to be found.
+Sarah's name is on your section, and yours is nowhere to be found.
 
 # background: boss_scolding
 # speaker: Delia
-"Pauline's been carrying this. I need to see you start pulling your weight."
+"Sarah's been carrying this. I need to see you start pulling your weight."
 
 # background: boss_intro
 # thought
@@ -61,10 +61,10 @@ She isn't angry. She's barely interested and unimpressed.
     "Can you have it by four?"
     -> sc1_converge
 
-* ["Pauline put her name on my work."]
+* ["Sarah put her name on my work."]
     ~ standing = standing - 2
     ~ composure = composure + 1
-    ~ named_pauline = true
+    ~ named_sarah = true
     # background: boss_intro
     # thought
     A pause.
@@ -90,7 +90,7 @@ She isn't angry. She's barely interested and unimpressed.
 
 # background: boss_intro
 # thought
-You open the shared drive. There's one file. Modified 09:52 by Pauline.
+You open the shared drive. There's one file. Modified 09:52 by Sarah.
 
 # background: boss_intro
 # thought
@@ -127,11 +127,11 @@ The thread likes it this time. Somebody says they can always count on her.
 
 ~ composure = composure - 1
 
-// 3c — Fiona
+// 3c — Jean
 
 # background: slack_dm_sent
 # thought
-You DM Fiona. You're stuck on a deploy issue and you need ten minutes of someone else's afternoon.
+You DM Jean. You're stuck on a deploy issue and you need ten minutes of someone else's afternoon.
 
 # background: slack_dm_reply
 # thought

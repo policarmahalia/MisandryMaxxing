@@ -8,19 +8,22 @@ import scenario1 from '../story/compiled/scenario1.json';
 import scenario2 from '../story/compiled/scenario2.json';
 import scenario3 from '../story/compiled/scenario3.json';
 import scenario4 from '../story/compiled/scenario4.json';
-import scenario5 from '../story/compiled/scenario5.json';
 import quiz1 from './components/quiz/quizBank/quiz1.json';
 import quiz2 from './components/quiz/quizBank/quiz2.json';
 import quiz3 from './components/quiz/quizBank/quiz3.json';
 import quiz4 from './components/quiz/quizBank/quiz4.json';
+<<<<<<< HEAD
 import quiz5 from './components/quiz/quizBank/quiz5.json';
 import PrologueScene from './components/nav/PrologueScene';
+=======
+>>>>>>> 2030bb019dbb6366eea68ed698de842e4b8bc754
 import './App.css';
 
 // scenarioMeta drives the order and titles; these map its ink/quiz keys to the
 // actual imported JSON. Vite needs static imports, so both lists move together.
-const STORIES = { scenario1, scenario2, scenario3, scenario4, scenario5 };
-const QUIZZES = { quiz1, quiz2, quiz3, quiz4, quiz5 };
+// scenario5 / quiz5 are cut for time — see src/data/scenarioMeta.js
+const STORIES = { scenario1, scenario2, scenario3, scenario4 };
+const QUIZZES = { quiz1, quiz2, quiz3, quiz4 };
 
 const ORDER = scenarioMeta.map((s) => s.id);
 
@@ -112,7 +115,7 @@ function App() {
         <div className="quiz-results">
           <h2>The end</h2>
           <p className="quiz-score-detail">
-            That's all five. Pick one to replay.
+            That's the end. Pick a chapter to replay.
           </p>
           <div className="quiz-results-actions">
             {scenarioMeta.map((s) => (

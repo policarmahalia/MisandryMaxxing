@@ -156,8 +156,8 @@ Sprint review. Sandes, nine weeks in now, says the thing about the connection po
 # thought
 Four minutes. Then Ellie says it back, slightly better.
 
-# character: reyana, neutral, centre
-# speaker: Reyana
+# character: linda, neutral, centre
+# speaker: Linda
 "Nice one, Ellie."
 
 # background: meeting_room
@@ -171,7 +171,7 @@ Sandes's face does the exact thing you've spent three months learning not to let
     ~ backed_owen = true
     # background: meeting_room
     # thought
-    The room does what the room does. Reyana says "sure, sure" and moves on.
+    The room does what the room does. Linda says "sure, sure" and moves on.
     # background: meeting_room
     # thought
     Afterwards, two separate people describe you as a bit intense lately. Sandes doesn't thank you and probably didn't register it clearly enough to.

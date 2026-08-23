@@ -52,7 +52,7 @@ I spent all night preparing? What should I do?
 BOSS stares at you like you just asked to fly the plane.
 
 # speaker: BOSS
-"Cute. Reyana, you'll be presenting. You — take notes. We don't have all day."
+"Cute. Linda, you'll be presenting. You — take notes. We don't have all day."
 
 -> notetaking
 
@@ -64,7 +64,7 @@ You sit at the corner of the table, laptop open, typing furiously. No one looks 
 // Scene 2 — flashcut through the meeting
 # scene: intro_ignoring
 # thought
-The meeting flashes forward. Reyana presents. You take notes.
+The meeting flashes forward. Linda presents. You take notes.
 
 // Ghost choices: options he can see and cannot take. inkjs has no disabled
 // choice, so the text ships as a tag and SceneRenderer draws them greyed and
@@ -101,11 +101,11 @@ This is my chance!
 # thought
 The room goes quiet. Everyone stares at you, straight-faced. You are ignored.
 
-# speaker: Reyana
+# speaker: Linda
 "Hey, BOSS... how about we grab those onion rings you like?"
 
 # scene: callout
-# speaker: Reyana
+# speaker: Linda
 "Or should I say... sonoin rings!"
 
 # scene: laughing

@@ -15,7 +15,7 @@ VAR left_room = false
 Boss told you to stay back for a quick performance check.
 
 # background: office_close
-# speaker: boss
+# speaker: BOSS
 "So. How has your first week been?"
 
 * ["Good."]
@@ -27,7 +27,7 @@ Boss told you to stay back for a quick performance check.
 === perf_check ===
 
 # background: boss_pleased
-# speaker: boss
+# speaker: BOSS
 "I'm impressed with your performance."
 
 # background: boss_pleased
@@ -35,7 +35,7 @@ Boss told you to stay back for a quick performance check.
 Thanks, I guess?
 
 # background: boss_smirk
-# speaker: boss
+# speaker: BOSS
 "I heard you went pretty above and beyond to get this role."
 
 # background: boss_smirk
@@ -43,11 +43,11 @@ Thanks, I guess?
 What the hell does that mean?
 
 # background: boss_smirk
-# speaker: boss
+# speaker: BOSS
 "Are you somebody's nephew? Or..."
 
 # background: boss_smirk
-# speaker: boss
+# speaker: BOSS
 "...did you sleep with someone?"
 
 # background: boss_smirk
@@ -55,7 +55,7 @@ What the hell does that mean?
 Tf??????
 
 # background: boss_laugh
-# speaker: boss
+# speaker: BOSS
 "Relax. I'm just asking."
 
 # background: boss_tie
@@ -63,11 +63,11 @@ Tf??????
 She's standing in front of you now, playing with your tie.
 
 # background: boss_tie
-# speaker: boss
+# speaker: BOSS
 "I can make things very easy for you here. Or very hard."
 
 # background: boss_tie
-# speaker: boss
+# speaker: BOSS
 "The question is... how badly do you want to stay?"
 
 * ["This is inappropriate."]
@@ -88,11 +88,11 @@ She's standing in front of you now, playing with your tie.
 Her hand slides down your arm.
 
 # background: boss_pull
-# speaker: boss
+# speaker: BOSS
 "Think about it. A good word from me goes a long way."
 
 # background: boss_grip
-# speaker: boss
+# speaker: BOSS
 "Or maybe you want to make things really easy for yourself."
 
 * ["I need to go."]
@@ -113,7 +113,7 @@ Her hand slides down your arm.
 She releases you, smirking.
 
 # background: boss_release
-# speaker: boss
+# speaker: BOSS
 "I'll see you Monday then. Same time."
 
 -> that_night
