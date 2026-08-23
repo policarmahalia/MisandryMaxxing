@@ -7,8 +7,44 @@ VAR froze = false
 VAR left_room = false
 
 // ============================================================
+// Content warning
+//
+// The skip has to advance state or the night scene reads wrong for anyone who
+// took it, so it sets the same flags a freeze would and applies the composure
+// cost before rejoining.
+// ============================================================
+
+# cw: sexual_harassment
+# background: blackout
+This scenario contains workplace sexual harassment, including unwanted physical contact and coercion by a senior colleague.
+
+* [Continue]
+    -> scene1_office
+
+* [Skip this scenario]
+    -> sc4_skip
+
+
+=== sc4_skip ===
+
+# background: blackout
+# thought
+Thursday: a senior colleague keeps him back after hours and makes it clear his job depends on how he responds to her.
+
+# background: blackout
+# thought
+He gets out of the room. What he does about it is still his to decide.
+
+~ composure = composure - 2
+~ froze = true
+
+-> that_night
+
+
+// ============================================================
 // Scene 1 — The Office
 // ============================================================
+=== scene1_office ===
 
 # background: office_close
 # thought

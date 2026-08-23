@@ -84,9 +84,14 @@ html, body, #root {
 .choice-prompt-thought {
   color: white;
   font-style: italic;
+  max-width: 46rem;
   font-size: 1rem;
   text-align: center;
   margin: 0;
+}
+
+.choice-prompt-thought.plain {
+  font-style: normal;
 }
 
 .choice-prompt-options {

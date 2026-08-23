@@ -202,7 +202,9 @@ function SceneRenderer({ engine, onScenarioComplete }) {
       <img
         className="scene-art-fullbleed"
         src={`${import.meta.env.BASE_URL}assets/scenes/${scene}.png`}
-        alt="scene"
+        alt=""
+        onError={(e) => { e.target.style.visibility = 'hidden'; }}
+        onLoad={(e) => { e.target.style.visibility = 'visible'; }}
       />
 
       <StatBar stats={stats} deltas={deltas} />
@@ -238,6 +240,7 @@ function SceneRenderer({ engine, onScenarioComplete }) {
       <ChoicePrompt
         open={promptOpen}
         thought={dialogueText}
+        isThought={isThought}
         choices={choices}
         onSelect={handleChoice}
       />
