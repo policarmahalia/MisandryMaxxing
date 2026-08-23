@@ -1,6 +1,19 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 
 const PASS_MARK = 0.5; // 50%, same bar as the original single-answer version
+
+// Every question in every bank is authored with the issues first and the red
+// herrings after, so the top three were always the answer and the quiz could be
+// passed without reading a word. Shuffled per playthrough rather than reordered
+// in the JSON, so it can't be learned across attempts either.
+function shuffle(items) {
+  const out = [...items];
+  for (let i = out.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
 
 function QuizScreen({ quizData, onPass, onRetry }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -21,6 +34,13 @@ function QuizScreen({ quizData, onPass, onRetry }) {
   const question = quizData[currentIndex];
   const isLast = currentIndex + 1 >= quizData.length;
 
+  // Reshuffled only when the question changes — not on every render, or the
+  // options would jump around underneath the player as they clicked.
+  const options = useMemo(
+    () => shuffle(question.options),
+    [question]
+  );
+
   function toggle(i) {
     if (revealed) return;
     setSelected((prev) =>
@@ -31,13 +51,9 @@ function QuizScreen({ quizData, onPass, onRetry }) {
   // Per-question tally. Picking a red herring cancels out an issue you named,
   // so selecting every option scores zero rather than full marks.
   function tally() {
-    const caught = question.options.filter(
-      (o, i) => o.isIssue && selected.includes(i)
-    ).length;
-    const wrong = question.options.filter(
-      (o, i) => !o.isIssue && selected.includes(i)
-    ).length;
-    const issueCount = question.options.filter((o) => o.isIssue).length;
+    const caught = options.filter((o, i) => o.isIssue && selected.includes(i)).length;
+    const wrong = options.filter((o, i) => !o.isIssue && selected.includes(i)).length;
+    const issueCount = options.filter((o) => o.isIssue).length;
     return { caught, wrong, issueCount };
   }
 
@@ -142,7 +158,7 @@ function QuizScreen({ quizData, onPass, onRetry }) {
       </p>
 
       <div className="quiz-options">
-        {question.options.map((option, i) => (
+        {options.map((option, i) => (
           <div key={i} className="quiz-option-row">
             <button
               type="button"
