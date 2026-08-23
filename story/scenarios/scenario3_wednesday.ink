@@ -183,25 +183,28 @@ She replies inside a minute.
 // ============================================================
 === sc4_pr ===
 
-# background: home_evening
+// Uses the Slack PR frames. Deliberately doesn't name the reviewer — the art
+// carries a name, and not repeating it in the box avoids the two disagreeing.
+
+# background: slack_pr_sent
 # thought
-21:40. You open a PR for the pooling fix — the one from the thread nobody answered.
+21:00. You open a PR for the pooling fix, the one from the thread nobody answered, and message the reviewer directly. Questions, changes, thoughts in general.
+
+# background: slack_pr_lgtm
+# thought
+The reply lands at 11:35pm.
+
+# background: slack_pr_lgtm
+# thought
+LGTM. Two and a half hours, four letters, and no indication anyone opened it.
 
 # background: home_evening
 # thought
-Morning: forty-one comments. Naming conventions. A suggestion to split a nine-line function. Two people asking whether you'd considered an approach you'd considered and rejected in the description.
+By morning the PR itself has forty-one comments on it. Naming conventions. A suggestion to split a nine-line function. Two people asking whether you'd considered an approach you'd considered and rejected in the description.
 
 # background: home_evening
 # thought
-One of them is Pauline, and it's the most useful review on there. She's spent twenty minutes on it. She's being kind.
-
-# background: home_evening
-# thought
-Ellie's PR, opened the same night, four files changed.
-
-# background: home_evening
-# thought
-LGTM.
+Nobody who had time to do that had time to answer the question you actually asked.
 
 ~ composure = composure - 1
 
