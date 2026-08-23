@@ -12,11 +12,8 @@ import quiz1 from './components/quiz/quizBank/quiz1.json';
 import quiz2 from './components/quiz/quizBank/quiz2.json';
 import quiz3 from './components/quiz/quizBank/quiz3.json';
 import quiz4 from './components/quiz/quizBank/quiz4.json';
-<<<<<<< HEAD
 import quiz5 from './components/quiz/quizBank/quiz5.json';
 import PrologueScene from './components/nav/PrologueScene';
-=======
->>>>>>> 2030bb019dbb6366eea68ed698de842e4b8bc754
 import './App.css';
 
 // scenarioMeta drives the order and titles; these map its ink/quiz keys to the
