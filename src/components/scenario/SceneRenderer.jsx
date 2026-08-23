@@ -51,6 +51,12 @@ function SceneRenderer({ engine, onScenarioComplete }) {
         speaker: getTagValue(tags, 'speaker'),
         ghostChoices: getGhostChoices(tags),
         isThought: tags.some((t) => t.type === 'thought'),
+        isFlash: tags.some((t) => t.type === 'flash'),
+        // A flash-cut writes several # background tags with no text between
+        // them, so ink hands them over as one line carrying all of them.
+        flashFrames: tags
+          .filter((t) => t.type === 'background' || t.type === 'scene')
+          .map((t) => t.value),
       };
     });
   }
@@ -140,16 +146,32 @@ function SceneRenderer({ engine, onScenarioComplete }) {
     } else if (line.scene === 'sideeyeing') {
       setAwaitingTap(false);
       autoTimer.current = setTimeout(() => showLine(lines, index + 1, result), 2000);
+    } else if (line.isFlash) {
+      // Rapid cut, no tap, 0.5s a frame. Ink emits no line for a tag-only
+      // block, so the whole flash arrives as one line carrying every
+      // background — step through them all rather than showing the first.
+      setAwaitingTap(false);
+      const frames = line.flashFrames.length ? line.flashFrames : [line.scene];
+      let f = 0;
+      const tick = () => {
+        setScene(frames[f]);
+        f += 1;
+        autoTimer.current = setTimeout(
+          f < frames.length ? tick : () => showLine(lines, index + 1, result),
+          500
+        );
+      };
+      tick();
     } else if (index + 1 < lines.length) {
       // more lines still queued in this batch — wait for tap
       setAwaitingTap(true);
       advanceQueue.current = () => showLine(lines, index + 1, result);
     } else if (result.choices.length > 0) {
-      // last line in batch, but choices are coming — wait for tap then show prompt
+      // last line in batch, but choices are coming — wait for tap then prompt
       setAwaitingTap(true);
       advanceQueue.current = () => showLine(lines, index + 1, result);
     } else if (result.isEnded) {
-      // last line in batch, no choices, story is actually done — wait for final tap then end
+      // last line in batch, story is done — wait for a final tap then end
       setAwaitingTap(true);
       advanceQueue.current = () => showLine(lines, index + 1, result);
     } else {
