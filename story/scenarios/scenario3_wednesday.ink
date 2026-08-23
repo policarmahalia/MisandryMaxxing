@@ -105,48 +105,49 @@ You do it again. It takes until four, and it is the second time you have written
 === sc3_small_things ===
 
 // 3b — the thread
+//
+// The Slack art carries the conversation, so these lines narrate his side of
+// it rather than repeating what's on screen.
 
-# background: slack_ui
+# background: slack_posted
 # thought
-The #platform-eng thread is arguing about connection pooling. You post the actual answer, with a link to the config.
+You post the answer to the pooling thread, with a link to the config.
 
-# background: slack_ui
+# background: slack_posted
 # thought
-Nothing.
+Read by all. Nothing.
 
-# background: slack_ui
+# background: slack_repeated
 # thought
-Forty minutes later the thread resolves without you, in the direction you pointed it.
+Four hours later it comes back, almost word for word, from someone else.
+
+# background: slack_praised
+# thought
+The thread likes it this time. Somebody says they can always count on her.
 
 ~ composure = composure - 1
 
 // 3c — Fiona
 
-# background: slack_ui
+# background: slack_dm_sent
 # thought
-You DM Fiona asking for ten minutes on a deploy issue.
+You DM Fiona. You're stuck on a deploy issue and you need ten minutes of someone else's afternoon.
 
-# background: slack_ui
-# speaker: Fiona
-"sure — what do i get in return 😉"
+# background: slack_dm_reply
+# thought
+She replies inside a minute.
 
 * ["A working deploy."]
     ~ standing = standing + 1
     ~ composure = composure - 1
-    # background: slack_ui
-    # speaker: Fiona
-    "hahaha ok ok. 5 mins."
-    # background: slack_ui
+    # background: slack_dm_joke
     # thought
     She helps. She's good. It was a joke.
     -> sc4_pr
 
 * ["lol"]
     ~ composure = composure - 2
-    # background: slack_ui
-    # speaker: Fiona
-    "gimme 5."
-    # background: slack_ui
+    # background: slack_dm_joke
     # thought
     She helps. She's good. It was a joke.
     -> sc4_pr
@@ -154,9 +155,9 @@ You DM Fiona asking for ten minutes on a deploy issue.
 * [Close the DM. Work it out yourself.]
     ~ standing = standing - 1
     ~ composure = composure - 1
-    # background: slack_ui
+    # background: slack_dm_reply
     # thought
-    You're still on it when the sync starts.
+    You close the DM. You're still on it when the sync starts.
     -> sc4_pr
 
 
@@ -165,25 +166,28 @@ You DM Fiona asking for ten minutes on a deploy issue.
 // ============================================================
 === sc4_pr ===
 
-# background: home_evening
+// Uses the Slack PR frames. Deliberately doesn't name the reviewer — the art
+// carries a name, and not repeating it in the box avoids the two disagreeing.
+
+# background: slack_pr_sent
 # thought
-21:40. You open a PR for the pooling fix — the one from the thread nobody answered.
+21:00. You open a PR for the pooling fix, the one from the thread nobody answered, and message the reviewer directly. Questions, changes, thoughts in general.
+
+# background: slack_pr_lgtm
+# thought
+The reply lands at 11:35pm.
+
+# background: slack_pr_lgtm
+# thought
+LGTM. Two and a half hours, four letters, and no indication anyone opened it.
 
 # background: home_evening
 # thought
-Morning: forty-one comments. Naming conventions. A suggestion to split a nine-line function. Two people asking whether you'd considered an approach you'd considered and rejected in the description.
+By morning the PR itself has forty-one comments on it. Naming conventions. A suggestion to split a nine-line function. Two people asking whether you'd considered an approach you'd considered and rejected in the description.
 
 # background: home_evening
 # thought
-One of them is Pauline, and it's the most useful review on there. She's spent twenty minutes on it. She's being kind.
-
-# background: home_evening
-# thought
-Ellie's PR, opened the same night, four files changed.
-
-# background: home_evening
-# thought
-LGTM.
+Nobody who had time to do that had time to answer the question you actually asked.
 
 ~ composure = composure - 1
 
