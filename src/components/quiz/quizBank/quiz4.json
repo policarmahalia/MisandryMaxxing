@@ -73,10 +73,10 @@
   },
   {
     "topic": "Being an Ethical Bystander",
-    "question": "Fiona says \"she's a lot after seven — you get used to her.\" What does that tell us, and what should have happened instead?",
+    "question": "Jean says \"she's a lot after seven — you get used to her.\" What does that tell us, and what should have happened instead?",
     "options": [
       {
-        "text": "Fiona already knew, which means others did too, and nobody said anything beforehand",
+        "text": "Jean already knew, which means others did too, and nobody said anything beforehand",
         "isIssue": true,
         "note": "\"You get used to her\" is only sayable by someone who has. This wasn't a first time; it was a first time for him."
       },
@@ -96,7 +96,7 @@
         "note": "Better than nothing, and it puts the whole burden on him — he now declines meetings with a principal engineer and pays for that too."
       },
       {
-        "text": "Nothing — Fiona wasn't in the room, so it wasn't hers to raise",
+        "text": "Nothing — Jean wasn't in the room, so it wasn't hers to raise",
         "isIssue": false,
         "note": "She wasn't in the room and she knew about the room. That's the definition of a bystander, not an exemption from being one."
       },

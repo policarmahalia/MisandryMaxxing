@@ -340,32 +340,39 @@ You don't go. At 10:30 BOSS says good morning like a person who says good mornin
 // ============================================================
 === sc4_converge ===
 
-// Fiona's beat plays on every route. It used to sit inside sc4_noreport, which
+// Jean's beat plays on every route. It used to sit inside sc4_noreport, which
 // meant anyone who reported never learned that the floor already knew — and
 // quiz4 asks about this exact line.
 # background: kitchenette
 # thought
-Later, at the sink, Fiona brings it up herself. You hadn't mentioned it to anyone.
+Later, at the sink, Jean brings it up herself. You hadn't mentioned it to anyone.
 
 # background: kitchenette
-# speaker: Fiona
+# speaker: Jean
 "You were here late with BOSS, yeah? She's a lot after seven."
 
 # background: kitchenette
-# speaker: Fiona
+# speaker: Jean
 "You get used to her."
 
 # background: kitchenette
 # thought
-You get used to her. Which means Fiona already has. Which means Fiona knew before yesterday, and so, presumably, did whoever told Fiona.
+You get used to her. Which means Jean already has. Which means Jean knew before yesterday, and so, presumably, did whoever told Jean.
+
+// Thursday is now the last chapter, so this is the game's ending. It closes on
+// no resolution on any route: reporting formally, informally, withdrawing, or
+// not going at all all arrive here.
+# background: openplan_morning
+# thought
+Friday, 15:00. The scope goes into the sprint with your name on it as author and hers as reviewer.
 
 # background: openplan_morning
 # thought
-Friday, 15:00. The migration scope goes into the sprint. BOSS's name is on it as reviewer and yours is on it as author, which is correct, and which is the first time all week something has been.
+Nothing about the floor is different in the morning. She says good morning. You say it back.
 
 # background: openplan_morning
 # thought
-Calibration is in three weeks.
+You are going to work here on Monday, and so is she.
 
 # module: quiz4
 

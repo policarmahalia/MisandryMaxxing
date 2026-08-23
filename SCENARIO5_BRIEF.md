@@ -55,7 +55,7 @@ morning of week one, then a card skips eleven weeks to the performance review.
    [Sandes says the thing about the connection pool, and it's right, and it goes
    past the room like a car going past a bus stop.]
    [Four minutes. Then Ellie says it back, slightly better.]
-   **Reyana:** ["Nice one, Ellie."]
+   **Linda:** ["Nice one, Ellie."]
    [Sandes's face does the exact thing you've spent three months learning not to
    let your face do.]
 
@@ -151,12 +151,12 @@ name in it:
 
 | In the art now | Should be |
 |---|---|
-| Jean | **Fiona** |
-| Linda | **Reyana** |
-| Sarah | **Pauline** |
+| Jean | **Jean** |
+| Linda | **Linda** |
+| Sarah | **Sarah** |
 
-One frame — the #platform-eng thread — has **Linda and Reyana as two separate
-people**, but Linda *is* Reyana, so she appears twice under both names.
+One frame — the #platform-eng thread — has **Linda and Linda as two separate
+people**, but Linda *is* Linda, so she appears twice under both names.
 
 Filenames: **lowercase, no spaces, no brackets, `.png` not `.PNG`.** They're used
 directly as tags, so `Wednesday Slack (1).png` can't be loaded — it has to be

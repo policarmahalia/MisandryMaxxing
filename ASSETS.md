@@ -1,6 +1,6 @@
 # Art needed
 
-For Pauline. Every entry says what it is **and where it appears**, so the mood
+For Sarah. Every entry says what it is **and where it appears**, so the mood
 of the scene is on the page next to the request.
 
 **Spec:** 1951 × 1100 PNG, matching the existing set — line-art characters over
@@ -23,7 +23,7 @@ picture with the character already in it. That's what the eight existing files a
 
 ```
 # background: meeting_room
-# character: reyana, neutral, centre
+# character: linda, neutral, centre
 ```
 
 That assumes a sprite drawn on transparency, positioned over a background.
@@ -48,7 +48,7 @@ scenario 3 runs today with whatever is in the folder and falls back to black.
 All six backgrounds are drawn: `intro_ignoring` · `staring` · `awkward` ·
 `callout` · `laughing` · `meme`. **Nothing new needed.**
 
-One note: the **ghost-choice beat** now lives here, during Reyana's
+One note: the **ghost-choice beat** now lives here, during Linda's
 presentation — two options rendered greyed and unclickable for four seconds
 while his hands are on the keyboard. It reuses `staring` and `intro_ignoring`,
 so it costs no new art, but it is the most important four seconds in the
@@ -64,7 +64,7 @@ chapter and the art should not distract from it.
 |---|---|---|
 | `boss_intro` / `boss_scolding` / `boss_showing` | **17 lines.** The whole report scene — DRAWN. | Delia at a desk with a laptop, three states. |
 | `openplan_morning` | **no longer used by Wednesday.** The whole report scene — he finalises it at 10:40, Delia arrives at 11:15, and all four responses play here. Also the shared-drive moment afterwards. | Ordinary Wednesday. Nothing has visibly gone wrong. The scene's weight is entirely in the dialogue, so the room should stay flat and unremarkable. |
-| `slack_ui` | **10 lines.** The #platform-eng thread that resolves without him, then the Fiona DM exchange. | A chat interface. His message needs to be visibly *there* with nothing under it — the gap is the point. |
+| `slack_ui` | **10 lines.** The #platform-eng thread that resolves without him, then the Jean DM exchange. | A chat interface. His message needs to be visibly *there* with nothing under it — the gap is the point. |
 | `home_evening` | **6 lines.** 21:40, opening the PR. Then next morning: forty-one comments against Ellie's LGTM. | Away from the office, alone, late. The only room in the chapter that's his. |
 
 ### Characters
@@ -72,7 +72,7 @@ chapter and the art should not distract from it.
 | Tag | Where it's used | Notes |
 |---|---|---|
 | `delia, tired, right` | **5 lines.** Delia at his desk with the wrong report. | **Tired, not furious.** She doesn't have time to adjudicate. If she reads as angry the whole scene collapses into a villain story. |
-| `delia, cool, right` | **2 lines.** Only on the "Pauline must have overwritten it" route. | A single degree cooler than `tired`. The difference should be barely perceptible — that's what makes it land. |
+| `delia, cool, right` | **2 lines.** Only on the "Sarah must have overwritten it" route. | A single degree cooler than `tired`. The difference should be barely perceptible — that's what makes it land. |
 
 ### Priority if time runs short
 

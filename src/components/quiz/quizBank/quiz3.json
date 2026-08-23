@@ -1,7 +1,7 @@
 [
   {
     "topic": "Unpacking Gender-Based Violence",
-    "question": "Pauline's name is on the report he wrote, and Delia's read is that he hasn't been pulling his weight. What's going on here?",
+    "question": "Sarah's name is on the report he wrote, and Delia's read is that he hasn't been pulling his weight. What's going on here?",
     "options": [
       {
         "text": "His work counted — it just counted for somebody else",
@@ -37,7 +37,7 @@
   },
   {
     "topic": "Healthy Relationships, Consent & Boundaries",
-    "question": "He asks Fiona for ten minutes on a deploy issue and she replies \"what do i get in return 😉\". She's joking, and she helps. What's the problem?",
+    "question": "He asks Jean for ten minutes on a deploy issue and she replies \"what do i get in return 😉\". She's joking, and she helps. What's the problem?",
     "options": [
       {
         "text": "Ordinary collegial help got priced, even in jest",
@@ -124,7 +124,7 @@
       {
         "text": "Being reviewed kindly and being reviewed disproportionately aren't opposites",
         "isIssue": true,
-        "note": "Pauline's is the most useful review on there and she spent twenty minutes being genuinely helpful. She is also one of the forty-one."
+        "note": "Sarah's is the most useful review on there and she spent twenty minutes being genuinely helpful. She is also one of the forty-one."
       },
       {
         "text": "His code was probably worse and deserved the attention",
