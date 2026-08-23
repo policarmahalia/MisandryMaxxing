@@ -12,7 +12,12 @@ import quiz1 from './components/quiz/quizBank/quiz1.json';
 import quiz2 from './components/quiz/quizBank/quiz2.json';
 import quiz3 from './components/quiz/quizBank/quiz3.json';
 import quiz4 from './components/quiz/quizBank/quiz4.json';
+<<<<<<< HEAD
 import MusicPlayer from './components/music/MusicPlayer';
+=======
+import quiz5 from './components/quiz/quizBank/quiz5.json';
+import PrologueScene from './components/nav/PrologueScene';
+>>>>>>> b9481a190c11f66fd2d91803fc3450594c76420b
 import './App.css';
 
 // scenarioMeta drives the order and titles; these map its ink/quiz keys to the
@@ -26,6 +31,8 @@ const ORDER = scenarioMeta.map((s) => s.id);
 function metaFor(id) {
   return scenarioMeta.find((s) => s.id === id);
 }
+
+
 
 // ?scenario=4 drops you straight into that chapter, for playtesting one
 // without replaying the ones before it.
@@ -78,8 +85,16 @@ function App() {
 
   return (
     <div className="app">
+<<<<<<< HEAD
       <MusicPlayer />
       {screen === 'intro' && <IntroScreen onStart={() => setScreen('scenario')} />}
+=======
+      {screen === 'intro' && <IntroScreen onStart={() => setScreen('prologue')} />}
+
+      {screen === 'prologue' && (
+        <PrologueScene onComplete={() => setScreen('scenario')} />
+      )}
+>>>>>>> b9481a190c11f66fd2d91803fc3450594c76420b
 
       {screen === 'scenario' && (
         // key remounts the renderer on scenario change so it pulls from the

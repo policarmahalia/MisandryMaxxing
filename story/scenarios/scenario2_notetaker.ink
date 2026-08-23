@@ -108,7 +108,7 @@ The room goes quiet. Everyone stares at you, straight-faced. You are ignored.
 # speaker: Linda
 "Or should I say... sonoin rings!"
 
-# scene: laughing
+# scene: meme
 # thought
 The whole room erupts in laughter.
 
