@@ -12,6 +12,7 @@ import quiz1 from './components/quiz/quizBank/quiz1.json';
 import quiz2 from './components/quiz/quizBank/quiz2.json';
 import quiz3 from './components/quiz/quizBank/quiz3.json';
 import quiz4 from './components/quiz/quizBank/quiz4.json';
+import MusicPlayer from './components/music/MusicPlayer';
 import './App.css';
 
 // scenarioMeta drives the order and titles; these map its ink/quiz keys to the
@@ -77,6 +78,7 @@ function App() {
 
   return (
     <div className="app">
+      <MusicPlayer />
       {screen === 'intro' && <IntroScreen onStart={() => setScreen('scenario')} />}
 
       {screen === 'scenario' && (
