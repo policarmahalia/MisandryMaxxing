@@ -84,32 +84,26 @@ chapter and the art should not distract from it.
 
 ## Scenario 4 — Thursday
 
-Content warning scenario. Reuses `home_evening`, `openplan_morning` and
-`kitchenette` from Wednesday. Three new backgrounds, two new characters.
-
-### Backgrounds
+Rewritten. **Ten new backgrounds, none of them drawn** — this chapter currently
+plays entirely on black, so it's the biggest art gap in the game.
 
 | Tag | Where it's used | Feel |
 |---|---|---|
-| `black` | The content warning card, and the skip summary. | Not a drawing — a flat black field the warning text sits on. Can be pure CSS if that's easier. |
-| `meeting_room_night` | **The whole harassment sequence**, both scenes and all eight responses. | 19:50, floor empty, door pushed shut, corridor light on a sensor flicking on and off. It should look like an ordinary meeting room after hours, because it is one. **Nothing menacing in the staging** — the register note is "nobody leers, including the prose", and that goes for the art. |
-| `small_room` | The People and Culture conversation, all three outcomes. | A small booked room. Vanna is kind and the room should be too. The failure here is procedural, not personal, and the picture shouldn't telegraph it. |
-
-### Characters
-
-| Tag | Where it's used | Notes |
-|---|---|---|
-| `boss, relaxed, right` | Most of her lines — the opener, and the exit line afterwards. | Principal engineer, two levels up. Comfortable, friendly, entirely at ease. She is not written as a predator and must not be drawn as one; the discomfort is meant to come from the words. |
-| `boss, close, right` | The hand scene only. | Same character, closer to frame. **The change should be spatial, not expressive** — she looks exactly as friendly as before. That's the whole point of the scene. |
-| `vanna, kind, centre` | Her scene. | People and Culture. Genuinely kind, listens to the end, and cannot help. Warm, unhurried, mid-forties reading. |
+| `office_close` | Opening. Kept back after hours for a "quick performance check". | An office after everyone's gone. Ordinary, not sinister — the staging should not telegraph anything. |
+| `boss_pleased` | "I'm impressed with your performance." | Warm, complimentary. She means it, and that's what makes the next beat work. |
+| `boss_smirk` | "Are you somebody's nephew? Or… did you sleep with someone?" | The turn. Still friendly on the surface. |
+| `boss_laugh` | "Relax. I'm just asking." | Laughing it off, putting it back on him for reacting. |
+| `boss_tie` | Standing in front of him, playing with his tie. "I can make things very easy for you here. Or very hard." | First physical contact. **Close, not lurid** — the discomfort should come from the words and the proximity. |
+| `boss_pull` | Her hand slides down his arm. | |
+| `boss_grip` | "Or maybe you want to make things really easy for yourself." | |
+| `boss_release` | She lets go, smirking. "I'll see you Monday then. Same time." | The scene ends with her entirely unbothered. |
+| `bed_dark` | That night, awake, still working it out. | Alone, dark, no resolution. |
+| `blackout` | The two closing lines. | **Not a drawing** — flat black. |
 
 ### Priority
 
-`meeting_room_night` is the one that matters — it carries the chapter's two
-hardest scenes and both BOSS states. `black` needs no drawing. `small_room`
-could fall back to `meeting_room` at a pinch.
-
----
+`boss_tie`, `boss_pull` and `boss_grip` are the three that carry the scene.
+`blackout` needs nothing. `office_close` and `bed_dark` are the two rooms.
 
 ## Scenario 5 — Friday
 

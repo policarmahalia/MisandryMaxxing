@@ -1,145 +1,145 @@
 [
   {
     "topic": "Unpacking Gender-Based Violence",
-    "question": "BOSS frames the comment as a joke and apologises when he names it. Why is it still gender-based harassment?",
+    "question": "Boss asks if he's \"somebody's nephew\" or slept with someone to get the role, right after telling him she's impressed with his performance. What's actually happening in that moment?",
     "options": [
       {
-        "text": "Intent doesn't determine impact — how she meant it doesn't set what it did",
+        "text": "His competence gets undercut the second before he can enjoy it",
         "isIssue": true,
-        "note": "\"It was a joke, you really can't take one\" moves the problem from what she did to how he received it. That move is the harassment continuing, not ending."
+        "note": "\"I'm impressed\" lasted about one sentence before it turned into a question about who he slept with. The compliment wasn't really about him."
       },
       {
-        "text": "She used a two-level seniority gap to make the contact and the comment",
+        "text": "It reduces his hire to something other than merit, out loud, to his face",
         "isIssue": true,
-        "note": "The gap is what makes the room closed even with the door open. Refusing costs him something it would never cost her."
+        "note": "He doesn't get to just be good at the job. There's a version of that story where it's not about the work at all, and she just said it out loud."
       },
       {
-        "text": "\"For a diversity hire\" reframes his competence as something he was granted",
+        "text": "There's a power gap doing the work here, not just the words",
         "isIssue": true,
-        "note": "It arrives attached to praise, which is what makes it hard to reject. He can't object to the compliment without objecting to the compliment."
+        "note": "She's his boss with the door closed. He can't just say \"that's a weird thing to ask\" the way he could to a peer."
       },
       {
-        "text": "Because she is his manager and all humour between levels is prohibited",
+        "text": "She's just making conversation, it's not that deep",
         "isIssue": false,
-        "note": "Seniority doesn't outlaw jokes. It changes who can safely decline one, which is a narrower and more useful point."
+        "note": "It's a closed-door one-on-one where his boss is asking who he slept with for the job. That's not small talk."
       },
       {
-        "text": "Because he didn't laugh",
+        "text": "He should've laughed it off like she wanted",
         "isIssue": false,
-        "note": "Whether he laughed decides nothing. On the deflection route he laughs along, and the cost lands anyway."
+        "note": "Going along with it is easier in the room. It's not the same as the comment being fine."
       },
       {
-        "text": "Because it happened outside normal working hours",
+        "text": "It's a joke, she said \"relax\"",
         "isIssue": false,
-        "note": "Late and empty made it easier. The same words at 11am would be the same words."
+        "note": "She said relax right after asking. That doesn't undo the question, it just tells him not to react to it."
       }
     ]
   },
   {
     "topic": "Healthy Relationships, Consent & Boundaries",
-    "question": "He asks her to take her hand off him and she does, immediately. What made the contact a boundary violation in the first place?",
+    "question": "Boss is playing with his tie, then her hand slides down his arm, then she squeezes his bicep, all while talking about how easy or hard she can make things for him. What's the boundary issue?",
     "options": [
       {
-        "text": "Consent is required before contact, not granted by the absence of objection",
+        "text": "Touch is happening without him agreeing to it, at all",
         "isIssue": true,
-        "note": "She never asked. Stopping when told is the minimum, not a defence — the violation was complete before he said anything."
+        "note": "Tie, arm, bicep. Nobody asked. It just kept going."
       },
       {
-        "text": "The seniority gap made refusing expensive, so silence can't be read as permission",
+        "text": "It's tied directly to whether he keeps his job",
         "isIssue": true,
-        "note": "Naming it costs him standing in the scenario, and that isn't a game mechanic being cynical. That's the calculation he has about four seconds to do."
+        "note": "\"How badly do you want to stay\" while her hand's on him isn't ambiguous about what's being offered or threatened."
       },
       {
-        "text": "Stopping promptly doesn't undo it, and what follows shows why",
+        "text": "He physically can't just get up and leave without consequence",
         "isIssue": true,
-        "note": "Her embarrassment converts into something cooler within four seconds. He asked correctly, she complied correctly, and he still paid."
+        "note": "She's his boss, the door's closed, and she just told him she controls how easy or hard things get for him. Leaving isn't free."
       },
       {
-        "text": "She held on after he asked — that's what made it a violation",
+        "text": "He froze instead of stopping her, so it's partly on him",
         "isIssue": false,
-        "note": "She didn't. Requiring her to refuse before it counts sets the bar so high that almost nothing clears it, which is exactly why this reading is common."
+        "note": "Freezing is a completely normal response to this. It's not consent and it's not his fault for not fighting it off."
       },
       {
-        "text": "It happened in a closed room rather than an open one",
+        "text": "It's not a big deal, she didn't actually do anything serious",
         "isIssue": false,
-        "note": "The closed room removed witnesses. It didn't create the problem, and an open-plan version would still be one."
+        "note": "Unwanted touch from your boss while she talks about your job security is already the serious part."
       },
       {
-        "text": "Physical contact is only acceptable between people of equal seniority",
+        "text": "He was too polite about it, that's the real issue",
         "isIssue": false,
-        "note": "Not the rule, and it implies a peer could have done this. Consent is the variable here, not the org chart."
+        "note": "His tone isn't what made this happen. She did."
       }
     ]
   },
   {
     "topic": "Being an Ethical Bystander",
-    "question": "Jean says \"she's a lot after seven — you get used to her.\" What does that tell us, and what should have happened instead?",
+    "question": "This happens behind a closed door with nobody else around. There's no bystander in the room. What does ethical bystander behavior even mean in a case like this?",
     "options": [
       {
-        "text": "Jean already knew, which means others did too, and nobody said anything beforehand",
+        "text": "Building a workplace where people would actually notice a closed-door pattern",
         "isIssue": true,
-        "note": "\"You get used to her\" is only sayable by someone who has. This wasn't a first time; it was a first time for him."
+        "note": "\"Stay back after everyone's gone\" isn't unusual on its own. It becomes a pattern that colleagues could actually clock, if anyone's watching for it."
       },
       {
-        "text": "The pattern needed naming to someone who could act on it, before he walked into that room",
+        "text": "Being someone he could tell afterward without getting a dismissive reaction",
         "isIssue": true,
-        "note": "Bystander action isn't only about the moment. Every person who knew and treated it as a personality trait made the room he was sent into."
+        "note": "Whether he says anything later depends a lot on what he expects to happen if he does. That's built long before this moment, by how people already respond to things like this."
       },
       {
-        "text": "Framing it as something you get used to makes it his job to adapt",
+        "text": "Not needing a witness for it to have been wrong",
         "isIssue": true,
-        "note": "Said kindly, and it still hands him the work. He is now the one managing BOSS's behaviour, alone, on his own time."
+        "note": "Ethical bystander behavior usually gets talked about as something that happens in the room. It also includes what happens if nobody was there at all, and whether the response afterward is still taken seriously."
       },
       {
-        "text": "Warning him privately to avoid late meetings with her",
+        "text": "There's nothing to say here, no one else was around",
         "isIssue": false,
-        "note": "Better than nothing, and it puts the whole burden on him — he now declines meetings with a principal engineer and pays for that too."
+        "note": "True that nobody witnessed it directly. Doesn't mean the concept has nothing to offer once he tells someone."
       },
       {
-        "text": "Nothing — Jean wasn't in the room, so it wasn't hers to raise",
+        "text": "He should've recorded it for proof",
         "isIssue": false,
-        "note": "She wasn't in the room and she knew about the room. That's the definition of a bystander, not an exemption from being one."
+        "note": "Puts the burden of evidence-gathering on him in the moment, on top of everything else happening to him."
       },
       {
-        "text": "Confronting BOSS directly on his behalf",
+        "text": "This one's just between the two of them",
         "isIssue": false,
-        "note": "Takes the decision off him the day after somebody else already took a decision about his body."
+        "note": "Treating it as private is exactly how patterns like this stay invisible to everyone else."
       }
     ]
   },
   {
     "topic": "Trauma-Informed Response",
-    "question": "He tells a colleague what happened and says he isn't sure he wants to report it. What is a trauma-informed response?",
+    "question": "He's lying awake that night, still working out what to do, with the choice already narrowed to \"go to Monday's meeting.\" What would an actually supportive response look like if someone knew what happened?",
     "options": [
       {
-        "text": "Believe him",
+        "text": "Believe him without making him prove it first",
         "isIssue": true,
-        "note": "First, and without a follow-up question that sounds like a test. Everything else is worthless without it."
+        "note": "It's one person's word against a senior manager's. Starting from doubt makes an already impossible decision worse."
       },
       {
-        "text": "Tell him it isn't his fault, particularly if he laughed along",
+        "text": "Let him decide what happens next instead of deciding for him",
         "isIssue": true,
-        "note": "The deflection route is the one most people take, and it's the one that leaves people most convinced they consented to it."
+        "note": "Report it, don't report it, quit, stay quiet — huge decisions. Someone taking that decision out of his hands, even to \"help,\" adds another loss of control on top of the first one."
       },
       {
-        "text": "Let him decide what happens next, including deciding nothing happens",
+        "text": "Take the risk to his job seriously instead of brushing past it",
         "isIssue": true,
-        "note": "The scenario makes both reporting routes fail differently. Someone who's read the outcome letter can say so; nobody gets to make the choice for him."
+        "note": "\"She's senior, you're new, they'll believe her\" isn't him catastrophizing. It's a realistic read of the situation, and it deserves to be treated as one."
       },
       {
-        "text": "Explain that he has a responsibility to report it so it doesn't happen to someone else",
+        "text": "Tell him to just report it, it's obviously the right move",
         "isIssue": false,
-        "note": "True and devastating. It makes the next person's safety his debt, on the worst day he's had, and it's the single most common thing said to people in this position."
+        "note": "Maybe it is the right move eventually. Said flatly like that, it skips over what he's actually weighing and makes his hesitation sound like the problem."
       },
       {
-        "text": "Reassure him that BOSS probably didn't mean it that way",
+        "text": "Tell him it'll blow over if he doesn't make a thing of it",
         "isIssue": false,
-        "note": "It's an argument about her, offered to him, while he's the one who needs something."
+        "note": "\"Same time Monday\" says otherwise. This isn't a one-off that ends on its own."
       },
       {
-        "text": "Offer to report it for him so he doesn't have to",
+        "text": "Ask him what he was doing alone with her in the first place",
         "isIssue": false,
-        "note": "Generous and still a decision made over his head. Offer to go with him instead — that keeps it his."
+        "note": "She told him to stay back. That's not a choice he made his way into."
       }
     ]
   }
